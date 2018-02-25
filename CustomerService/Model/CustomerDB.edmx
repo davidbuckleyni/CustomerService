@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="customerDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AddOns">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Status" Type="nvarchar" MaxLength="250" />
+          <Property Name="RxNT" Type="bit" />
+          <Property Name="OQAnalyst" Type="bit" />
+          <Property Name="Availity" Type="bit" />
+        </EntityType>
+        <EntityType Name="ContractDetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SignOffGoLive" Type="date" />
+          <Property Name="NoOfUsers" Type="int" />
+          <Property Name="BasePrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BaseUsers" Type="int" />
+          <Property Name="CostExtraUser" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MonthlyCharge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RRARR" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="650" />
+          <Property Name="CustomerJoined" Type="date" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Town" Type="nvarchar" MaxLength="150" />
+          <Property Name="County" Type="nvarchar" MaxLength="150" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="15" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CustomerLocations" Type="int" />
+        </EntityType>
+        <EntityType Name="CustomerContacts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="PoistionId" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="350" />
+          <Property Name="phone" Type="nvarchar" MaxLength="250" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="isPrimayContact" Type="bit" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="CustomerCountys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="CountyCode" Type="int" />
+          <Property Name="CountyDescription" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Implentat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerId" Type="int" />
+          <Property Name="OldEhr" Type="int" />
+          <Property Name="ImplentationFee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="bit" />
+          <Property Name="ProjectManager" Type="int" />
+          <Property Name="DataMigrationLead" Type="int" />
+          <Property Name="DataVolume" Type="int" />
+          <Property Name="Live" Type="bit" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ProgamTypes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProgramTypesDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="ProgramTypeStatus" Type="bit" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="revenue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerid" Type="int" />
+          <Property Name="PriceFixedUntil" Type="date" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Users" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RevenueAmount" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="StandardLookups">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="nvarchar" MaxLength="250" />
+          <Property Name="description" Type="nvarchar" MaxLength="350" />
+          <Property Name="lookupgroup" Type="int" />
+          <Property Name="lookupdescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Pasword" Type="nvarchar" MaxLength="250" />
+          <Property Name="isAdmin" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="LoginAttempts" Type="int" />
+          <Property Name="IpAddress" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="customerDbModelStoreContainer">
+          <EntitySet Name="AddOns" EntityType="Self.AddOns" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractDetails" EntityType="Self.ContractDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContacts" EntityType="Self.CustomerContacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerCountys" EntityType="Self.CustomerCountys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Implentat" EntityType="Self.Implentat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProgamTypes" EntityType="Self.ProgamTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="revenue" EntityType="Self.revenue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StandardLookups" EntityType="Self.StandardLookups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="customerDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="650" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerJoined" Type="DateTime" Precision="0" />
+          <Property Name="Address1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Town" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerLocations" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="customerDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="CustomerContacts" EntityType="customerDbModel.CustomerContact" />
+          <EntitySet Name="ContractDetails" EntityType="customerDbModel.ContractDetail" />
+          <EntitySet Name="StandardLookups" EntityType="customerDbModel.StandardLookup" />
+          <EntitySet Name="CustomerCountys" EntityType="customerDbModel.CustomerCounty" />
+          <EntitySet Name="Implentats" EntityType="customerDbModel.Implentat" />
+          <EntitySet Name="revenues" EntityType="customerDbModel.revenue" />
+          <EntitySet Name="Users" EntityType="customerDbModel.User" />
+          <EntitySet Name="AddOns" EntityType="customerDbModel.AddOn" />
+          <EntitySet Name="ProgamTypes" EntityType="customerDbModel.ProgamType" />
+        </EntityContainer>
+        <EntityType Name="CustomerContact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="phone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="isPrimayContact" Type="Boolean" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PoistionId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ContractDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SignOffGoLive" Type="DateTime" Precision="0" />
+          <Property Name="NoOfUsers" Type="Int32" />
+          <Property Name="BasePrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BaseUsers" Type="Int32" />
+          <Property Name="CostExtraUser" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MonthlyCharge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RRARR" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="StandardLookup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="lookupgroup" Type="Int32" />
+          <Property Name="lookupdescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="CustomerCounty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="CountyCode" Type="Int32" />
+          <Property Name="CountyDescription" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Implentat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerId" Type="Int32" />
+          <Property Name="OldEhr" Type="Int32" />
+          <Property Name="ImplentationFee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="Boolean" />
+          <Property Name="ProjectManager" Type="Int32" />
+          <Property Name="DataMigrationLead" Type="Int32" />
+          <Property Name="DataVolume" Type="Int32" />
+          <Property Name="Live" Type="Boolean" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="revenue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerid" Type="Int32" />
+          <Property Name="PriceFixedUntil" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Users" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RevenueAmount" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Pasword" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="isAdmin" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="LoginAttempts" Type="Int32" />
+          <Property Name="IpAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AddOn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Status" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RxNT" Type="Boolean" />
+          <Property Name="OQAnalyst" Type="Boolean" />
+          <Property Name="Availity" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ProgamType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ProgramTypesDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProgramTypeStatus" Type="Boolean" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="customerDbModelStoreContainer" CdmEntityContainer="customerDbEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="customerDbModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerLocations" ColumnName="CustomerLocations" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerJoined" ColumnName="CustomerJoined" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContacts">
+            <EntityTypeMapping TypeName="customerDbModel.CustomerContact">
+              <MappingFragment StoreEntitySet="CustomerContacts">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PoistionId" ColumnName="PoistionId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="isPrimayContact" ColumnName="isPrimayContact" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContractDetails">
+            <EntityTypeMapping TypeName="customerDbModel.ContractDetail">
+              <MappingFragment StoreEntitySet="ContractDetails">
+                <ScalarProperty Name="RRARR" ColumnName="RRARR" />
+                <ScalarProperty Name="MonthlyCharge" ColumnName="MonthlyCharge" />
+                <ScalarProperty Name="CostExtraUser" ColumnName="CostExtraUser" />
+                <ScalarProperty Name="BaseUsers" ColumnName="BaseUsers" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="NoOfUsers" ColumnName="NoOfUsers" />
+                <ScalarProperty Name="SignOffGoLive" ColumnName="SignOffGoLive" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StandardLookups">
+            <EntityTypeMapping TypeName="customerDbModel.StandardLookup">
+              <MappingFragment StoreEntitySet="StandardLookups">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="lookupdescription" ColumnName="lookupdescription" />
+                <ScalarProperty Name="lookupgroup" ColumnName="lookupgroup" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerCountys">
+            <EntityTypeMapping TypeName="customerDbModel.CustomerCounty">
+              <MappingFragment StoreEntitySet="CustomerCountys">
+                <ScalarProperty Name="CountyDescription" ColumnName="CountyDescription" />
+                <ScalarProperty Name="CountyCode" ColumnName="CountyCode" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Implentats">
+            <EntityTypeMapping TypeName="customerDbModel.Implentat">
+              <MappingFragment StoreEntitySet="Implentat">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Live" ColumnName="Live" />
+                <ScalarProperty Name="DataVolume" ColumnName="DataVolume" />
+                <ScalarProperty Name="DataMigrationLead" ColumnName="DataMigrationLead" />
+                <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="ImplentationFee" ColumnName="ImplentationFee" />
+                <ScalarProperty Name="OldEhr" ColumnName="OldEhr" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="revenues">
+            <EntityTypeMapping TypeName="customerDbModel.revenue">
+              <MappingFragment StoreEntitySet="revenue">
+                <ScalarProperty Name="RevenueAmount" ColumnName="RevenueAmount" />
+                <ScalarProperty Name="Users" ColumnName="Users" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="PriceFixedUntil" ColumnName="PriceFixedUntil" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="customerDbModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="LoginAttempts" ColumnName="LoginAttempts" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="Pasword" ColumnName="Pasword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddOns">
+            <EntityTypeMapping TypeName="customerDbModel.AddOn">
+              <MappingFragment StoreEntitySet="AddOns">
+                <ScalarProperty Name="Availity" ColumnName="Availity" />
+                <ScalarProperty Name="OQAnalyst" ColumnName="OQAnalyst" />
+                <ScalarProperty Name="RxNT" ColumnName="RxNT" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProgamTypes">
+            <EntityTypeMapping TypeName="customerDbModel.ProgamType">
+              <MappingFragment StoreEntitySet="ProgamTypes">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="ProgramTypeStatus" ColumnName="ProgramTypeStatus" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ProgramTypesDescription" ColumnName="ProgramTypesDescription" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
