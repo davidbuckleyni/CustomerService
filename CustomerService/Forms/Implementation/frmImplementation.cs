@@ -86,7 +86,7 @@ namespace CustomerService.Forms.Implementation
             _imp.Paid = chkIsPaid.Checked;
             _imp.Live = chkIsLive.Checked;
             _imp.OldEhr =Int32.Parse(txtOldEhr.Text);
-
+             
             if (this.IsEdit)
             {
                 _db.SaveImplmentation(_imp);
