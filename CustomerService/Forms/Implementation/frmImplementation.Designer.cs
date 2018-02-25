@@ -64,7 +64,7 @@
             this.txtOldEhr.Location = new System.Drawing.Point(140, 10);
             this.txtOldEhr.Name = "txtOldEhr";
             this.txtOldEhr.Size = new System.Drawing.Size(186, 20);
-            this.txtOldEhr.TabIndex = 4;
+            this.txtOldEhr.TabIndex = 0;
             // 
             // radLabel2
             // 
@@ -79,7 +79,7 @@
             this.txtFee.Location = new System.Drawing.Point(140, 55);
             this.txtFee.Name = "txtFee";
             this.txtFee.Size = new System.Drawing.Size(89, 20);
-            this.txtFee.TabIndex = 6;
+            this.txtFee.TabIndex = 1;
             // 
             // radLabel3
             // 
@@ -94,7 +94,7 @@
             this.chkIsPaid.Location = new System.Drawing.Point(207, 215);
             this.chkIsPaid.Name = "chkIsPaid";
             this.chkIsPaid.Size = new System.Drawing.Size(53, 18);
-            this.chkIsPaid.TabIndex = 8;
+            this.chkIsPaid.TabIndex = 7;
             this.chkIsPaid.Text = "Is Paid";
             // 
             // radLabel5
@@ -111,7 +111,7 @@
             this.cboProjectManager.Location = new System.Drawing.Point(139, 94);
             this.cboProjectManager.Name = "cboProjectManager";
             this.cboProjectManager.Size = new System.Drawing.Size(186, 21);
-            this.cboProjectManager.TabIndex = 10;
+            this.cboProjectManager.TabIndex = 3;
             // 
             // radLabel4
             // 
@@ -127,7 +127,7 @@
             this.cboDataMIgrationLead.Location = new System.Drawing.Point(139, 139);
             this.cboDataMIgrationLead.Name = "cboDataMIgrationLead";
             this.cboDataMIgrationLead.Size = new System.Drawing.Size(186, 21);
-            this.cboDataMIgrationLead.TabIndex = 12;
+            this.cboDataMIgrationLead.TabIndex = 4;
             // 
             // radLabel6
             // 
@@ -143,14 +143,14 @@
             this.cboDataVoulme.Location = new System.Drawing.Point(139, 175);
             this.cboDataVoulme.Name = "cboDataVoulme";
             this.cboDataVoulme.Size = new System.Drawing.Size(186, 21);
-            this.cboDataVoulme.TabIndex = 14;
+            this.cboDataVoulme.TabIndex = 5;
             // 
             // radButton2
             // 
             this.radButton2.Location = new System.Drawing.Point(488, 247);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(110, 24);
-            this.radButton2.TabIndex = 16;
+            this.radButton2.TabIndex = 9;
             this.radButton2.Text = "Cancel";
             this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
@@ -159,7 +159,7 @@
             this.btnSave.Location = new System.Drawing.Point(353, 247);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 24);
-            this.btnSave.TabIndex = 15;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -168,7 +168,7 @@
             this.radMaskedEditBox1.Location = new System.Drawing.Point(251, 53);
             this.radMaskedEditBox1.Name = "radMaskedEditBox1";
             this.radMaskedEditBox1.Size = new System.Drawing.Size(125, 20);
-            this.radMaskedEditBox1.TabIndex = 18;
+            this.radMaskedEditBox1.TabIndex = 2;
             this.radMaskedEditBox1.TabStop = false;
             // 
             // chkIsLive
@@ -176,7 +176,7 @@
             this.chkIsLive.Location = new System.Drawing.Point(139, 215);
             this.chkIsLive.Name = "chkIsLive";
             this.chkIsLive.Size = new System.Drawing.Size(51, 18);
-            this.chkIsLive.TabIndex = 19;
+            this.chkIsLive.TabIndex = 6;
             this.chkIsLive.Text = "Is Live";
             // 
             // radLabel7
@@ -211,6 +211,7 @@
             this.MaximizeBox = false;
             this.Name = "frmImplementation";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Implementation";
             this.Load += new System.EventHandler(this.frmImplementation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtOldEhr)).EndInit();

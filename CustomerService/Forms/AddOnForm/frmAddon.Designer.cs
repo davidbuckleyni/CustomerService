@@ -170,6 +170,7 @@
             this.Controls.Add(this.txtDescription);
             this.MaximizeBox = false;
             this.Name = "frmAddon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Ons";
             this.Load += new System.EventHandler(this.frmAddon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();

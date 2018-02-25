@@ -248,16 +248,6 @@ namespace CustomerService
             BindImplentationsForCustomer(CustomerId);
         }
 
-        private void radButton1_Click(object sender, EventArgs e)
-        {
-            frmRevenue _frmRevenue = new frmRevenue();
-            _frmRevenue.CustomerId = CustomerId;
-            _frmRevenue.RecordId = Revenueid;
-            _frmRevenue.IsEdit = true; 
-            _frmRevenue.ShowDialog();
-            BindRevenue(CustomerId);
-        }
-
         private void btnAddRevenue_Click(object sender, EventArgs e)
         {
             frmRevenue _frmRevenue = new frmRevenue();
@@ -505,6 +495,42 @@ namespace CustomerService
             _frmPrograType.CustomerId = CustomerId;
             _frmPrograType.IsEditMode = false;
             _frmPrograType.ShowDialog();
+        }
+
+        private void rgProgramTypes_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            btnEditProgramTypes_Click(sender, e);
+        }
+
+        private void rgAddons_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            btnEditAddon_Click(sender, e);
+        }
+
+        private void grdRevenue_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            btnEditRevenue_Click(sender, e);
+
+        }
+
+        private void btnEditRevenue_Click(object sender, EventArgs e)
+        {
+            frmRevenue _frmRevenue = new frmRevenue();
+            _frmRevenue.CustomerId = CustomerId;
+            _frmRevenue.RecordId = Revenueid;
+            _frmRevenue.IsEdit = true;
+            _frmRevenue.ShowDialog();
+            BindRevenue(CustomerId);
+        }
+
+        private void grdImplentations_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            btnEditImplentation_Click(sender, e);
+        }
+
+        private void rgContacts_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            btnEditContact_Click(sender, e);
         }
     }
 }

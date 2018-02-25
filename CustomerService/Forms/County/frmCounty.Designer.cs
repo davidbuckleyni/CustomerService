@@ -81,6 +81,7 @@
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.cboCountys);
             this.Name = "frmCounty";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pick A County ";
             this.Load += new System.EventHandler(this.frmCounty_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();

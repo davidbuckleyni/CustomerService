@@ -105,7 +105,7 @@
             this.cboPrimaryContact.Location = new System.Drawing.Point(106, 17);
             this.cboPrimaryContact.Name = "cboPrimaryContact";
             this.cboPrimaryContact.Size = new System.Drawing.Size(186, 21);
-            this.cboPrimaryContact.TabIndex = 1;
+            this.cboPrimaryContact.TabIndex = 0;
             // 
             // radLabel5
             // 
@@ -120,7 +120,7 @@
             this.btnSave.Location = new System.Drawing.Point(306, 223);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 24);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -129,7 +129,7 @@
             this.btnCancel.Location = new System.Drawing.Point(422, 223);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 24);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -138,7 +138,7 @@
             this.txtName.Location = new System.Drawing.Point(107, 67);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(186, 20);
-            this.txtName.TabIndex = 8;
+            this.txtName.TabIndex = 1;
             // 
             // radLabel1
             // 
@@ -166,6 +166,7 @@
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel2);
             this.Name = "frmContact";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contacts";
             this.Load += new System.EventHandler(this.frmContact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();

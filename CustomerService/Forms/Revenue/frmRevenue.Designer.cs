@@ -64,7 +64,7 @@
             this.rdPriceFixedUnitl.Location = new System.Drawing.Point(119, 91);
             this.rdPriceFixedUnitl.Name = "rdPriceFixedUnitl";
             this.rdPriceFixedUnitl.Size = new System.Drawing.Size(164, 20);
-            this.rdPriceFixedUnitl.TabIndex = 7;
+            this.rdPriceFixedUnitl.TabIndex = 2;
             this.rdPriceFixedUnitl.TabStop = false;
             this.rdPriceFixedUnitl.Text = "21 February 2018";
             this.rdPriceFixedUnitl.Value = new System.DateTime(2018, 2, 21, 19, 54, 23, 187);
@@ -74,7 +74,7 @@
             this.radButton2.Location = new System.Drawing.Point(422, 218);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(110, 24);
-            this.radButton2.TabIndex = 19;
+            this.radButton2.TabIndex = 5;
             this.radButton2.Text = "Cancel";
             // 
             // btnSave
@@ -82,7 +82,7 @@
             this.btnSave.Location = new System.Drawing.Point(306, 217);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 24);
-            this.btnSave.TabIndex = 18;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -108,7 +108,7 @@
             this.txtUsers.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.txtUsers.Name = "txtUsers";
             this.txtUsers.Size = new System.Drawing.Size(125, 20);
-            this.txtUsers.TabIndex = 24;
+            this.txtUsers.TabIndex = 1;
             this.txtUsers.TabStop = false;
             this.txtUsers.Text = "0";
             // 
@@ -126,7 +126,7 @@
             this.txtRevenue.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.txtRevenue.Name = "txtRevenue";
             this.txtRevenue.Size = new System.Drawing.Size(125, 20);
-            this.txtRevenue.TabIndex = 25;
+            this.txtRevenue.TabIndex = 3;
             this.txtRevenue.TabStop = false;
             this.txtRevenue.Text = "0";
             // 
@@ -144,7 +144,7 @@
             this.cboYear.Location = new System.Drawing.Point(119, 13);
             this.cboYear.Name = "cboYear";
             this.cboYear.Size = new System.Drawing.Size(121, 21);
-            this.cboYear.TabIndex = 27;
+            this.cboYear.TabIndex = 0;
             // 
             // frmRevenue
             // 

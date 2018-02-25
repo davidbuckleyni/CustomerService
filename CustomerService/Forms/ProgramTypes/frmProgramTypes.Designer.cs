@@ -73,14 +73,14 @@
             this.txtDescription.Location = new System.Drawing.Point(99, 21);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(186, 20);
-            this.txtDescription.TabIndex = 32;
+            this.txtDescription.TabIndex = 0;
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(341, 258);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 24);
-            this.btnCancel.TabIndex = 38;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -89,7 +89,7 @@
             this.btnSave.Location = new System.Drawing.Point(212, 258);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 24);
-            this.btnSave.TabIndex = 37;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -100,7 +100,7 @@
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.SelectionFill = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(78)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.txtNotes.Size = new System.Drawing.Size(354, 139);
-            this.txtNotes.TabIndex = 39;
+            this.txtNotes.TabIndex = 1;
             // 
             // chkStatus
             // 
@@ -108,7 +108,7 @@
             this.chkStatus.Location = new System.Drawing.Point(99, 230);
             this.chkStatus.Name = "chkStatus";
             this.chkStatus.Size = new System.Drawing.Size(56, 17);
-            this.chkStatus.TabIndex = 40;
+            this.chkStatus.TabIndex = 2;
             this.chkStatus.Text = "Status";
             this.chkStatus.UseVisualStyleBackColor = true;
             // 
