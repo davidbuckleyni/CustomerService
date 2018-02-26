@@ -37,8 +37,6 @@
             this.cboProjectManager = new System.Windows.Forms.ComboBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.cboDataMIgrationLead = new System.Windows.Forms.ComboBox();
-            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.cboDataVoulme = new System.Windows.Forms.ComboBox();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.btnSave = new Telerik.WinControls.UI.RadButton();
             this.radMaskedEditBox1 = new Telerik.WinControls.UI.RadMaskedEditBox();
@@ -51,7 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkIsPaid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMaskedEditBox1)).BeginInit();
@@ -129,22 +126,6 @@
             this.cboDataMIgrationLead.Size = new System.Drawing.Size(186, 21);
             this.cboDataMIgrationLead.TabIndex = 4;
             // 
-            // radLabel6
-            // 
-            this.radLabel6.Location = new System.Drawing.Point(8, 170);
-            this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(71, 18);
-            this.radLabel6.TabIndex = 13;
-            this.radLabel6.Text = "Data Volume";
-            // 
-            // cboDataVoulme
-            // 
-            this.cboDataVoulme.FormattingEnabled = true;
-            this.cboDataVoulme.Location = new System.Drawing.Point(139, 175);
-            this.cboDataVoulme.Name = "cboDataVoulme";
-            this.cboDataVoulme.Size = new System.Drawing.Size(186, 21);
-            this.cboDataVoulme.TabIndex = 5;
-            // 
             // radButton2
             // 
             this.radButton2.Location = new System.Drawing.Point(488, 247);
@@ -197,8 +178,6 @@
             this.Controls.Add(this.radMaskedEditBox1);
             this.Controls.Add(this.radButton2);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.radLabel6);
-            this.Controls.Add(this.cboDataVoulme);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.cboDataMIgrationLead);
             this.Controls.Add(this.radLabel5);
@@ -221,7 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkIsPaid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMaskedEditBox1)).EndInit();
@@ -242,8 +220,6 @@
         private System.Windows.Forms.ComboBox cboProjectManager;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private System.Windows.Forms.ComboBox cboDataMIgrationLead;
-        private Telerik.WinControls.UI.RadLabel radLabel6;
-        private System.Windows.Forms.ComboBox cboDataVoulme;
         private Telerik.WinControls.UI.RadButton radButton2;
         private Telerik.WinControls.UI.RadButton btnSave;
         private Telerik.WinControls.UI.RadMaskedEditBox radMaskedEditBox1;

@@ -42,6 +42,7 @@
     <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -98,7 +99,7 @@
   <ItemGroup>
     <Compile Include="Classes\ContextBase.cs" />
     <Compile Include="Classes\CustomersContext.cs" />
-    <Compile Include="Classes\StandardLookup.cs" />
+    <Compile Include="Classes\StandardLookups.cs" />
     <Compile Include="Costants.cs" />
     <Compile Include="customerDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +110,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="customerDbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -145,6 +156,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDbDataSet8.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customerDbDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddOnForm\frmAddon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +185,12 @@
     <Compile Include="Forms\Implementation\frmImplementation.Designer.cs">
       <DependentUpon>frmImplementation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Notes\frmNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Notes\frmNotes.Designer.cs">
+      <DependentUpon>frmNotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProgramTypes\frmProgramTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +208,24 @@
     </Compile>
     <Compile Include="Forms\Search\frmSearch.Designer.cs">
       <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StandardLookupsEditor\frmStandardLookupEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StandardLookupsEditor\frmStandardLookupEditor.Designer.cs">
+      <DependentUpon>frmStandardLookupEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StandardLookupsEditor\frmStandardLookupEditorEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StandardLookupsEditor\frmStandardLookupEditorEdit.Designer.cs">
+      <DependentUpon>frmStandardLookupEditorEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Users\frmLogin.cs">
       <SubType>Form</SubType>
@@ -229,7 +269,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\CustomField.cs">
+      <DependentUpon>CustomerDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Implentat.cs">
+      <DependentUpon>CustomerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Note.cs">
       <DependentUpon>CustomerDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ProgamType.cs">
@@ -246,17 +292,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\ReportRevenue.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\ReportRevenue.Designer.cs">
-      <DependentUpon>ReportRevenue.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\ReportDesigner.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\ReportDesigner.Designer.cs">
       <DependentUpon>ReportDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RevenueReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RevenueReport.Designer.cs">
+      <DependentUpon>RevenueReport.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AddOnForm\frmAddon.resx">
       <DependentUpon>frmAddon.cs</DependentUpon>
@@ -270,6 +316,9 @@
     <EmbeddedResource Include="Forms\Implementation\frmImplementation.resx">
       <DependentUpon>frmImplementation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Notes\frmNotes.resx">
+      <DependentUpon>frmNotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProgramTypes\frmProgramTypes.resx">
       <DependentUpon>frmProgramTypes.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +327,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Search\frmSearch.resx">
       <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StandardLookupsEditor\frmStandardLookupEditor.resx">
+      <DependentUpon>frmStandardLookupEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StandardLookupsEditor\frmStandardLookupEditorEdit.resx">
+      <DependentUpon>frmStandardLookupEditorEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -296,11 +354,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\ReportRevenue.resx">
-      <DependentUpon>ReportRevenue.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportDesigner.resx">
       <DependentUpon>ReportDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RevenueReport.resx">
+      <DependentUpon>RevenueReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="Model\CustomerDB.edmx">
@@ -328,6 +386,28 @@
     </None>
     <None Include="customerDbDataSet1.xss">
       <DependentUpon>customerDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet10.xsc">
+      <DependentUpon>customerDbDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet10.xss">
+      <DependentUpon>customerDbDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet11.xsc">
+      <DependentUpon>customerDbDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet11.xss">
+      <DependentUpon>customerDbDataSet11.xsd</DependentUpon>
     </None>
     <None Include="customerDbDataSet2.xsc">
       <DependentUpon>customerDbDataSet2.xsd</DependentUpon>
@@ -406,10 +486,22 @@
     <None Include="customerDbDataSet8.xss">
       <DependentUpon>customerDbDataSet8.xsd</DependentUpon>
     </None>
+    <None Include="customerDbDataSet9.xsc">
+      <DependentUpon>customerDbDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet9.xss">
+      <DependentUpon>customerDbDataSet9.xsd</DependentUpon>
+    </None>
     <None Include="Model\CustomerDB.edmx.diagram">
       <DependentUpon>CustomerDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CustomerService.Classes.StandardLookups.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

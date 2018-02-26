@@ -39,7 +39,7 @@ namespace CustomerService.Forms.Users
             if(txtPassword.Text !="")
             {
                 User validUser = _db.ValidateUser(txtLogin.Text, txtPassword.Text);
-                if (validUser != null && validUser.isActive == true)
+                if (validUser != null  )
                 {
                     
                     frmCustomerService _frmCustomerService = new frmCustomerService();

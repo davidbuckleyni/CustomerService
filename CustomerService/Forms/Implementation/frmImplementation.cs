@@ -43,11 +43,7 @@ namespace CustomerService.Forms.Implementation
             cboDataMIgrationLead.DataSource = _db.GetStandardLookupByGroup(Costants.DataMigrationList);
 
 
-
-            cboDataVoulme.DisplayMember = "Description";
-            cboDataVoulme.ValueMember = "Code";
-            cboDataVoulme.DataSource = _db.GetStandardLookupByGroup(Costants.DataMigrationList);
-
+ 
             if (this.IsEdit)
             {
                 Implentat _newImp = new Implentat();
@@ -60,8 +56,7 @@ namespace CustomerService.Forms.Implementation
               
                 cboDataMIgrationLead.SelectedValue = _newImp.DataMigrationLead ?? 0;
                 cboProjectManager.SelectedValue = _newImp.ProjectManager ?? 0;
-                cboDataVoulme.SelectedValue = _newImp.DataVolume ?? 0;
-
+          
             }
 
 
@@ -81,9 +76,7 @@ namespace CustomerService.Forms.Implementation
 
             _imp.DataMigrationLead = (int)cboDataMIgrationLead.SelectedValue;
             _imp.ProjectManager = (int)cboProjectManager.SelectedValue;
-            if(cboDataVoulme.SelectedValue != null)
-            _imp.DataVolume = (int)cboDataVoulme.SelectedValue;
-            _imp.Paid = chkIsPaid.Checked;
+              _imp.Paid = chkIsPaid.Checked;
             _imp.Live = chkIsLive.Checked;
             _imp.OldEhr =Int32.Parse(txtOldEhr.Text);
              

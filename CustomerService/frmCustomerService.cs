@@ -4,8 +4,10 @@ using CustomerService.Forms.AddOnForm;
 using CustomerService.Forms.Contacts;
 using CustomerService.Forms.County;
 using CustomerService.Forms.Implementation;
+using CustomerService.Forms.Notes;
 using CustomerService.Forms.ProgramTypes;
 using CustomerService.Forms.Revenue;
+using CustomerService.Forms.StandardLookupsEditor;
 using CustomerService.Model;
 using CustomerService.Reports;
 using DevExpress.LookAndFeel;
@@ -18,6 +20,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
 
 namespace CustomerService
@@ -34,6 +37,7 @@ namespace CustomerService
         public bool IsNewCustomer { get; set; }
         public bool isAdmin { get; set; }
         public int AddOnId { get; set; }
+        public int NotesId { get; set; }
         public frmCustomerService()
         {
             InitializeComponent();
@@ -41,20 +45,13 @@ namespace CustomerService
 
         private void frmCustomerService_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'customerDbDataSet8.CustomerContacts' table. You can move, or remove it, as needed.
-            this.customerContactsTableAdapter1.Fill(this.customerDbDataSet8.CustomerContacts);
-            // TODO: This line of code loads data into the 'customerDbDataSet7.revenue' table. You can move, or remove it, as needed.
-            this.revenueTableAdapter.Fill(this.customerDbDataSet7.revenue);
-            // TODO: This line of code loads data into the 'customerDbDataSet6.AddOns' table. You can move, or remove it, as needed.
-            this.addOnsTableAdapter1.Fill(this.customerDbDataSet6.AddOns);
-            // TODO: This line of code loads data into the 'customerDbDataSet5.ProgamTypes' table. You can move, or remove it, as needed.
-            this.progamTypesTableAdapter.Fill(this.customerDbDataSet5.ProgamTypes);
+            
 
+            if (isAdmin==false)
 
-            if (isAdmin)
-
-            { RadPageViewPage pageToRemove = this.radPageView2.Pages["radPageViewPage4"];
-                this.radPageView2.Pages.Remove(pageToRemove);
+            {
+                pnlRevenueNotAllowed.Visible = true;
+                pnlRevenue.Visible = false;
             }
 
             this.rgAddons.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
@@ -90,11 +87,18 @@ namespace CustomerService
                 rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
                 BindAddOns(CustomerId);
                 BindContacts(CustomerId);
+                BindNotes(CustomerId);
 
             }
 
         }
+        public void BindNotes(int id)
+        {
 
+            rgNotes.DataSource = CustomerDb.GetAlLNotesByCustomerId(id);
+            rgNotes.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+
+        }
         public void BindAddOns(int id)
         {
 
@@ -297,7 +301,7 @@ namespace CustomerService
                     if (control2 is RichTextBox)
                     (control2 as RichTextBox).Clear();
 
-                txtNotes.Text = "";
+                 
                
             };
 
@@ -316,7 +320,7 @@ namespace CustomerService
             _cust.PhoneNumber = txtPhone.Text;
             _cust.EmailAddress = txtEmail.Text;
             _cust.CustomerJoined = rdDateJoined.Value;
-            _cust.Notes = txtNotes.Text;
+          
             _cust.State = txtState.Text;
             _cust.isActive = true;
             
@@ -340,7 +344,7 @@ namespace CustomerService
         {
              
 
-            ReportPrintTool printTool = new ReportPrintTool(new ReportRevenue());
+            ReportPrintTool printTool = new ReportPrintTool(new RevenueReport());
 
               // Invoke the Ribbon Print Preview form modally  
             // with the specified look and feel settings.  
@@ -420,6 +424,7 @@ namespace CustomerService
             {
                 //do something else
             }
+            BindAddOns(CustomerId);
 
         }
 
@@ -437,6 +442,7 @@ namespace CustomerService
             {
                 //do something else
             }
+            BindContacts(CustomerId);
         }
 
         private void btnDeleteRevenue_Click(object sender, EventArgs e)
@@ -453,6 +459,7 @@ namespace CustomerService
             {
                 //do something else
             }
+            BindRevenue(CustomerId);
         }
 
         private void btnDeleteImplentation_Click(object sender, EventArgs e)
@@ -469,6 +476,7 @@ namespace CustomerService
             {
                 //do something else
             }
+            BindImplentationsForCustomer(CustomerId);
         }
 
         private void radButton8_Click(object sender, EventArgs e)
@@ -486,6 +494,7 @@ namespace CustomerService
             {
                 //do something else
             }
+            BindImplentationsForCustomer(CustomerId);
         }
 
         private void btnAddProgramTypes_Click(object sender, EventArgs e)
@@ -531,6 +540,100 @@ namespace CustomerService
         private void rgContacts_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
             btnEditContact_Click(sender, e);
+        }
+
+        private void rgNotes_SelectionChanged(object sender, EventArgs e)
+        {
+            if (rgNotes.SelectedRows.Count > 0)
+            {
+                if (rgNotes.CurrentRow.Cells[0].Value != null)
+                {
+                    this.NotesId = (int)rgNotes.CurrentRow.Cells[0].Value;
+
+                }
+            }
+        }
+
+        private void btnAddNotes_Click(object sender, EventArgs e)
+        {
+            frmNotes _frmnotes = new frmNotes();
+            _frmnotes.StartPosition = FormStartPosition.CenterScreen;
+            _frmnotes.CustomerId = CustomerId;
+            _frmnotes.NotesId = NotesId;
+            _frmnotes.IsEditMode = false;
+            _frmnotes.ShowDialog();
+            BindNotes(CustomerId);
+        }
+
+        private void btnEditNote_Click(object sender, EventArgs e)
+        {
+            frmNotes _frmnotes = new frmNotes();
+            _frmnotes.StartPosition = FormStartPosition.CenterScreen;
+            _frmnotes.CustomerId = CustomerId;
+            _frmnotes.NotesId = NotesId;
+            _frmnotes.IsEditMode = true;
+            _frmnotes.ShowDialog();
+            BindNotes(CustomerId);
+        }
+
+        private void btnDeleteNote_Click(object sender, EventArgs e)
+        {
+            Note _DeleteNote = new Note();
+            _DeleteNote = CustomerDb.GetNotesById(NotesId);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Note ", "Delete Note", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CustomerDb.DeleteNote(_DeleteNote);
+                BindAddOns(CustomerId);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
+            BindNotes(CustomerId);
+        }
+
+        private void radRibbonBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private FilterDescriptor filterDescriptor;
+
+        private void txtboxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                radButtonElement3_Click(sender, e);
+            }
+        }
+
+        private void radButtonElement3_Click(object sender, EventArgs e)
+        {
+            if (filterDescriptor == null)
+            {
+                filterDescriptor = new FilterDescriptor("CustomerName", FilterOperator.Contains, txtboxSearch.Text);
+                rgCustomers.FilterDescriptors.Add(filterDescriptor);
+            }
+            else
+            {
+                filterDescriptor.Value = txtboxSearch.Text;
+            }
+        }
+
+        private void btnSearchReset_Click(object sender, EventArgs e)
+        {
+            this.rgCustomers.MasterTemplate.FilterDescriptors.Clear();
+        }
+
+        private void btnEditLookupsCountys_Click(object sender, EventArgs e)
+        {
+            frmStandardLookupEditor _frmStandardLookupEditor = new frmStandardLookupEditor();
+            _frmStandardLookupEditor.LookupType = Costants.CountyList;
+
+            _frmStandardLookupEditor.ShowDialog();
+
+
         }
     }
 }

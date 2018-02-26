@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace CustomerService.Reports
 {
-    public partial class ReportRevenue : DevExpress.XtraReports.UI.XtraReport
+    public partial class RevenueReport : DevExpress.XtraReports.UI.XtraReport
     {
-        public ReportRevenue()
+        public RevenueReport()
         {
             InitializeComponent();
         }

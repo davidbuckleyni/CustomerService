@@ -76,6 +76,21 @@
           <Property Name="CountyCode" Type="int" />
           <Property Name="CountyDescription" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="CustomFields">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Field_Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Field_Value_String" Type="nvarchar" MaxLength="350" />
+          <Property Name="Field_Value_Int" Type="int" />
+          <Property Name="Field_Value_Dec" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="FieldTable" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
         <EntityType Name="Implentat">
           <Key>
             <PropertyRef Name="id" />
@@ -92,6 +107,21 @@
           <Property Name="isActive" Type="bit" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="Status" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="isAdminOnly" Type="bit" />
         </EntityType>
         <EntityType Name="ProgamTypes">
           <Key>
@@ -154,7 +184,9 @@
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerContacts" EntityType="Self.CustomerContacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerCountys" EntityType="Self.CustomerCountys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomFields" EntityType="Self.CustomFields" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Implentat" EntityType="Self.Implentat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProgamTypes" EntityType="Self.ProgamTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="revenue" EntityType="Self.revenue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StandardLookups" EntityType="Self.StandardLookups" Schema="dbo" store:Type="Tables" />
@@ -196,6 +228,8 @@
           <EntitySet Name="Users" EntityType="customerDbModel.User" />
           <EntitySet Name="AddOns" EntityType="customerDbModel.AddOn" />
           <EntitySet Name="ProgamTypes" EntityType="customerDbModel.ProgamType" />
+          <EntitySet Name="Notes" EntityType="customerDbModel.Note" />
+          <EntitySet Name="CustomFields" EntityType="customerDbModel.CustomField" />
         </EntityContainer>
         <EntityType Name="CustomerContact">
           <Key>
@@ -318,6 +352,36 @@
           <Property Name="isActive" Type="Boolean" />
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="isAdminOnly" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CustomField">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Field_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Field_Value_String" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="Field_Value_Int" Type="Int32" />
+          <Property Name="Field_Value_Dec" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FieldTable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -474,6 +538,38 @@
                 <ScalarProperty Name="ProgramTypeStatus" ColumnName="ProgramTypeStatus" />
                 <ScalarProperty Name="Notes" ColumnName="Notes" />
                 <ScalarProperty Name="ProgramTypesDescription" ColumnName="ProgramTypesDescription" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="customerDbModel.Note">
+              <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="isAdminOnly" ColumnName="isAdminOnly" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomFields">
+            <EntityTypeMapping TypeName="customerDbModel.CustomField">
+              <MappingFragment StoreEntitySet="CustomFields">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="FieldTable" ColumnName="FieldTable" />
+                <ScalarProperty Name="Field_Value_Dec" ColumnName="Field_Value_Dec" />
+                <ScalarProperty Name="Field_Value_Int" ColumnName="Field_Value_Int" />
+                <ScalarProperty Name="Field_Value_String" ColumnName="Field_Value_String" />
+                <ScalarProperty Name="Field_Name" ColumnName="Field_Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

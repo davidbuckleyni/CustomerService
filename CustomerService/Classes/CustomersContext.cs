@@ -39,7 +39,7 @@ namespace CustomerService.Classes
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.ProgamTypes.Where(w=>w.CustomerId==id).ToList();
+                q = myContext.ProgamTypes.Where(w => w.CustomerId == id).ToList();
             }
 
             return q;
@@ -58,7 +58,7 @@ namespace CustomerService.Classes
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.AddOns.Where(w=>w.CustomerId==id).ToList();
+                q = myContext.AddOns.Where(w => w.CustomerId == id).ToList();
             }
 
             return q;
@@ -92,7 +92,7 @@ namespace CustomerService.Classes
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.Implentats.Where(w => w.customerId == CustomerId).ToList(); 
+                q = myContext.Implentats.Where(w => w.customerId == CustomerId).ToList();
             }
 
             return q;
@@ -118,14 +118,14 @@ namespace CustomerService.Classes
 
 
         }
-        public  List<CustomerCounty> GetALLCustomerCountiesForList(int CustomerId)
+        public List<CustomerCounty> GetALLCustomerCountiesForList(int CustomerId)
         {
             List<CustomerCounty> lookups = new List<CustomerCounty>();
             var q = new List<CustomerCounty>();
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.CustomerCountys.Where(w=>w.CustomerId ==CustomerId).ToList();
+                q = myContext.CustomerCountys.Where(w => w.CustomerId == CustomerId).ToList();
             }
 
             return q;
@@ -133,35 +133,36 @@ namespace CustomerService.Classes
 
         }
 
-        public BindingList<StandardLookup> GetALLCustomerCounties(    )
+        public BindingList<StandardLookups> GetALLCustomerCounties()
         {
-            BindingList<StandardLookup> lookups = new BindingList<StandardLookup>();
+            BindingList<StandardLookups> lookups = new BindingList<StandardLookups>();
 
             using (var myContext = new customerDbEntities())
             {
                 var q = from lookup in myContext.StandardLookups
-                        where lookup.lookupgroup==1 
+                        where lookup.lookupgroup == 1
                         orderby lookup.id ascending
                         select new
                         {
                             Code = lookup.id,
                             Description = lookup.code,
+                            Value = lookup.description,
                         };
 
                 if (q != null)
                 {
                     Array.ForEach(q.ToArray(), l =>
                     {
-                        lookups.Add(new StandardLookup(l.Code, l.Description));
+                        lookups.Add(new StandardLookups(l.Code ,l.Description, l.Value));
                     });
                 }
             }
             return lookups;
         }
 
-        public BindingList<StandardLookup> GetStandardLookupByGroup(int groups)
+        public BindingList<StandardLookups> GetStandardLookupByGroup(int groups)
         {
-            BindingList<StandardLookup> lookups = new BindingList<StandardLookup>();
+            BindingList<StandardLookups> lookups = new BindingList<StandardLookups>();
 
             using (var myContext = new customerDbEntities())
             {
@@ -171,14 +172,15 @@ namespace CustomerService.Classes
                         select new
                         {
                             Code = lookup.id,
-                            Description = lookup.description,
+                            Description = lookup.code,
+                            Value = lookup.description,
                         };
 
                 if (q != null)
                 {
                     Array.ForEach(q.ToArray(), l =>
                     {
-                        lookups.Add(new StandardLookup(l.Code, l.Description));
+                        lookups.Add(new StandardLookups(l.Code, l.Description, l.Value));
                     });
                 }
             }
@@ -186,35 +188,36 @@ namespace CustomerService.Classes
         }
 
 
-        public BindingList<StandardLookup> GetALLCustomerCountiesForList()
+        public BindingList<StandardLookups> GetALLCustomerCountiesForList()
         {
-            BindingList<StandardLookup> lookups = new BindingList<StandardLookup>();
+            BindingList<StandardLookups> lookups = new BindingList<StandardLookups>();
 
             using (var myContext = new customerDbEntities())
             {
                 var q = from lookup in myContext.StandardLookups
-                        where lookup.lookupgroup==1
+                        where lookup.lookupgroup == 1
                         orderby lookup.id ascending
                         select new
-                        {
+                         {
                             Code = lookup.id,
                             Description = lookup.code,
+                            Value = lookup.description,
                         };
 
                 if (q != null)
                 {
                     Array.ForEach(q.ToArray(), l =>
                     {
-                        lookups.Add(new StandardLookup(l.Code, l.Description));
+                        lookups.Add(new StandardLookups(l.Code ,l.Description, l.Value));
                     });
                 }
             }
             return lookups;
         }
 
-        public BindingList<StandardLookup> GetAlCustomersForSearch()
+        public BindingList<StandardLookups> GetAlCustomersForSearch()
         {
-            BindingList<StandardLookup> lookups = new BindingList<StandardLookup>();
+            BindingList<StandardLookups> lookups = new BindingList<StandardLookups>();
 
             using (var myContext = new customerDbEntities())
             {
@@ -230,7 +233,7 @@ namespace CustomerService.Classes
                 {
                     Array.ForEach(q.ToArray(), l =>
                     {
-                        lookups.Add(new StandardLookup(l.Code, l.Description));
+                        lookups.Add(new StandardLookups(l.Code, l.Description,""));
                     });
                 }
             }
@@ -392,6 +395,32 @@ namespace CustomerService.Classes
                 throw;
             }
         }
+        public void SaveNote(Note _note)
+        {
+            try
+            {
+                using (var ctx = new customerDbEntities())
+                {
+                    ctx.Notes.Add(_note);
+                    ctx.Entry(_note).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+        }
 
         public void SaveCustomer(Customer _cust)
         {
@@ -401,6 +430,33 @@ namespace CustomerService.Classes
                 {
                     ctx.Customers.Add(_cust);
                     ctx.Entry(_cust).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+        }
+
+        public void SaveLookup(StandardLookup _lookup)
+        {
+            try
+            {
+                using (var ctx = new customerDbEntities())
+                {
+                    ctx.StandardLookups.Add(_lookup);
+                    ctx.Entry(_lookup).State = System.Data.Entity.EntityState.Modified;
                     ctx.SaveChanges();
                 }
             }
@@ -508,23 +564,60 @@ namespace CustomerService.Classes
         }
 
 
-        public User ValidateUser(string txtUser,string password)
+        public User GetUserById(int id)
         {
             User q = new User();
             using (var myContext = new customerDbEntities())
             {
-                q = myContext.Users.Where(w => w.UserName.Trim() == txtUser.Trim() || w.Pasword ==password).FirstOrDefault();
+                q = myContext.Users.Where(w => w.id == id).FirstOrDefault();
+
+            }
+
+            return q;
+        }
+
+        public StandardLookup GetLookupById(int id)
+        {
+            StandardLookup q = new StandardLookup();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.StandardLookups.Where(w => w.id == id).FirstOrDefault();
+
+            }
+
+            return q;
+        }
+
+        public User ValidateUser(string txtUser, string password)
+        {
+            User q = new User();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.Users.Where(w => w.UserName.Trim() == txtUser.Trim() && w.Pasword == password).FirstOrDefault();
 
             }
 
             return q;
         }
         public CustomerContact GetCustomerContactById(int id)
-        { CustomerContact q = new CustomerContact();
+        {
+            CustomerContact q = new CustomerContact();
             using (var myContext = new customerDbEntities())
             {
-              q= myContext.CustomerContacts.Where(w => w.id == id).FirstOrDefault();
-          
+                q = myContext.CustomerContacts.Where(w => w.id == id).FirstOrDefault();
+
+            }
+
+            return q;
+        }
+
+        public Note GetNotesById(int id)
+        {
+            Note q = new Note();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.Notes.Where(w => w.id == id).FirstOrDefault();
+
             }
 
             return q;
@@ -551,6 +644,27 @@ namespace CustomerService.Classes
             }
         }
 
+        public void AddToUsers(User newUser)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.Users.Add(newUser);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
         public void AddToAddon(AddOn newAddon)
         {
             using (var myContext = new customerDbEntities())
@@ -638,12 +752,56 @@ namespace CustomerService.Classes
             }
         }
 
+        public void AddToLookups(StandardLookup lookup)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.StandardLookups.Add(lookup);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
+
         public void DeleteContact(CustomerContact deleteContact)
         {
             using (var myContext = new customerDbEntities())
             {
                 myContext.CustomerContacts.Attach(deleteContact);
                 myContext.CustomerContacts.Remove(deleteContact);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
+        public void DeleteNote(Note deleteNote)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.Notes.Attach(deleteNote);
+                myContext.Notes.Remove(deleteNote);
                 try
                 {
                     myContext.SaveChanges();
@@ -727,6 +885,31 @@ namespace CustomerService.Classes
                 }
             }
         }
+
+
+
+        public void DeleteUser(User deleteUser)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.Users.Attach(deleteUser);
+                myContext.Users.Remove(deleteUser);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
         public void AddToCounties(CustomerCounty newCounty)
         {
             using (var myContext = new customerDbEntities())
@@ -748,7 +931,27 @@ namespace CustomerService.Classes
                 }
             }
         }
-
+        public void AddToNotes(Note newNote)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.Notes.Add(newNote);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
         public void AddToRevenue(revenue newReve)
         {
             using (var myContext = new customerDbEntities())
@@ -775,7 +978,40 @@ namespace CustomerService.Classes
             List<CustomerContact> q = new List<CustomerContact>();
             using (var myContext = new customerDbEntities())
             {
-              q = myContext.CustomerContacts.Where(w => w.CustomerId == Id).ToList();
+                q = myContext.CustomerContacts.Where(w => w.CustomerId == Id).ToList();
+            }
+            return q;
+
+        }
+
+
+        public List<StandardLookup> GetAllLookupsById(int Id)
+        {
+            List<StandardLookup> q = new List<StandardLookup>();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.StandardLookups.Where(w=>w.id==Id).ToList();
+            }
+            return q;
+
+        }
+
+        public List<User> GetAllUsers(int Id)
+        {
+            List<User> q = new List<User>();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.Users.ToList();
+            }
+            return q;
+
+        }
+        public List<Note> GetAlLNotesByCustomerId(int Id)
+        {
+            List<Note> q = new List<Note>();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.Notes.Where(w => w.CustomerId == Id).ToList();
             }
             return q;
 

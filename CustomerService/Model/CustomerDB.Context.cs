@@ -35,5 +35,7 @@ namespace CustomerService.Model
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<AddOn> AddOns { get; set; }
         public virtual DbSet<ProgamType> ProgamTypes { get; set; }
+        public virtual DbSet<Note> Notes { get; set; }
+        public virtual DbSet<CustomField> CustomFields { get; set; }
     }
 }
