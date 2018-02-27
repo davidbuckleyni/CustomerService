@@ -49,6 +49,22 @@ namespace CustomerService.Classes
 
         }
 
+        public List<User> GetAllUsers()
+        {
+            List<User> q = new List<User>();
+
+            using (var myContext = new customerDbEntities())
+            {
+
+                q = myContext.Users.ToList();
+            }
+
+            return q;
+
+
+
+
+        }
 
 
         public List<AddOn> GetAllAddonsByCustomerId(int id)
@@ -263,7 +279,32 @@ namespace CustomerService.Classes
                 throw;
             }
         }
-
+        public void SaveUser(User _user)
+        {
+            try
+            {
+                using (var ctx = new customerDbEntities())
+                {
+                    ctx.Users.Add(_user);
+                    ctx.Entry(_user).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+        }
         public void SaveCustomerContact(CustomerContact _customerContact)
         {
             try
@@ -343,6 +384,7 @@ namespace CustomerService.Classes
                 throw;
             }
         }
+       
         public void SaveCustomerCounty(CustomerCounty _customerCounty)
         {
             try
@@ -520,7 +562,14 @@ namespace CustomerService.Classes
                 return q;
             }
         }
-
+        public User GetUserById(int Id)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                User q = myContext.Users.Where(w => w.id == Id).FirstOrDefault();
+                return q;
+            }
+        }
 
 
         public AddOn GetAddOnById(int Id)
@@ -564,18 +613,7 @@ namespace CustomerService.Classes
         }
 
 
-        public User GetUserById(int id)
-        {
-            User q = new User();
-            using (var myContext = new customerDbEntities())
-            {
-                q = myContext.Users.Where(w => w.id == id).FirstOrDefault();
-
-            }
-
-            return q;
-        }
-
+     
         public StandardLookup GetLookupById(int id)
         {
             StandardLookup q = new StandardLookup();

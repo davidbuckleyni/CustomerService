@@ -121,6 +121,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDbDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customerDbDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet12.xsd</DependentUpon>
+    </Compile>
     <Compile Include="customerDbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -233,6 +238,12 @@
     <Compile Include="Forms\Users\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Users\frmUsersEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\frmUsersEdit.Designer.cs">
+      <DependentUpon>frmUsersEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomerService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +351,9 @@
     <EmbeddedResource Include="Forms\Users\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\frmUsersEdit.resx">
+      <DependentUpon>frmUsersEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerService.resx">
       <DependentUpon>frmCustomerService.cs</DependentUpon>
     </EmbeddedResource>
@@ -408,6 +422,17 @@
     </None>
     <None Include="customerDbDataSet11.xss">
       <DependentUpon>customerDbDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet12.xsc">
+      <DependentUpon>customerDbDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet12.xss">
+      <DependentUpon>customerDbDataSet12.xsd</DependentUpon>
     </None>
     <None Include="customerDbDataSet2.xsc">
       <DependentUpon>customerDbDataSet2.xsd</DependentUpon>
@@ -529,6 +554,10 @@
       <DependentUpon>CustomerDB.edmx</DependentUpon>
       <LastGenOutput>CustomerDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\database.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\united-states-of-america.png" />
+    <None Include="Resources\user.png" />
     <None Include="Resources\report.png" />
   </ItemGroup>
   <ItemGroup>

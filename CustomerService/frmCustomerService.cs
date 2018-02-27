@@ -10,6 +10,7 @@ using CustomerService.Forms.Revenue;
 using CustomerService.Forms.StandardLookupsEditor;
 using CustomerService.Model;
 using CustomerService.Reports;
+
 using DevExpress.LookAndFeel;
 using DevExpress.XtraReports.UI;
 using System;
@@ -634,6 +635,34 @@ namespace CustomerService
             _frmStandardLookupEditor.ShowDialog();
 
 
+        }
+
+        private void btnUsersEdit_Click(object sender, EventArgs e)
+        {
+            if (isAdmin == true)
+            {
+                frmUsers _frmUser = new frmUsers();
+                _frmUser.ShowDialog();
+            }else
+                MessageBox.Show(this, "Only admins can modify users. Please contact Nick or an admin.","Authorization Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+
+        }
+
+        private void btnProjectLeads_Click(object sender, EventArgs e)
+        {
+            frmStandardLookupEditor _frmStandardLookup = new frmStandardLookupEditor();
+            _frmStandardLookup.LookupType = Costants.ProjectManagersList;
+            _frmStandardLookup.ShowDialog();
+
+        }
+
+        private void btnDataMigration_Click(object sender, EventArgs e)
+        {
+            frmStandardLookupEditor _frmStandardLookup = new frmStandardLookupEditor();
+            _frmStandardLookup.LookupType = Costants.DataMigrationList;
+            _frmStandardLookup.ShowDialog();
         }
     }
 }
