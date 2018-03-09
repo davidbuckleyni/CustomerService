@@ -34,7 +34,6 @@
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.chkIsPaid = new Telerik.WinControls.UI.RadCheckBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.cboProjectManager = new System.Windows.Forms.ComboBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.cboDataMIgrationLead = new System.Windows.Forms.ComboBox();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
@@ -42,6 +41,7 @@
             this.radMaskedEditBox1 = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.chkIsLive = new Telerik.WinControls.UI.RadCheckBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.txtProjectManager = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtOldEhr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFee)).BeginInit();
@@ -54,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radMaskedEditBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsLive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProjectManager)).BeginInit();
             this.SuspendLayout();
             // 
             // txtOldEhr
@@ -101,14 +102,6 @@
             this.radLabel5.Size = new System.Drawing.Size(89, 18);
             this.radLabel5.TabIndex = 9;
             this.radLabel5.Text = "Project Manager";
-            // 
-            // cboProjectManager
-            // 
-            this.cboProjectManager.FormattingEnabled = true;
-            this.cboProjectManager.Location = new System.Drawing.Point(139, 94);
-            this.cboProjectManager.Name = "cboProjectManager";
-            this.cboProjectManager.Size = new System.Drawing.Size(186, 21);
-            this.cboProjectManager.TabIndex = 3;
             // 
             // radLabel4
             // 
@@ -168,11 +161,19 @@
             this.radLabel7.TabIndex = 27;
             this.radLabel7.Text = "$";
             // 
+            // txtProjectManager
+            // 
+            this.txtProjectManager.Location = new System.Drawing.Point(140, 89);
+            this.txtProjectManager.Name = "txtProjectManager";
+            this.txtProjectManager.Size = new System.Drawing.Size(186, 20);
+            this.txtProjectManager.TabIndex = 28;
+            // 
             // frmImplementation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 284);
+            this.Controls.Add(this.txtProjectManager);
             this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.chkIsLive);
             this.Controls.Add(this.radMaskedEditBox1);
@@ -181,7 +182,6 @@
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.cboDataMIgrationLead);
             this.Controls.Add(this.radLabel5);
-            this.Controls.Add(this.cboProjectManager);
             this.Controls.Add(this.chkIsPaid);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.txtFee);
@@ -205,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radMaskedEditBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsLive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProjectManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +218,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadCheckBox chkIsPaid;
         private Telerik.WinControls.UI.RadLabel radLabel5;
-        private System.Windows.Forms.ComboBox cboProjectManager;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private System.Windows.Forms.ComboBox cboDataMIgrationLead;
         private Telerik.WinControls.UI.RadButton radButton2;
@@ -225,5 +225,6 @@
         private Telerik.WinControls.UI.RadMaskedEditBox radMaskedEditBox1;
         private Telerik.WinControls.UI.RadCheckBox chkIsLive;
         private Telerik.WinControls.UI.RadLabel radLabel7;
+        private Telerik.WinControls.UI.RadTextBox txtProjectManager;
     }
 }

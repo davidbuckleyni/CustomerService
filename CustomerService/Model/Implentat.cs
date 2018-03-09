@@ -19,12 +19,12 @@ namespace CustomerService.Model
         public Nullable<int> OldEhr { get; set; }
         public Nullable<decimal> ImplentationFee { get; set; }
         public Nullable<bool> Paid { get; set; }
-        public Nullable<int> ProjectManager { get; set; }
         public Nullable<int> DataMigrationLead { get; set; }
         public Nullable<int> DataVolume { get; set; }
         public Nullable<bool> Live { get; set; }
         public Nullable<bool> isActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public string CreatedBy { get; set; }
+        public string ProjectManager { get; set; }
     }
 }

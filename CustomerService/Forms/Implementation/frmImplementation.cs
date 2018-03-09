@@ -33,10 +33,7 @@ namespace CustomerService.Forms.Implementation
             radMaskedEditBox1.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
 
 
-            cboProjectManager.DisplayMember = "Description";
-            cboProjectManager.ValueMember = "Code";
-            cboProjectManager.DataSource = _db.GetStandardLookupByGroup(Costants.ProjectManagersList);
-
+           
 
             cboDataMIgrationLead.DisplayMember = "Description";
             cboDataMIgrationLead.ValueMember = "Code";
@@ -55,8 +52,8 @@ namespace CustomerService.Forms.Implementation
                 txtOldEhr.Text = _newImp.OldEhr.ToString();
               
                 cboDataMIgrationLead.SelectedValue = _newImp.DataMigrationLead ?? 0;
-                cboProjectManager.SelectedValue = _newImp.ProjectManager ?? 0;
-          
+
+                txtProjectManager.Text = _newImp.ProjectManager;
             }
 
 
@@ -74,8 +71,8 @@ namespace CustomerService.Forms.Implementation
            
             _imp.ImplentationFee =Convert.ToDecimal(txtFee.Text);
 
-         //   _imp.DataMigrationLead = (int)cboDataMIgrationLead.SelectedValue;
-            _imp.ProjectManager = (int)cboProjectManager.SelectedValue;
+            //   _imp.DataMigrationLead = (int)cboDataMIgrationLead.SelectedValue;
+            _imp.ProjectManager = txtProjectManager.Text;   
               _imp.Paid = chkIsPaid.Checked;
             _imp.Live = chkIsLive.Checked;
             _imp.OldEhr =Int32.Parse(txtOldEhr.Text);

@@ -104,13 +104,13 @@
           <Property Name="OldEhr" Type="int" />
           <Property Name="ImplentationFee" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Paid" Type="bit" />
-          <Property Name="ProjectManager" Type="int" />
           <Property Name="DataMigrationLead" Type="int" />
           <Property Name="DataVolume" Type="int" />
           <Property Name="Live" Type="bit" />
           <Property Name="isActive" Type="bit" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="ProjectManager" Type="nvarchar" MaxLength="350" />
         </EntityType>
         <EntityType Name="Notes">
           <Key>
@@ -205,7 +205,6 @@
           <EntitySet Name="ContractDetails" EntityType="customerDbModel.ContractDetail" />
           <EntitySet Name="StandardLookups" EntityType="customerDbModel.StandardLookup" />
           <EntitySet Name="CustomerCountys" EntityType="customerDbModel.CustomerCounty" />
-          <EntitySet Name="Implentats" EntityType="customerDbModel.Implentat" />
           <EntitySet Name="revenues" EntityType="customerDbModel.revenue" />
           <EntitySet Name="Users" EntityType="customerDbModel.User" />
           <EntitySet Name="ProgamTypes" EntityType="customerDbModel.ProgamType" />
@@ -213,6 +212,7 @@
           <EntitySet Name="CustomFields" EntityType="customerDbModel.CustomField" />
           <EntitySet Name="AddOns" EntityType="customerDbModel.AddOn" />
           <EntitySet Name="Customers" EntityType="customerDbModel.Customer" />
+          <EntitySet Name="Implentats" EntityType="customerDbModel.Implentat" />
         </EntityContainer>
         <EntityType Name="CustomerContact">
           <Key>
@@ -263,23 +263,6 @@
           <Property Name="CustomerId" Type="Int32" />
           <Property Name="CountyCode" Type="Int32" />
           <Property Name="CountyDescription" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Implentat">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="customerId" Type="Int32" />
-          <Property Name="OldEhr" Type="Int32" />
-          <Property Name="ImplentationFee" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Paid" Type="Boolean" />
-          <Property Name="ProjectManager" Type="Int32" />
-          <Property Name="DataMigrationLead" Type="Int32" />
-          <Property Name="DataVolume" Type="Int32" />
-          <Property Name="Live" Type="Boolean" />
-          <Property Name="isActive" Type="Boolean" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="revenue">
           <Key>
@@ -391,6 +374,23 @@
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="CustomerLocations" Type="Int32" />
         </EntityType>
+        <EntityType Name="Implentat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerId" Type="Int32" />
+          <Property Name="OldEhr" Type="Int32" />
+          <Property Name="ImplentationFee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="Boolean" />
+          <Property Name="DataMigrationLead" Type="Int32" />
+          <Property Name="DataVolume" Type="Int32" />
+          <Property Name="Live" Type="Boolean" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectManager" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -447,24 +447,6 @@
                 <ScalarProperty Name="CountyDescription" ColumnName="CountyDescription" />
                 <ScalarProperty Name="CountyCode" ColumnName="CountyCode" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Implentats">
-            <EntityTypeMapping TypeName="customerDbModel.Implentat">
-              <MappingFragment StoreEntitySet="Implentat">
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="Live" ColumnName="Live" />
-                <ScalarProperty Name="DataVolume" ColumnName="DataVolume" />
-                <ScalarProperty Name="DataMigrationLead" ColumnName="DataMigrationLead" />
-                <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
-                <ScalarProperty Name="Paid" ColumnName="Paid" />
-                <ScalarProperty Name="ImplentationFee" ColumnName="ImplentationFee" />
-                <ScalarProperty Name="OldEhr" ColumnName="OldEhr" />
-                <ScalarProperty Name="customerId" ColumnName="customerId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -582,6 +564,24 @@
                 <ScalarProperty Name="Address1" ColumnName="Address1" />
                 <ScalarProperty Name="CustomerJoined" ColumnName="CustomerJoined" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Implentats">
+            <EntityTypeMapping TypeName="customerDbModel.Implentat">
+              <MappingFragment StoreEntitySet="Implentat">
+                <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Live" ColumnName="Live" />
+                <ScalarProperty Name="DataVolume" ColumnName="DataVolume" />
+                <ScalarProperty Name="DataMigrationLead" ColumnName="DataMigrationLead" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="ImplentationFee" ColumnName="ImplentationFee" />
+                <ScalarProperty Name="OldEhr" ColumnName="OldEhr" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
