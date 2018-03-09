@@ -15,6 +15,7 @@ namespace CustomerService.Model
     public partial class ContractDetail
     {
         public int id { get; set; }
+        public Nullable<int> CustomerId { get; set; }
         public Nullable<System.DateTime> SignOffGoLive { get; set; }
         public Nullable<int> NoOfUsers { get; set; }
         public Nullable<decimal> BasePrice { get; set; }

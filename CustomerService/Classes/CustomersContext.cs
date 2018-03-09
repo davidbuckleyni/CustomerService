@@ -31,7 +31,22 @@ namespace CustomerService.Classes
 
 
         }
+           public List<ContractDetail> GetAllContractsById(int id)
+        {
+            List<ContractDetail> q = new List<ContractDetail>();
 
+            using (var myContext = new customerDbEntities())
+            {
+
+                q = myContext.ContractDetails.Where(w => w.CustomerId == id).ToList();
+            }
+
+            return q;
+
+
+
+
+        }
         public List<ProgamType> GetALLProgramTypesById(int id)
         {
             List<ProgamType> q = new List<ProgamType>();
@@ -489,7 +504,32 @@ namespace CustomerService.Classes
                 throw;
             }
         }
-
+        public void SaveContractType(ContractDetail _contract)
+        {
+            try
+            {
+                using (var ctx = new customerDbEntities())
+                {
+                    ctx.ContractDetails.Add(_contract);
+                    ctx.Entry(_contract).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+        }
         public void SaveCustomer(Customer _cust)
         {
             try
@@ -674,6 +714,18 @@ namespace CustomerService.Classes
 
             return q;
         }
+
+        public ContractDetail GetContractById(int id)
+        {
+            ContractDetail q = new ContractDetail();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.ContractDetails.Where(w => w.id == id).FirstOrDefault();
+
+            }
+
+            return q;
+        }
         public CustomField GetCustomFieldById(int id)
         {
             CustomField q = new CustomField();
@@ -811,6 +863,28 @@ namespace CustomerService.Classes
             using (var myContext = new customerDbEntities())
             {
                 myContext.Customers.Add(newCust);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void AddToContract(ContractDetail contractDetail)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.ContractDetails.Add(contractDetail);
                 try
                 {
                     myContext.SaveChanges();

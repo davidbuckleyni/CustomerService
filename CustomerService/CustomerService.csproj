@@ -146,6 +146,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDbDataSet16.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customerDbDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet17.xsd</DependentUpon>
+    </Compile>
     <Compile Include="customerDbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,6 +220,12 @@
     </Compile>
     <Compile Include="Forms\CustomFields\frmCustomFieldsEditor.Designer.cs">
       <DependentUpon>frmCustomFieldsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contracts\frmContracts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Contracts\frmContracts.Designer.cs">
+      <DependentUpon>frmContracts.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Implementation\frmImplementation.cs">
       <SubType>Form</SubType>
@@ -361,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomFields\frmCustomFieldsEditor.resx">
       <DependentUpon>frmCustomFieldsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Contracts\frmContracts.resx">
+      <DependentUpon>frmContracts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Implementation\frmImplementation.resx">
       <DependentUpon>frmImplementation.cs</DependentUpon>
@@ -516,6 +530,17 @@
     <None Include="customerDbDataSet16.xss">
       <DependentUpon>customerDbDataSet16.xsd</DependentUpon>
     </None>
+    <None Include="customerDbDataSet17.xsc">
+      <DependentUpon>customerDbDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet17.xss">
+      <DependentUpon>customerDbDataSet17.xsd</DependentUpon>
+    </None>
     <None Include="customerDbDataSet2.xsc">
       <DependentUpon>customerDbDataSet2.xsd</DependentUpon>
     </None>
@@ -645,9 +670,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

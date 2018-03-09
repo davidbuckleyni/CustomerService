@@ -24,6 +24,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
           <Property Name="SignOffGoLive" Type="date" />
           <Property Name="NoOfUsers" Type="int" />
           <Property Name="BasePrice" Type="decimal" Precision="18" Scale="2" />
@@ -205,7 +206,6 @@
       <Schema Namespace="customerDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="customerDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CustomerContacts" EntityType="customerDbModel.CustomerContact" />
-          <EntitySet Name="ContractDetails" EntityType="customerDbModel.ContractDetail" />
           <EntitySet Name="StandardLookups" EntityType="customerDbModel.StandardLookup" />
           <EntitySet Name="CustomerCountys" EntityType="customerDbModel.CustomerCounty" />
           <EntitySet Name="revenues" EntityType="customerDbModel.revenue" />
@@ -216,6 +216,7 @@
           <EntitySet Name="AddOns" EntityType="customerDbModel.AddOn" />
           <EntitySet Name="Customers" EntityType="customerDbModel.Customer" />
           <EntitySet Name="Implentats" EntityType="customerDbModel.Implentat" />
+          <EntitySet Name="ContractDetails" EntityType="customerDbModel.ContractDetail" />
         </EntityContainer>
         <EntityType Name="CustomerContact">
           <Key>
@@ -231,19 +232,6 @@
           <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="PoistionId" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="ContractDetail">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SignOffGoLive" Type="DateTime" Precision="0" />
-          <Property Name="NoOfUsers" Type="Int32" />
-          <Property Name="BasePrice" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="BaseUsers" Type="Int32" />
-          <Property Name="CostExtraUser" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="MonthlyCharge" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RRARR" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="StandardLookup">
           <Key>
@@ -397,6 +385,20 @@
           <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="ProjectManager" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="ContractDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="SignOffGoLive" Type="DateTime" Precision="0" />
+          <Property Name="NoOfUsers" Type="Int32" />
+          <Property Name="BasePrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BaseUsers" Type="Int32" />
+          <Property Name="CostExtraUser" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MonthlyCharge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RRARR" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -415,20 +417,6 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ContractDetails">
-            <EntityTypeMapping TypeName="customerDbModel.ContractDetail">
-              <MappingFragment StoreEntitySet="ContractDetails">
-                <ScalarProperty Name="RRARR" ColumnName="RRARR" />
-                <ScalarProperty Name="MonthlyCharge" ColumnName="MonthlyCharge" />
-                <ScalarProperty Name="CostExtraUser" ColumnName="CostExtraUser" />
-                <ScalarProperty Name="BaseUsers" ColumnName="BaseUsers" />
-                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
-                <ScalarProperty Name="NoOfUsers" ColumnName="NoOfUsers" />
-                <ScalarProperty Name="SignOffGoLive" ColumnName="SignOffGoLive" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -591,6 +579,21 @@
                 <ScalarProperty Name="ImplentationFee" ColumnName="ImplentationFee" />
                 <ScalarProperty Name="OldEhr" ColumnName="OldEhr" />
                 <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContractDetails">
+            <EntityTypeMapping TypeName="customerDbModel.ContractDetail">
+              <MappingFragment StoreEntitySet="ContractDetails">
+                <ScalarProperty Name="RRARR" ColumnName="RRARR" />
+                <ScalarProperty Name="MonthlyCharge" ColumnName="MonthlyCharge" />
+                <ScalarProperty Name="CostExtraUser" ColumnName="CostExtraUser" />
+                <ScalarProperty Name="BaseUsers" ColumnName="BaseUsers" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="NoOfUsers" ColumnName="NoOfUsers" />
+                <ScalarProperty Name="SignOffGoLive" ColumnName="SignOffGoLive" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="96435c07959945d28d0b7f0dc4421418" Name="Diagram1">
         <EntityTypeShape EntityType="customerDbModel.CustomerContact" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="customerDbModel.ContractDetail" Width="1.5" PointX="3.75" PointY="4.75" />
         <EntityTypeShape EntityType="customerDbModel.StandardLookup" Width="1.5" PointX="5.75" PointY="5.75" />
         <EntityTypeShape EntityType="customerDbModel.CustomerCounty" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="customerDbModel.revenue" Width="1.5" PointX="5.375" PointY="0.75" />
@@ -17,6 +16,7 @@
         <EntityTypeShape EntityType="customerDbModel.AddOn" Width="1.5" PointX="0.75" PointY="9.75" />
         <EntityTypeShape EntityType="customerDbModel.Customer" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="customerDbModel.Implentat" Width="1.5" PointX="8.375" PointY="5.75" />
+        <EntityTypeShape EntityType="customerDbModel.ContractDetail" Width="1.5" PointX="10.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

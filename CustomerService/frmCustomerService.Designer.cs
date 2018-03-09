@@ -91,46 +91,56 @@
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn9 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn10 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn20 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn28 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn11 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn21 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn29 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn12 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn7 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn8 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor4 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn22 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn30 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn23 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn24 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn31 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn32 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn26 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn27 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn28 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn8 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn25 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn9 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn33 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn13 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn14 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn26 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn27 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn34 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn35 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn29 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn9 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn10 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn15 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn30 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn31 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn32 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn28 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn36 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn16 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn29 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn37 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn33 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn17 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn18 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition10 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn20 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn21 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn7 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn22 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn23 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn24 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn25 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn26 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn27 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup4 = new Telerik.WinControls.UI.RadRibbonBarGroup();
@@ -159,17 +169,13 @@
             this.radSplitContainer1 = new Telerik.WinControls.UI.RadSplitContainer();
             this.splitPanel1 = new Telerik.WinControls.UI.SplitPanel();
             this.rgCustomers = new Telerik.WinControls.UI.RadGridView();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet1 = new CustomerService.customerDbDataSet1();
             this.splitPanel2 = new Telerik.WinControls.UI.SplitPanel();
             this.radPageView2 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
             this.rdDateJoined = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
-            this.txtEmail = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
-            this.txtMobile = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-            this.txtPhone = new Telerik.WinControls.UI.RadTextBox();
             this.btnAddCustomer = new Telerik.WinControls.UI.RadButton();
             this.btnSaveCustomer = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -190,11 +196,15 @@
             this.btnEditContact = new Telerik.WinControls.UI.RadButton();
             this.btnAddContacts = new Telerik.WinControls.UI.RadButton();
             this.rgContacts = new Telerik.WinControls.UI.RadGridView();
+            this.customerContactsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet8 = new CustomerService.customerDbDataSet8();
             this.radPageViewPage4 = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnDeleteImplentation = new Telerik.WinControls.UI.RadButton();
             this.btnEditImplentation = new Telerik.WinControls.UI.RadButton();
             this.btnAddImplentation = new Telerik.WinControls.UI.RadButton();
             this.grdImplentations = new Telerik.WinControls.UI.RadGridView();
+            this.implementationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet2 = new CustomerService.customerDbDataSet2();
             this.radPageViewPage5 = new Telerik.WinControls.UI.RadPageViewPage();
             this.pnlRevenue = new System.Windows.Forms.Panel();
             this.pnlRevenueNotAllowed = new System.Windows.Forms.Panel();
@@ -203,53 +213,47 @@
             this.btnEditRevenue = new Telerik.WinControls.UI.RadButton();
             this.btnAddRevenue = new Telerik.WinControls.UI.RadButton();
             this.grdRevenue = new Telerik.WinControls.UI.RadGridView();
+            this.revenueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet7 = new CustomerService.customerDbDataSet7();
             this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnDeleteAddon = new Telerik.WinControls.UI.RadButton();
             this.btnEditAddon = new Telerik.WinControls.UI.RadButton();
             this.btnAddAddon = new Telerik.WinControls.UI.RadButton();
             this.rgAddons = new Telerik.WinControls.UI.RadGridView();
+            this.addOnsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet6 = new CustomerService.customerDbDataSet6();
             this.radPageViewPage6 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radButton8 = new Telerik.WinControls.UI.RadButton();
             this.btnEditProgramTypes = new Telerik.WinControls.UI.RadButton();
             this.btnAddProgramTypes = new Telerik.WinControls.UI.RadButton();
             this.rgProgramTypes = new Telerik.WinControls.UI.RadGridView();
+            this.progamTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet5 = new CustomerService.customerDbDataSet5();
             this.radPageViewPage7 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radButton6 = new Telerik.WinControls.UI.RadButton();
             this.grdCounties = new Telerik.WinControls.UI.RadGridView();
+            this.customerCountysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet3 = new CustomerService.customerDbDataSet3();
             this.radPageViewPage8 = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnDeleteNote = new Telerik.WinControls.UI.RadButton();
             this.btnEditNote = new Telerik.WinControls.UI.RadButton();
             this.btnAddNotes = new Telerik.WinControls.UI.RadButton();
             this.rgNotes = new Telerik.WinControls.UI.RadGridView();
+            this.notesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet9 = new CustomerService.customerDbDataSet9();
             this.radPageViewPage9 = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnDeleteCustomFields = new Telerik.WinControls.UI.RadButton();
             this.btnCustomFieldEdit = new Telerik.WinControls.UI.RadButton();
             this.btnCustomFieldAdd = new Telerik.WinControls.UI.RadButton();
             this.rgCustomFields = new Telerik.WinControls.UI.RadGridView();
+            this.customFieldsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet16 = new CustomerService.customerDbDataSet16();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.radLabelElement1 = new Telerik.WinControls.UI.RadLabelElement();
             this.userNameStatus = new Telerik.WinControls.UI.RadLabelElement();
             this.addOnsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.customerDbDataSet5BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet1 = new CustomerService.customerDbDataSet1();
-            this.customerContactsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet8 = new CustomerService.customerDbDataSet8();
-            this.implementationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet2 = new CustomerService.customerDbDataSet2();
-            this.revenueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet7 = new CustomerService.customerDbDataSet7();
-            this.addOnsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet6 = new CustomerService.customerDbDataSet6();
-            this.progamTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet5 = new CustomerService.customerDbDataSet5();
-            this.customerCountysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet3 = new CustomerService.customerDbDataSet3();
-            this.notesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet9 = new CustomerService.customerDbDataSet9();
-            this.customFieldsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerDbDataSet16 = new CustomerService.customerDbDataSet16();
             this.customerContactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerDbDataSet = new CustomerService.customerDbDataSet();
             this.customerContactsTableAdapter = new CustomerService.customerDbDataSetTableAdapters.CustomerContactsTableAdapter();
@@ -265,6 +269,16 @@
             this.customerContactsTableAdapter1 = new CustomerService.customerDbDataSet8TableAdapters.CustomerContactsTableAdapter();
             this.notesTableAdapter = new CustomerService.customerDbDataSet9TableAdapters.NotesTableAdapter();
             this.customFieldsTableAdapter = new CustomerService.customerDbDataSet16TableAdapters.CustomFieldsTableAdapter();
+            this.radPageViewPage10 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.btnEditContract = new Telerik.WinControls.UI.RadButton();
+            this.rgContracts = new Telerik.WinControls.UI.RadGridView();
+            this.btnAddContracts = new Telerik.WinControls.UI.RadButton();
+            this.customerDbDataSet17 = new CustomerService.customerDbDataSet17();
+            this.contractDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contractDetailsTableAdapter = new CustomerService.customerDbDataSet17TableAdapters.ContractDetailsTableAdapter();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.txtZip = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitContainer1)).BeginInit();
             this.radSplitContainer1.SuspendLayout();
@@ -272,6 +286,8 @@
             this.splitPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgCustomers.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel2)).BeginInit();
             this.splitPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView2)).BeginInit();
@@ -279,12 +295,6 @@
             this.radPageViewPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rdDateJoined)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMobile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaveCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -306,12 +316,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAddContacts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgContacts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgContacts.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet8)).BeginInit();
             this.radPageViewPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteImplentation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditImplentation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImplentation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdImplentations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdImplentations.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.implementationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet2)).BeginInit();
             this.radPageViewPage5.SuspendLayout();
             this.pnlRevenue.SuspendLayout();
             this.pnlRevenueNotAllowed.SuspendLayout();
@@ -320,60 +334,64 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAddRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdRevenue.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.revenueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet7)).BeginInit();
             this.radPageViewPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteAddon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditAddon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddAddon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgAddons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgAddons.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet6)).BeginInit();
             this.radPageViewPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditProgramTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddProgramTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgProgramTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgProgramTypes.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progamTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet5)).BeginInit();
             this.radPageViewPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCounties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCounties.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerCountysBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet3)).BeginInit();
             this.radPageViewPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteNote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditNote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgNotes.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet9)).BeginInit();
             this.radPageViewPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteCustomFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomFieldEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomFieldAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgCustomFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgCustomFields.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customFieldsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet5BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.implementationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.revenueBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progamTypesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerCountysBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customFieldsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource)).BeginInit();
+            this.radPageViewPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditContract)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgContracts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgContracts.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddContracts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtZip)).BeginInit();
             this.SuspendLayout();
             // 
             // radRibbonBar1
@@ -771,6 +789,16 @@
             this.rgCustomers.Text = "radGridView1";
             this.rgCustomers.SelectionChanged += new System.EventHandler(this.rgCustomers_SelectionChanged);
             // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.customerDbDataSet1;
+            // 
+            // customerDbDataSet1
+            // 
+            this.customerDbDataSet1.DataSetName = "customerDbDataSet1";
+            this.customerDbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // splitPanel2
             // 
             this.splitPanel2.Controls.Add(this.radPageView2);
@@ -794,6 +822,7 @@
             this.radPageView2.Controls.Add(this.radPageViewPage4);
             this.radPageView2.Controls.Add(this.radPageViewPage5);
             this.radPageView2.Controls.Add(this.radPageViewPage1);
+            this.radPageView2.Controls.Add(this.radPageViewPage10);
             this.radPageView2.Controls.Add(this.radPageViewPage6);
             this.radPageView2.Controls.Add(this.radPageViewPage7);
             this.radPageView2.Controls.Add(this.radPageViewPage8);
@@ -801,21 +830,17 @@
             this.radPageView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPageView2.Location = new System.Drawing.Point(0, 0);
             this.radPageView2.Name = "radPageView2";
-            this.radPageView2.SelectedPage = this.radPageViewPage9;
+            this.radPageView2.SelectedPage = this.radPageViewPage2;
             this.radPageView2.Size = new System.Drawing.Size(1433, 333);
             this.radPageView2.TabIndex = 0;
             this.radPageView2.Text = "Customer";
             // 
             // radPageViewPage2
             // 
+            this.radPageViewPage2.Controls.Add(this.radLabel7);
+            this.radPageViewPage2.Controls.Add(this.txtZip);
             this.radPageViewPage2.Controls.Add(this.rdDateJoined);
             this.radPageViewPage2.Controls.Add(this.radLabel10);
-            this.radPageViewPage2.Controls.Add(this.radLabel9);
-            this.radPageViewPage2.Controls.Add(this.txtEmail);
-            this.radPageViewPage2.Controls.Add(this.radLabel8);
-            this.radPageViewPage2.Controls.Add(this.txtMobile);
-            this.radPageViewPage2.Controls.Add(this.radLabel7);
-            this.radPageViewPage2.Controls.Add(this.txtPhone);
             this.radPageViewPage2.Controls.Add(this.btnAddCustomer);
             this.radPageViewPage2.Controls.Add(this.btnSaveCustomer);
             this.radPageViewPage2.Controls.Add(this.radLabel6);
@@ -830,7 +855,7 @@
             this.radPageViewPage2.Controls.Add(this.txtTItle);
             this.radPageViewPage2.Controls.Add(this.radLabel1);
             this.radPageViewPage2.Controls.Add(this.txtCustomerName);
-            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(61F, 24F);
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(65F, 28F);
             this.radPageViewPage2.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage2.Name = "radPageViewPage2";
             this.radPageViewPage2.Size = new System.Drawing.Size(1412, 285);
@@ -853,51 +878,6 @@
             this.radLabel10.Size = new System.Drawing.Size(65, 18);
             this.radLabel10.TabIndex = 4;
             this.radLabel10.Text = "Date Joined";
-            // 
-            // radLabel9
-            // 
-            this.radLabel9.Location = new System.Drawing.Point(396, 168);
-            this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(33, 18);
-            this.radLabel9.TabIndex = 18;
-            this.radLabel9.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(468, 166);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(256, 20);
-            this.txtEmail.TabIndex = 9;
-            // 
-            // radLabel8
-            // 
-            this.radLabel8.Location = new System.Drawing.Point(3, 205);
-            this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(41, 18);
-            this.radLabel8.TabIndex = 16;
-            this.radLabel8.Text = "Mobile";
-            // 
-            // txtMobile
-            // 
-            this.txtMobile.Location = new System.Drawing.Point(106, 205);
-            this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(256, 20);
-            this.txtMobile.TabIndex = 6;
-            // 
-            // radLabel7
-            // 
-            this.radLabel7.Location = new System.Drawing.Point(3, 166);
-            this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(38, 18);
-            this.radLabel7.TabIndex = 15;
-            this.radLabel7.Text = "Phone";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(106, 166);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(256, 20);
-            this.txtPhone.TabIndex = 5;
             // 
             // btnAddCustomer
             // 
@@ -1016,7 +996,7 @@
             this.radPageViewPage3.Controls.Add(this.btnEditContact);
             this.radPageViewPage3.Controls.Add(this.btnAddContacts);
             this.radPageViewPage3.Controls.Add(this.rgContacts);
-            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(56F, 24F);
+            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(60F, 28F);
             this.radPageViewPage3.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage3.Name = "radPageViewPage3";
             this.radPageViewPage3.Size = new System.Drawing.Size(1412, 285);
@@ -1093,7 +1073,7 @@
             gridViewTextBoxColumn12.HeaderText = "Name";
             gridViewTextBoxColumn12.IsAutoGenerated = true;
             gridViewTextBoxColumn12.Name = "Name";
-            gridViewTextBoxColumn12.Width = 295;
+            gridViewTextBoxColumn12.Width = 296;
             gridViewDecimalColumn3.DataType = typeof(int);
             gridViewDecimalColumn3.EnableExpressionEditor = false;
             gridViewDecimalColumn3.FieldName = "CustomerId";
@@ -1108,26 +1088,27 @@
             gridViewTextBoxColumn13.IsAutoGenerated = true;
             gridViewTextBoxColumn13.Name = "phone";
             gridViewTextBoxColumn13.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn13.Width = 434;
+            gridViewTextBoxColumn13.Width = 436;
             gridViewTextBoxColumn14.EnableExpressionEditor = false;
             gridViewTextBoxColumn14.FieldName = "email";
             gridViewTextBoxColumn14.HeaderText = "Email";
             gridViewTextBoxColumn14.IsAutoGenerated = true;
             gridViewTextBoxColumn14.Name = "email";
-            gridViewTextBoxColumn14.Width = 448;
+            gridViewTextBoxColumn14.Width = 450;
             gridViewCheckBoxColumn2.EnableExpressionEditor = false;
             gridViewCheckBoxColumn2.FieldName = "isPrimayContact";
             gridViewCheckBoxColumn2.HeaderText = "Primary Contact";
             gridViewCheckBoxColumn2.IsAutoGenerated = true;
             gridViewCheckBoxColumn2.MinWidth = 20;
             gridViewCheckBoxColumn2.Name = "isPrimayContact";
-            gridViewCheckBoxColumn2.Width = 155;
+            gridViewCheckBoxColumn2.Width = 156;
             gridViewCheckBoxColumn3.EnableExpressionEditor = false;
             gridViewCheckBoxColumn3.FieldName = "isActive";
             gridViewCheckBoxColumn3.HeaderText = "Active";
             gridViewCheckBoxColumn3.IsAutoGenerated = true;
             gridViewCheckBoxColumn3.MinWidth = 20;
             gridViewCheckBoxColumn3.Name = "isActive";
+            gridViewCheckBoxColumn3.Width = 49;
             gridViewDateTimeColumn3.EnableExpressionEditor = false;
             gridViewDateTimeColumn3.FieldName = "CreatedDate";
             gridViewDateTimeColumn3.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -1177,13 +1158,23 @@
             this.rgContacts.SelectionChanged += new System.EventHandler(this.rgContacts_SelectionChanged);
             this.rgContacts.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.rgContacts_CellDoubleClick);
             // 
+            // customerContactsBindingSource1
+            // 
+            this.customerContactsBindingSource1.DataMember = "CustomerContacts";
+            this.customerContactsBindingSource1.DataSource = this.customerDbDataSet8;
+            // 
+            // customerDbDataSet8
+            // 
+            this.customerDbDataSet8.DataSetName = "customerDbDataSet8";
+            this.customerDbDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // radPageViewPage4
             // 
             this.radPageViewPage4.Controls.Add(this.btnDeleteImplentation);
             this.radPageViewPage4.Controls.Add(this.btnEditImplentation);
             this.radPageViewPage4.Controls.Add(this.btnAddImplentation);
             this.radPageViewPage4.Controls.Add(this.grdImplentations);
-            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(92F, 24F);
+            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(96F, 28F);
             this.radPageViewPage4.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage4.Name = "radPageViewPage4";
             this.radPageViewPage4.Size = new System.Drawing.Size(1412, 285);
@@ -1261,34 +1252,34 @@
             gridViewDecimalColumn7.HeaderText = "OldEhr";
             gridViewDecimalColumn7.IsAutoGenerated = true;
             gridViewDecimalColumn7.Name = "OldEhr";
-            gridViewDecimalColumn7.Width = 174;
+            gridViewDecimalColumn7.Width = 175;
             gridViewDecimalColumn8.EnableExpressionEditor = false;
             gridViewDecimalColumn8.FieldName = "ImplentationFee";
             gridViewDecimalColumn8.HeaderText = "ImplentationFee";
             gridViewDecimalColumn8.IsAutoGenerated = true;
             gridViewDecimalColumn8.Name = "ImplentationFee";
-            gridViewDecimalColumn8.Width = 174;
+            gridViewDecimalColumn8.Width = 175;
             gridViewCheckBoxColumn4.EnableExpressionEditor = false;
             gridViewCheckBoxColumn4.FieldName = "Paid";
             gridViewCheckBoxColumn4.HeaderText = "Paid";
             gridViewCheckBoxColumn4.IsAutoGenerated = true;
             gridViewCheckBoxColumn4.MinWidth = 20;
             gridViewCheckBoxColumn4.Name = "Paid";
-            gridViewCheckBoxColumn4.Width = 174;
+            gridViewCheckBoxColumn4.Width = 175;
             gridViewDecimalColumn9.DataType = typeof(int);
             gridViewDecimalColumn9.EnableExpressionEditor = false;
             gridViewDecimalColumn9.FieldName = "ProjectManager";
             gridViewDecimalColumn9.HeaderText = "ProjectManager";
             gridViewDecimalColumn9.IsAutoGenerated = true;
             gridViewDecimalColumn9.Name = "ProjectManager";
-            gridViewDecimalColumn9.Width = 174;
+            gridViewDecimalColumn9.Width = 175;
             gridViewDecimalColumn10.DataType = typeof(int);
             gridViewDecimalColumn10.EnableExpressionEditor = false;
             gridViewDecimalColumn10.FieldName = "DataMigrationLead";
             gridViewDecimalColumn10.HeaderText = "DataMigrationLead";
             gridViewDecimalColumn10.IsAutoGenerated = true;
             gridViewDecimalColumn10.Name = "DataMigrationLead";
-            gridViewDecimalColumn10.Width = 174;
+            gridViewDecimalColumn10.Width = 175;
             gridViewDecimalColumn11.DataType = typeof(int);
             gridViewDecimalColumn11.EnableExpressionEditor = false;
             gridViewDecimalColumn11.FieldName = "DataVolume";
@@ -1296,14 +1287,14 @@
             gridViewDecimalColumn11.IsAutoGenerated = true;
             gridViewDecimalColumn11.Name = "DataVolume";
             gridViewDecimalColumn11.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewDecimalColumn11.Width = 174;
+            gridViewDecimalColumn11.Width = 175;
             gridViewCheckBoxColumn5.EnableExpressionEditor = false;
             gridViewCheckBoxColumn5.FieldName = "Live";
             gridViewCheckBoxColumn5.HeaderText = "Live";
             gridViewCheckBoxColumn5.IsAutoGenerated = true;
             gridViewCheckBoxColumn5.MinWidth = 20;
             gridViewCheckBoxColumn5.Name = "Live";
-            gridViewCheckBoxColumn5.Width = 174;
+            gridViewCheckBoxColumn5.Width = 175;
             gridViewCheckBoxColumn6.EnableExpressionEditor = false;
             gridViewCheckBoxColumn6.FieldName = "isActive";
             gridViewCheckBoxColumn6.HeaderText = "isActive";
@@ -1318,7 +1309,7 @@
             gridViewDateTimeColumn4.HeaderText = "Date";
             gridViewDateTimeColumn4.IsAutoGenerated = true;
             gridViewDateTimeColumn4.Name = "CreatedDate";
-            gridViewDateTimeColumn4.Width = 164;
+            gridViewDateTimeColumn4.Width = 165;
             gridViewTextBoxColumn16.EnableExpressionEditor = false;
             gridViewTextBoxColumn16.FieldName = "CreatedBy";
             gridViewTextBoxColumn16.HeaderText = "CreatedBy";
@@ -1354,10 +1345,20 @@
             this.grdImplentations.SelectionChanged += new System.EventHandler(this.grdImplentations_SelectionChanged);
             this.grdImplentations.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.grdImplentations_CellDoubleClick);
             // 
+            // implementationBindingSource
+            // 
+            this.implementationBindingSource.DataMember = "Implementation";
+            this.implementationBindingSource.DataSource = this.customerDbDataSet2;
+            // 
+            // customerDbDataSet2
+            // 
+            this.customerDbDataSet2.DataSetName = "customerDbDataSet2";
+            this.customerDbDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // radPageViewPage5
             // 
             this.radPageViewPage5.Controls.Add(this.pnlRevenue);
-            this.radPageViewPage5.ItemSize = new System.Drawing.SizeF(55F, 24F);
+            this.radPageViewPage5.ItemSize = new System.Drawing.SizeF(59F, 28F);
             this.radPageViewPage5.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage5.Name = "radPageViewPage5";
             this.radPageViewPage5.Size = new System.Drawing.Size(1412, 285);
@@ -1481,23 +1482,23 @@
             gridViewDateTimeColumn6.HeaderText = "PriceFixedUntil";
             gridViewDateTimeColumn6.IsAutoGenerated = true;
             gridViewDateTimeColumn6.Name = "PriceFixedUntil";
-            gridViewDateTimeColumn6.Width = 340;
+            gridViewDateTimeColumn6.Width = 341;
             gridViewDecimalColumn14.DataType = typeof(int);
             gridViewDecimalColumn14.FieldName = "Year";
             gridViewDecimalColumn14.HeaderText = "Year";
             gridViewDecimalColumn14.IsAutoGenerated = true;
             gridViewDecimalColumn14.Name = "Year";
-            gridViewDecimalColumn14.Width = 340;
+            gridViewDecimalColumn14.Width = 341;
             gridViewDecimalColumn15.FieldName = "Users";
             gridViewDecimalColumn15.HeaderText = "Users";
             gridViewDecimalColumn15.IsAutoGenerated = true;
             gridViewDecimalColumn15.Name = "Users";
-            gridViewDecimalColumn15.Width = 340;
+            gridViewDecimalColumn15.Width = 341;
             gridViewDecimalColumn16.FieldName = "RevenueAmount";
             gridViewDecimalColumn16.HeaderText = "RevenueAmount";
             gridViewDecimalColumn16.IsAutoGenerated = true;
             gridViewDecimalColumn16.Name = "RevenueAmount";
-            gridViewDecimalColumn16.Width = 340;
+            gridViewDecimalColumn16.Width = 341;
             this.grdRevenue.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn12,
             gridViewDecimalColumn13,
@@ -1518,13 +1519,23 @@
             this.grdRevenue.TabIndex = 11;
             this.grdRevenue.Text = "radGridView1";
             // 
+            // revenueBindingSource
+            // 
+            this.revenueBindingSource.DataMember = "revenue";
+            this.revenueBindingSource.DataSource = this.customerDbDataSet7;
+            // 
+            // customerDbDataSet7
+            // 
+            this.customerDbDataSet7.DataSetName = "customerDbDataSet7";
+            this.customerDbDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // radPageViewPage1
             // 
             this.radPageViewPage1.Controls.Add(this.btnDeleteAddon);
             this.radPageViewPage1.Controls.Add(this.btnEditAddon);
             this.radPageViewPage1.Controls.Add(this.btnAddAddon);
             this.radPageViewPage1.Controls.Add(this.rgAddons);
-            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(51F, 24F);
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(55F, 28F);
             this.radPageViewPage1.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage1.Name = "radPageViewPage1";
             this.radPageViewPage1.Size = new System.Drawing.Size(1412, 285);
@@ -1585,43 +1596,43 @@
             gridViewDecimalColumn17.IsAutoGenerated = true;
             gridViewDecimalColumn17.Name = "id";
             gridViewDecimalColumn17.ReadOnly = true;
-            gridViewDecimalColumn17.Width = 173;
+            gridViewDecimalColumn17.Width = 174;
             gridViewDecimalColumn18.DataType = typeof(int);
             gridViewDecimalColumn18.FieldName = "CustomerId";
             gridViewDecimalColumn18.HeaderText = "CustomerId";
             gridViewDecimalColumn18.IsAutoGenerated = true;
             gridViewDecimalColumn18.Name = "CustomerId";
-            gridViewDecimalColumn18.Width = 173;
+            gridViewDecimalColumn18.Width = 174;
             gridViewTextBoxColumn18.FieldName = "Description";
             gridViewTextBoxColumn18.HeaderText = "Description";
             gridViewTextBoxColumn18.IsAutoGenerated = true;
             gridViewTextBoxColumn18.Name = "Description";
-            gridViewTextBoxColumn18.Width = 173;
+            gridViewTextBoxColumn18.Width = 174;
             gridViewDecimalColumn19.FieldName = "Amount";
             gridViewDecimalColumn19.HeaderText = "Amount";
             gridViewDecimalColumn19.IsAutoGenerated = true;
             gridViewDecimalColumn19.Name = "Amount";
-            gridViewDecimalColumn19.Width = 173;
+            gridViewDecimalColumn19.Width = 174;
             gridViewTextBoxColumn19.FieldName = "Status";
             gridViewTextBoxColumn19.HeaderText = "Status";
             gridViewTextBoxColumn19.IsAutoGenerated = true;
             gridViewTextBoxColumn19.Name = "Status";
-            gridViewTextBoxColumn19.Width = 173;
+            gridViewTextBoxColumn19.Width = 174;
             gridViewCheckBoxColumn8.FieldName = "RxNT";
             gridViewCheckBoxColumn8.HeaderText = "RxNT";
             gridViewCheckBoxColumn8.IsAutoGenerated = true;
             gridViewCheckBoxColumn8.Name = "RxNT";
-            gridViewCheckBoxColumn8.Width = 173;
+            gridViewCheckBoxColumn8.Width = 174;
             gridViewCheckBoxColumn9.FieldName = "OQAnalyst";
             gridViewCheckBoxColumn9.HeaderText = "OQAnalyst";
             gridViewCheckBoxColumn9.IsAutoGenerated = true;
             gridViewCheckBoxColumn9.Name = "OQAnalyst";
-            gridViewCheckBoxColumn9.Width = 173;
+            gridViewCheckBoxColumn9.Width = 174;
             gridViewCheckBoxColumn10.FieldName = "Availity";
             gridViewCheckBoxColumn10.HeaderText = "Availity";
             gridViewCheckBoxColumn10.IsAutoGenerated = true;
             gridViewCheckBoxColumn10.Name = "Availity";
-            gridViewCheckBoxColumn10.Width = 171;
+            gridViewCheckBoxColumn10.Width = 172;
             this.rgAddons.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn17,
             gridViewDecimalColumn18,
@@ -1643,13 +1654,23 @@
             this.rgAddons.SelectionChanged += new System.EventHandler(this.rgAddons_SelectionChanged);
             this.rgAddons.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.rgAddons_CellDoubleClick);
             // 
+            // addOnsBindingSource2
+            // 
+            this.addOnsBindingSource2.DataMember = "AddOns";
+            this.addOnsBindingSource2.DataSource = this.customerDbDataSet6;
+            // 
+            // customerDbDataSet6
+            // 
+            this.customerDbDataSet6.DataSetName = "customerDbDataSet6";
+            this.customerDbDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // radPageViewPage6
             // 
             this.radPageViewPage6.Controls.Add(this.radButton8);
             this.radPageViewPage6.Controls.Add(this.btnEditProgramTypes);
             this.radPageViewPage6.Controls.Add(this.btnAddProgramTypes);
             this.radPageViewPage6.Controls.Add(this.rgProgramTypes);
-            this.radPageViewPage6.ItemSize = new System.Drawing.SizeF(87F, 24F);
+            this.radPageViewPage6.ItemSize = new System.Drawing.SizeF(91F, 28F);
             this.radPageViewPage6.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage6.Name = "radPageViewPage6";
             this.radPageViewPage6.Size = new System.Drawing.Size(1412, 285);
@@ -1702,41 +1723,41 @@
             this.rgProgramTypes.MasterTemplate.AllowAddNewRow = false;
             this.rgProgramTypes.MasterTemplate.AllowDragToGroup = false;
             this.rgProgramTypes.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn20.DataType = typeof(int);
-            gridViewDecimalColumn20.EnableExpressionEditor = false;
-            gridViewDecimalColumn20.FieldName = "id";
-            gridViewDecimalColumn20.HeaderText = "id";
-            gridViewDecimalColumn20.IsAutoGenerated = true;
-            gridViewDecimalColumn20.IsVisible = false;
-            gridViewDecimalColumn20.Name = "id";
-            gridViewDecimalColumn20.Width = 74;
+            gridViewDecimalColumn28.DataType = typeof(int);
+            gridViewDecimalColumn28.EnableExpressionEditor = false;
+            gridViewDecimalColumn28.FieldName = "id";
+            gridViewDecimalColumn28.HeaderText = "id";
+            gridViewDecimalColumn28.IsAutoGenerated = true;
+            gridViewDecimalColumn28.IsVisible = false;
+            gridViewDecimalColumn28.Name = "id";
+            gridViewDecimalColumn28.Width = 74;
             gridViewTextBoxColumn20.EnableExpressionEditor = false;
             gridViewTextBoxColumn20.FieldName = "ProgramTypesDescription";
             gridViewTextBoxColumn20.HeaderText = "ProgramTypesDescription";
             gridViewTextBoxColumn20.IsAutoGenerated = true;
             gridViewTextBoxColumn20.Name = "ProgramTypesDescription";
-            gridViewTextBoxColumn20.Width = 369;
+            gridViewTextBoxColumn20.Width = 371;
             gridViewTextBoxColumn21.EnableExpressionEditor = false;
             gridViewTextBoxColumn21.FieldName = "Notes";
             gridViewTextBoxColumn21.HeaderText = "Notes";
             gridViewTextBoxColumn21.IsAutoGenerated = true;
             gridViewTextBoxColumn21.Name = "Notes";
-            gridViewTextBoxColumn21.Width = 353;
+            gridViewTextBoxColumn21.Width = 355;
             gridViewCheckBoxColumn11.EnableExpressionEditor = false;
             gridViewCheckBoxColumn11.FieldName = "ProgramTypeStatus";
             gridViewCheckBoxColumn11.HeaderText = "ProgramTypeStatus";
             gridViewCheckBoxColumn11.IsAutoGenerated = true;
             gridViewCheckBoxColumn11.MinWidth = 20;
             gridViewCheckBoxColumn11.Name = "ProgramTypeStatus";
-            gridViewCheckBoxColumn11.Width = 165;
-            gridViewDecimalColumn21.DataType = typeof(int);
-            gridViewDecimalColumn21.EnableExpressionEditor = false;
-            gridViewDecimalColumn21.FieldName = "CustomerId";
-            gridViewDecimalColumn21.HeaderText = "CustomerId";
-            gridViewDecimalColumn21.IsAutoGenerated = true;
-            gridViewDecimalColumn21.IsVisible = false;
-            gridViewDecimalColumn21.Name = "CustomerId";
-            gridViewDecimalColumn21.Width = 84;
+            gridViewCheckBoxColumn11.Width = 166;
+            gridViewDecimalColumn29.DataType = typeof(int);
+            gridViewDecimalColumn29.EnableExpressionEditor = false;
+            gridViewDecimalColumn29.FieldName = "CustomerId";
+            gridViewDecimalColumn29.HeaderText = "CustomerId";
+            gridViewDecimalColumn29.IsAutoGenerated = true;
+            gridViewDecimalColumn29.IsVisible = false;
+            gridViewDecimalColumn29.Name = "CustomerId";
+            gridViewDecimalColumn29.Width = 84;
             gridViewCheckBoxColumn12.EnableExpressionEditor = false;
             gridViewCheckBoxColumn12.FieldName = "isActive";
             gridViewCheckBoxColumn12.HeaderText = "Active";
@@ -1744,35 +1765,35 @@
             gridViewCheckBoxColumn12.MinWidth = 20;
             gridViewCheckBoxColumn12.Name = "isActive";
             gridViewCheckBoxColumn12.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewCheckBoxColumn12.Width = 165;
-            gridViewDateTimeColumn7.EnableExpressionEditor = false;
-            gridViewDateTimeColumn7.FieldName = "CreatedDate";
-            gridViewDateTimeColumn7.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn7.HeaderText = "CreatedDate";
-            gridViewDateTimeColumn7.IsAutoGenerated = true;
-            gridViewDateTimeColumn7.Name = "CreatedDate";
-            gridViewDateTimeColumn7.Width = 165;
+            gridViewCheckBoxColumn12.Width = 166;
+            gridViewDateTimeColumn8.EnableExpressionEditor = false;
+            gridViewDateTimeColumn8.FieldName = "CreatedDate";
+            gridViewDateTimeColumn8.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn8.HeaderText = "CreatedDate";
+            gridViewDateTimeColumn8.IsAutoGenerated = true;
+            gridViewDateTimeColumn8.Name = "CreatedDate";
+            gridViewDateTimeColumn8.Width = 166;
             gridViewTextBoxColumn22.EnableExpressionEditor = false;
             gridViewTextBoxColumn22.FieldName = "CreatedBy";
             gridViewTextBoxColumn22.HeaderText = "CreatedBy";
             gridViewTextBoxColumn22.IsAutoGenerated = true;
             gridViewTextBoxColumn22.Name = "CreatedBy";
-            gridViewTextBoxColumn22.Width = 165;
+            gridViewTextBoxColumn22.Width = 164;
             this.rgProgramTypes.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn20,
+            gridViewDecimalColumn28,
             gridViewTextBoxColumn20,
             gridViewTextBoxColumn21,
             gridViewCheckBoxColumn11,
-            gridViewDecimalColumn21,
+            gridViewDecimalColumn29,
             gridViewCheckBoxColumn12,
-            gridViewDateTimeColumn7,
+            gridViewDateTimeColumn8,
             gridViewTextBoxColumn22});
             this.rgProgramTypes.MasterTemplate.DataSource = this.progamTypesBindingSource;
             this.rgProgramTypes.MasterTemplate.EnableGrouping = false;
             sortDescriptor4.PropertyName = "isActive";
             this.rgProgramTypes.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor4});
-            this.rgProgramTypes.MasterTemplate.ViewDefinition = tableViewDefinition6;
+            this.rgProgramTypes.MasterTemplate.ViewDefinition = tableViewDefinition7;
             this.rgProgramTypes.Name = "rgProgramTypes";
             this.rgProgramTypes.ReadOnly = true;
             this.rgProgramTypes.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1782,12 +1803,22 @@
             this.rgProgramTypes.SelectionChanged += new System.EventHandler(this.rgProgramTypes_SelectionChanged);
             this.rgProgramTypes.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.rgProgramTypes_CellDoubleClick);
             // 
+            // progamTypesBindingSource
+            // 
+            this.progamTypesBindingSource.DataMember = "ProgamTypes";
+            this.progamTypesBindingSource.DataSource = this.customerDbDataSet5;
+            // 
+            // customerDbDataSet5
+            // 
+            this.customerDbDataSet5.DataSetName = "customerDbDataSet5";
+            this.customerDbDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // radPageViewPage7
             // 
             this.radPageViewPage7.Controls.Add(this.radButton2);
             this.radPageViewPage7.Controls.Add(this.radButton6);
             this.radPageViewPage7.Controls.Add(this.grdCounties);
-            this.radPageViewPage7.ItemSize = new System.Drawing.SizeF(48F, 24F);
+            this.radPageViewPage7.ItemSize = new System.Drawing.SizeF(52F, 28F);
             this.radPageViewPage7.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage7.Name = "radPageViewPage7";
             this.radPageViewPage7.Size = new System.Drawing.Size(1412, 285);
@@ -1832,14 +1863,14 @@
             this.grdCounties.MasterTemplate.AllowRowResize = false;
             this.grdCounties.MasterTemplate.AutoGenerateColumns = false;
             this.grdCounties.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn22.DataType = typeof(int);
-            gridViewDecimalColumn22.EnableExpressionEditor = false;
-            gridViewDecimalColumn22.FieldName = "id";
-            gridViewDecimalColumn22.HeaderText = "id";
-            gridViewDecimalColumn22.IsAutoGenerated = true;
-            gridViewDecimalColumn22.IsVisible = false;
-            gridViewDecimalColumn22.Name = "id";
-            gridViewDecimalColumn22.ReadOnly = true;
+            gridViewDecimalColumn30.DataType = typeof(int);
+            gridViewDecimalColumn30.EnableExpressionEditor = false;
+            gridViewDecimalColumn30.FieldName = "id";
+            gridViewDecimalColumn30.HeaderText = "id";
+            gridViewDecimalColumn30.IsAutoGenerated = true;
+            gridViewDecimalColumn30.IsVisible = false;
+            gridViewDecimalColumn30.Name = "id";
+            gridViewDecimalColumn30.ReadOnly = true;
             gridViewTextBoxColumn23.DataType = typeof(int);
             gridViewTextBoxColumn23.EnableExpressionEditor = false;
             gridViewTextBoxColumn23.FieldName = "CountyCode";
@@ -1851,19 +1882,29 @@
             gridViewTextBoxColumn24.FieldName = "CountyDescription";
             gridViewTextBoxColumn24.HeaderText = "County Description";
             gridViewTextBoxColumn24.Name = "CountyDescription";
-            gridViewTextBoxColumn24.Width = 1216;
+            gridViewTextBoxColumn24.Width = 1218;
             this.grdCounties.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn22,
+            gridViewDecimalColumn30,
             gridViewTextBoxColumn23,
             gridViewTextBoxColumn24});
             this.grdCounties.MasterTemplate.DataSource = this.customerCountysBindingSource;
             this.grdCounties.MasterTemplate.EnableGrouping = false;
-            this.grdCounties.MasterTemplate.ViewDefinition = tableViewDefinition7;
+            this.grdCounties.MasterTemplate.ViewDefinition = tableViewDefinition8;
             this.grdCounties.Name = "grdCounties";
             this.grdCounties.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.grdCounties.Size = new System.Drawing.Size(1405, 243);
             this.grdCounties.TabIndex = 2;
             this.grdCounties.Text = "grdCounties";
+            // 
+            // customerCountysBindingSource
+            // 
+            this.customerCountysBindingSource.DataMember = "CustomerCountys";
+            this.customerCountysBindingSource.DataSource = this.customerDbDataSet3;
+            // 
+            // customerDbDataSet3
+            // 
+            this.customerDbDataSet3.DataSetName = "customerDbDataSet3";
+            this.customerDbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // radPageViewPage8
             // 
@@ -1871,7 +1912,7 @@
             this.radPageViewPage8.Controls.Add(this.btnEditNote);
             this.radPageViewPage8.Controls.Add(this.btnAddNotes);
             this.radPageViewPage8.Controls.Add(this.rgNotes);
-            this.radPageViewPage8.ItemSize = new System.Drawing.SizeF(42F, 24F);
+            this.radPageViewPage8.ItemSize = new System.Drawing.SizeF(46F, 28F);
             this.radPageViewPage8.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage8.Name = "radPageViewPage8";
             this.radPageViewPage8.Size = new System.Drawing.Size(1412, 285);
@@ -1927,74 +1968,74 @@
             this.rgNotes.MasterTemplate.AllowDragToGroup = false;
             this.rgNotes.MasterTemplate.AllowRowResize = false;
             this.rgNotes.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn23.DataType = typeof(int);
-            gridViewDecimalColumn23.FieldName = "id";
-            gridViewDecimalColumn23.HeaderText = "id";
-            gridViewDecimalColumn23.IsAutoGenerated = true;
-            gridViewDecimalColumn23.Name = "id";
-            gridViewDecimalColumn23.ReadOnly = true;
-            gridViewDecimalColumn23.Width = 138;
-            gridViewDecimalColumn24.DataType = typeof(int);
-            gridViewDecimalColumn24.FieldName = "CustomerId";
-            gridViewDecimalColumn24.HeaderText = "CustomerId";
-            gridViewDecimalColumn24.IsAutoGenerated = true;
-            gridViewDecimalColumn24.Name = "CustomerId";
-            gridViewDecimalColumn24.Width = 138;
+            gridViewDecimalColumn31.DataType = typeof(int);
+            gridViewDecimalColumn31.FieldName = "id";
+            gridViewDecimalColumn31.HeaderText = "id";
+            gridViewDecimalColumn31.IsAutoGenerated = true;
+            gridViewDecimalColumn31.Name = "id";
+            gridViewDecimalColumn31.ReadOnly = true;
+            gridViewDecimalColumn31.Width = 139;
+            gridViewDecimalColumn32.DataType = typeof(int);
+            gridViewDecimalColumn32.FieldName = "CustomerId";
+            gridViewDecimalColumn32.HeaderText = "CustomerId";
+            gridViewDecimalColumn32.IsAutoGenerated = true;
+            gridViewDecimalColumn32.Name = "CustomerId";
+            gridViewDecimalColumn32.Width = 139;
             gridViewTextBoxColumn25.FieldName = "Title";
             gridViewTextBoxColumn25.HeaderText = "Title";
             gridViewTextBoxColumn25.IsAutoGenerated = true;
             gridViewTextBoxColumn25.Name = "Title";
-            gridViewTextBoxColumn25.Width = 138;
+            gridViewTextBoxColumn25.Width = 139;
             gridViewTextBoxColumn26.FieldName = "Description";
             gridViewTextBoxColumn26.HeaderText = "Description";
             gridViewTextBoxColumn26.IsAutoGenerated = true;
             gridViewTextBoxColumn26.Name = "Description";
-            gridViewTextBoxColumn26.Width = 138;
+            gridViewTextBoxColumn26.Width = 139;
             gridViewTextBoxColumn27.FieldName = "Notes";
             gridViewTextBoxColumn27.HeaderText = "Notes";
             gridViewTextBoxColumn27.IsAutoGenerated = true;
             gridViewTextBoxColumn27.Name = "Notes";
-            gridViewTextBoxColumn27.Width = 138;
+            gridViewTextBoxColumn27.Width = 139;
             gridViewTextBoxColumn28.FieldName = "CreatedBy";
             gridViewTextBoxColumn28.HeaderText = "CreatedBy";
             gridViewTextBoxColumn28.IsAutoGenerated = true;
             gridViewTextBoxColumn28.Name = "CreatedBy";
-            gridViewTextBoxColumn28.Width = 138;
-            gridViewDateTimeColumn8.FieldName = "CreatedDate";
-            gridViewDateTimeColumn8.HeaderText = "CreatedDate";
-            gridViewDateTimeColumn8.IsAutoGenerated = true;
-            gridViewDateTimeColumn8.Name = "CreatedDate";
-            gridViewDateTimeColumn8.Width = 138;
-            gridViewDecimalColumn25.DataType = typeof(int);
-            gridViewDecimalColumn25.FieldName = "Status";
-            gridViewDecimalColumn25.HeaderText = "Status";
-            gridViewDecimalColumn25.IsAutoGenerated = true;
-            gridViewDecimalColumn25.Name = "Status";
-            gridViewDecimalColumn25.Width = 138;
+            gridViewTextBoxColumn28.Width = 139;
+            gridViewDateTimeColumn9.FieldName = "CreatedDate";
+            gridViewDateTimeColumn9.HeaderText = "CreatedDate";
+            gridViewDateTimeColumn9.IsAutoGenerated = true;
+            gridViewDateTimeColumn9.Name = "CreatedDate";
+            gridViewDateTimeColumn9.Width = 139;
+            gridViewDecimalColumn33.DataType = typeof(int);
+            gridViewDecimalColumn33.FieldName = "Status";
+            gridViewDecimalColumn33.HeaderText = "Status";
+            gridViewDecimalColumn33.IsAutoGenerated = true;
+            gridViewDecimalColumn33.Name = "Status";
+            gridViewDecimalColumn33.Width = 139;
             gridViewCheckBoxColumn13.FieldName = "isActive";
             gridViewCheckBoxColumn13.HeaderText = "isActive";
             gridViewCheckBoxColumn13.IsAutoGenerated = true;
             gridViewCheckBoxColumn13.Name = "isActive";
-            gridViewCheckBoxColumn13.Width = 138;
+            gridViewCheckBoxColumn13.Width = 139;
             gridViewCheckBoxColumn14.FieldName = "isAdminOnly";
             gridViewCheckBoxColumn14.HeaderText = "isAdminOnly";
             gridViewCheckBoxColumn14.IsAutoGenerated = true;
             gridViewCheckBoxColumn14.Name = "isAdminOnly";
-            gridViewCheckBoxColumn14.Width = 140;
+            gridViewCheckBoxColumn14.Width = 141;
             this.rgNotes.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn23,
-            gridViewDecimalColumn24,
+            gridViewDecimalColumn31,
+            gridViewDecimalColumn32,
             gridViewTextBoxColumn25,
             gridViewTextBoxColumn26,
             gridViewTextBoxColumn27,
             gridViewTextBoxColumn28,
-            gridViewDateTimeColumn8,
-            gridViewDecimalColumn25,
+            gridViewDateTimeColumn9,
+            gridViewDecimalColumn33,
             gridViewCheckBoxColumn13,
             gridViewCheckBoxColumn14});
             this.rgNotes.MasterTemplate.DataSource = this.notesBindingSource;
             this.rgNotes.MasterTemplate.EnableGrouping = false;
-            this.rgNotes.MasterTemplate.ViewDefinition = tableViewDefinition8;
+            this.rgNotes.MasterTemplate.ViewDefinition = tableViewDefinition9;
             this.rgNotes.Name = "rgNotes";
             this.rgNotes.ReadOnly = true;
             this.rgNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -2003,16 +2044,26 @@
             this.rgNotes.Text = "radGridView1";
             this.rgNotes.SelectionChanged += new System.EventHandler(this.rgNotes_SelectionChanged);
             // 
+            // notesBindingSource
+            // 
+            this.notesBindingSource.DataMember = "Notes";
+            this.notesBindingSource.DataSource = this.customerDbDataSet9;
+            // 
+            // customerDbDataSet9
+            // 
+            this.customerDbDataSet9.DataSetName = "customerDbDataSet9";
+            this.customerDbDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // radPageViewPage9
             // 
             this.radPageViewPage9.Controls.Add(this.btnDeleteCustomFields);
             this.radPageViewPage9.Controls.Add(this.btnCustomFieldEdit);
             this.radPageViewPage9.Controls.Add(this.btnCustomFieldAdd);
             this.radPageViewPage9.Controls.Add(this.rgCustomFields);
-            this.radPageViewPage9.ItemSize = new System.Drawing.SizeF(82F, 24F);
-            this.radPageViewPage9.Location = new System.Drawing.Point(10, 33);
+            this.radPageViewPage9.ItemSize = new System.Drawing.SizeF(86F, 28F);
+            this.radPageViewPage9.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage9.Name = "radPageViewPage9";
-            this.radPageViewPage9.Size = new System.Drawing.Size(1412, 289);
+            this.radPageViewPage9.Size = new System.Drawing.Size(1412, 285);
             this.radPageViewPage9.Text = "Custom Fields";
             this.radPageViewPage9.Paint += new System.Windows.Forms.PaintEventHandler(this.radPageViewPage9_Paint);
             // 
@@ -2066,23 +2117,23 @@
             this.rgCustomFields.MasterTemplate.AllowDragToGroup = false;
             this.rgCustomFields.MasterTemplate.AllowRowResize = false;
             this.rgCustomFields.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn26.DataType = typeof(int);
-            gridViewDecimalColumn26.EnableExpressionEditor = false;
-            gridViewDecimalColumn26.FieldName = "id";
-            gridViewDecimalColumn26.HeaderText = "id";
-            gridViewDecimalColumn26.IsAutoGenerated = true;
-            gridViewDecimalColumn26.IsVisible = false;
-            gridViewDecimalColumn26.Name = "id";
-            gridViewDecimalColumn26.ReadOnly = true;
-            gridViewDecimalColumn26.Width = 201;
-            gridViewDecimalColumn27.DataType = typeof(int);
-            gridViewDecimalColumn27.EnableExpressionEditor = false;
-            gridViewDecimalColumn27.FieldName = "CustomerId";
-            gridViewDecimalColumn27.HeaderText = "CustomerId";
-            gridViewDecimalColumn27.IsAutoGenerated = true;
-            gridViewDecimalColumn27.IsVisible = false;
-            gridViewDecimalColumn27.Name = "CustomerId";
-            gridViewDecimalColumn27.Width = 305;
+            gridViewDecimalColumn34.DataType = typeof(int);
+            gridViewDecimalColumn34.EnableExpressionEditor = false;
+            gridViewDecimalColumn34.FieldName = "id";
+            gridViewDecimalColumn34.HeaderText = "id";
+            gridViewDecimalColumn34.IsAutoGenerated = true;
+            gridViewDecimalColumn34.IsVisible = false;
+            gridViewDecimalColumn34.Name = "id";
+            gridViewDecimalColumn34.ReadOnly = true;
+            gridViewDecimalColumn34.Width = 201;
+            gridViewDecimalColumn35.DataType = typeof(int);
+            gridViewDecimalColumn35.EnableExpressionEditor = false;
+            gridViewDecimalColumn35.FieldName = "CustomerId";
+            gridViewDecimalColumn35.HeaderText = "CustomerId";
+            gridViewDecimalColumn35.IsAutoGenerated = true;
+            gridViewDecimalColumn35.IsVisible = false;
+            gridViewDecimalColumn35.Name = "CustomerId";
+            gridViewDecimalColumn35.Width = 305;
             gridViewTextBoxColumn29.DataType = typeof(System.DateTime);
             gridViewTextBoxColumn29.EnableExpressionEditor = false;
             gridViewTextBoxColumn29.FieldName = "CreatedBy";
@@ -2091,14 +2142,14 @@
             gridViewTextBoxColumn29.IsVisible = false;
             gridViewTextBoxColumn29.Name = "CreatedBy";
             gridViewTextBoxColumn29.Width = 84;
-            gridViewDateTimeColumn9.EnableExpressionEditor = false;
-            gridViewDateTimeColumn9.FieldName = "CreatedDate";
-            gridViewDateTimeColumn9.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn9.HeaderText = "CreatedDate";
-            gridViewDateTimeColumn9.IsAutoGenerated = true;
-            gridViewDateTimeColumn9.IsVisible = false;
-            gridViewDateTimeColumn9.Name = "CreatedDate";
-            gridViewDateTimeColumn9.Width = 98;
+            gridViewDateTimeColumn10.EnableExpressionEditor = false;
+            gridViewDateTimeColumn10.FieldName = "CreatedDate";
+            gridViewDateTimeColumn10.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn10.HeaderText = "CreatedDate";
+            gridViewDateTimeColumn10.IsAutoGenerated = true;
+            gridViewDateTimeColumn10.IsVisible = false;
+            gridViewDateTimeColumn10.Name = "CreatedDate";
+            gridViewDateTimeColumn10.Width = 98;
             gridViewCheckBoxColumn15.EnableExpressionEditor = false;
             gridViewCheckBoxColumn15.FieldName = "isActive";
             gridViewCheckBoxColumn15.HeaderText = "isActive";
@@ -2112,26 +2163,26 @@
             gridViewTextBoxColumn30.HeaderText = "TableName";
             gridViewTextBoxColumn30.IsAutoGenerated = true;
             gridViewTextBoxColumn30.Name = "TableName";
-            gridViewTextBoxColumn30.Width = 350;
+            gridViewTextBoxColumn30.Width = 351;
             gridViewTextBoxColumn31.EnableExpressionEditor = false;
             gridViewTextBoxColumn31.FieldName = "FieldName";
             gridViewTextBoxColumn31.HeaderText = "FieldName";
             gridViewTextBoxColumn31.IsAutoGenerated = true;
             gridViewTextBoxColumn31.Name = "FieldName";
-            gridViewTextBoxColumn31.Width = 350;
+            gridViewTextBoxColumn31.Width = 351;
             gridViewTextBoxColumn32.EnableExpressionEditor = false;
             gridViewTextBoxColumn32.FieldName = "FieldValue";
             gridViewTextBoxColumn32.HeaderText = "FieldValue";
             gridViewTextBoxColumn32.IsAutoGenerated = true;
             gridViewTextBoxColumn32.Name = "FieldValue";
-            gridViewTextBoxColumn32.Width = 350;
-            gridViewDecimalColumn28.DataType = typeof(int);
-            gridViewDecimalColumn28.EnableExpressionEditor = false;
-            gridViewDecimalColumn28.FieldName = "FieldType";
-            gridViewDecimalColumn28.HeaderText = "FieldType";
-            gridViewDecimalColumn28.IsAutoGenerated = true;
-            gridViewDecimalColumn28.Name = "FieldType";
-            gridViewDecimalColumn28.Width = 332;
+            gridViewTextBoxColumn32.Width = 351;
+            gridViewDecimalColumn36.DataType = typeof(int);
+            gridViewDecimalColumn36.EnableExpressionEditor = false;
+            gridViewDecimalColumn36.FieldName = "FieldType";
+            gridViewDecimalColumn36.HeaderText = "FieldType";
+            gridViewDecimalColumn36.IsAutoGenerated = true;
+            gridViewDecimalColumn36.Name = "FieldType";
+            gridViewDecimalColumn36.Width = 333;
             gridViewCheckBoxColumn16.EnableExpressionEditor = false;
             gridViewCheckBoxColumn16.FieldName = "boolValue";
             gridViewCheckBoxColumn16.HeaderText = "boolValue";
@@ -2140,13 +2191,13 @@
             gridViewCheckBoxColumn16.MinWidth = 20;
             gridViewCheckBoxColumn16.Name = "boolValue";
             gridViewCheckBoxColumn16.Width = 34;
-            gridViewDecimalColumn29.EnableExpressionEditor = false;
-            gridViewDecimalColumn29.FieldName = "decimalValue";
-            gridViewDecimalColumn29.HeaderText = "decimalValue";
-            gridViewDecimalColumn29.IsAutoGenerated = true;
-            gridViewDecimalColumn29.IsVisible = false;
-            gridViewDecimalColumn29.Name = "decimalValue";
-            gridViewDecimalColumn29.Width = 36;
+            gridViewDecimalColumn37.EnableExpressionEditor = false;
+            gridViewDecimalColumn37.FieldName = "decimalValue";
+            gridViewDecimalColumn37.HeaderText = "decimalValue";
+            gridViewDecimalColumn37.IsAutoGenerated = true;
+            gridViewDecimalColumn37.IsVisible = false;
+            gridViewDecimalColumn37.Name = "decimalValue";
+            gridViewDecimalColumn37.Width = 36;
             gridViewTextBoxColumn33.EnableExpressionEditor = false;
             gridViewTextBoxColumn33.FieldName = "TextValue";
             gridViewTextBoxColumn33.HeaderText = "TextValue";
@@ -2171,29 +2222,39 @@
             gridViewCheckBoxColumn18.Name = "isDeleted";
             gridViewCheckBoxColumn18.Width = 46;
             this.rgCustomFields.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn26,
-            gridViewDecimalColumn27,
+            gridViewDecimalColumn34,
+            gridViewDecimalColumn35,
             gridViewTextBoxColumn29,
-            gridViewDateTimeColumn9,
+            gridViewDateTimeColumn10,
             gridViewCheckBoxColumn15,
             gridViewTextBoxColumn30,
             gridViewTextBoxColumn31,
             gridViewTextBoxColumn32,
-            gridViewDecimalColumn28,
+            gridViewDecimalColumn36,
             gridViewCheckBoxColumn16,
-            gridViewDecimalColumn29,
+            gridViewDecimalColumn37,
             gridViewTextBoxColumn33,
             gridViewCheckBoxColumn17,
             gridViewCheckBoxColumn18});
             this.rgCustomFields.MasterTemplate.DataSource = this.customFieldsBindingSource;
             this.rgCustomFields.MasterTemplate.EnableGrouping = false;
-            this.rgCustomFields.MasterTemplate.ViewDefinition = tableViewDefinition9;
+            this.rgCustomFields.MasterTemplate.ViewDefinition = tableViewDefinition10;
             this.rgCustomFields.Name = "rgCustomFields";
             this.rgCustomFields.ReadOnly = true;
             this.rgCustomFields.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rgCustomFields.Size = new System.Drawing.Size(1404, 219);
             this.rgCustomFields.TabIndex = 18;
             this.rgCustomFields.Text = "radGridView1";
+            // 
+            // customFieldsBindingSource
+            // 
+            this.customFieldsBindingSource.DataMember = "CustomFields";
+            this.customFieldsBindingSource.DataSource = this.customerDbDataSet16;
+            // 
+            // customerDbDataSet16
+            // 
+            this.customerDbDataSet16.DataSetName = "customerDbDataSet16";
+            this.customerDbDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // radStatusStrip1
             // 
@@ -2225,96 +2286,6 @@
             // addOnsBindingSource1
             // 
             this.addOnsBindingSource1.DataMember = "AddOns";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.customerDbDataSet1;
-            // 
-            // customerDbDataSet1
-            // 
-            this.customerDbDataSet1.DataSetName = "customerDbDataSet1";
-            this.customerDbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerContactsBindingSource1
-            // 
-            this.customerContactsBindingSource1.DataMember = "CustomerContacts";
-            this.customerContactsBindingSource1.DataSource = this.customerDbDataSet8;
-            // 
-            // customerDbDataSet8
-            // 
-            this.customerDbDataSet8.DataSetName = "customerDbDataSet8";
-            this.customerDbDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // implementationBindingSource
-            // 
-            this.implementationBindingSource.DataMember = "Implementation";
-            this.implementationBindingSource.DataSource = this.customerDbDataSet2;
-            // 
-            // customerDbDataSet2
-            // 
-            this.customerDbDataSet2.DataSetName = "customerDbDataSet2";
-            this.customerDbDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // revenueBindingSource
-            // 
-            this.revenueBindingSource.DataMember = "revenue";
-            this.revenueBindingSource.DataSource = this.customerDbDataSet7;
-            // 
-            // customerDbDataSet7
-            // 
-            this.customerDbDataSet7.DataSetName = "customerDbDataSet7";
-            this.customerDbDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addOnsBindingSource2
-            // 
-            this.addOnsBindingSource2.DataMember = "AddOns";
-            this.addOnsBindingSource2.DataSource = this.customerDbDataSet6;
-            // 
-            // customerDbDataSet6
-            // 
-            this.customerDbDataSet6.DataSetName = "customerDbDataSet6";
-            this.customerDbDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // progamTypesBindingSource
-            // 
-            this.progamTypesBindingSource.DataMember = "ProgamTypes";
-            this.progamTypesBindingSource.DataSource = this.customerDbDataSet5;
-            // 
-            // customerDbDataSet5
-            // 
-            this.customerDbDataSet5.DataSetName = "customerDbDataSet5";
-            this.customerDbDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerCountysBindingSource
-            // 
-            this.customerCountysBindingSource.DataMember = "CustomerCountys";
-            this.customerCountysBindingSource.DataSource = this.customerDbDataSet3;
-            // 
-            // customerDbDataSet3
-            // 
-            this.customerDbDataSet3.DataSetName = "customerDbDataSet3";
-            this.customerDbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // notesBindingSource
-            // 
-            this.notesBindingSource.DataMember = "Notes";
-            this.notesBindingSource.DataSource = this.customerDbDataSet9;
-            // 
-            // customerDbDataSet9
-            // 
-            this.customerDbDataSet9.DataSetName = "customerDbDataSet9";
-            this.customerDbDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customFieldsBindingSource
-            // 
-            this.customFieldsBindingSource.DataMember = "CustomFields";
-            this.customFieldsBindingSource.DataSource = this.customerDbDataSet16;
-            // 
-            // customerDbDataSet16
-            // 
-            this.customerDbDataSet16.DataSetName = "customerDbDataSet16";
-            this.customerDbDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // customerContactsBindingSource
             // 
@@ -2380,6 +2351,179 @@
             // 
             this.customFieldsTableAdapter.ClearBeforeFill = true;
             // 
+            // radPageViewPage10
+            // 
+            this.radPageViewPage10.Controls.Add(this.btnAddContracts);
+            this.radPageViewPage10.Controls.Add(this.radButton1);
+            this.radPageViewPage10.Controls.Add(this.btnEditContract);
+            this.radPageViewPage10.Controls.Add(this.rgContracts);
+            this.radPageViewPage10.ItemSize = new System.Drawing.SizeF(64F, 28F);
+            this.radPageViewPage10.Location = new System.Drawing.Point(10, 37);
+            this.radPageViewPage10.Name = "radPageViewPage10";
+            this.radPageViewPage10.Size = new System.Drawing.Size(1412, 285);
+            this.radPageViewPage10.Text = "Contracts";
+            // 
+            // radButton1
+            // 
+            this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.radButton1.Location = new System.Drawing.Point(265, 247);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(125, 24);
+            this.radButton1.TabIndex = 24;
+            this.radButton1.Text = "Delete Contracts";
+            // 
+            // btnEditContract
+            // 
+            this.btnEditContract.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditContract.Location = new System.Drawing.Point(134, 247);
+            this.btnEditContract.Name = "btnEditContract";
+            this.btnEditContract.Size = new System.Drawing.Size(125, 24);
+            this.btnEditContract.TabIndex = 23;
+            this.btnEditContract.Text = "Edit Contracts";
+            this.btnEditContract.Click += new System.EventHandler(this.btnEditContract_Click);
+            // 
+            // rgContracts
+            // 
+            this.rgContracts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rgContracts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(249)))));
+            this.rgContracts.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rgContracts.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.rgContracts.ForeColor = System.Drawing.Color.Black;
+            this.rgContracts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rgContracts.Location = new System.Drawing.Point(4, 13);
+            // 
+            // 
+            // 
+            this.rgContracts.MasterTemplate.AllowAddNewRow = false;
+            this.rgContracts.MasterTemplate.AllowColumnChooser = false;
+            this.rgContracts.MasterTemplate.AllowColumnResize = false;
+            this.rgContracts.MasterTemplate.AllowDragToGroup = false;
+            this.rgContracts.MasterTemplate.AllowRowResize = false;
+            this.rgContracts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewDecimalColumn20.DataType = typeof(int);
+            gridViewDecimalColumn20.EnableExpressionEditor = false;
+            gridViewDecimalColumn20.FieldName = "id";
+            gridViewDecimalColumn20.HeaderText = "id";
+            gridViewDecimalColumn20.IsAutoGenerated = true;
+            gridViewDecimalColumn20.IsVisible = false;
+            gridViewDecimalColumn20.Name = "id";
+            gridViewDecimalColumn20.ReadOnly = true;
+            gridViewDecimalColumn20.Width = 201;
+            gridViewDecimalColumn21.DataType = typeof(int);
+            gridViewDecimalColumn21.EnableExpressionEditor = false;
+            gridViewDecimalColumn21.FieldName = "CustomerId";
+            gridViewDecimalColumn21.HeaderText = "CustomerId";
+            gridViewDecimalColumn21.IsAutoGenerated = true;
+            gridViewDecimalColumn21.IsVisible = false;
+            gridViewDecimalColumn21.Name = "CustomerId";
+            gridViewDecimalColumn21.Width = 305;
+            gridViewDateTimeColumn7.EnableExpressionEditor = false;
+            gridViewDateTimeColumn7.FieldName = "SignOffGoLive";
+            gridViewDateTimeColumn7.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn7.HeaderText = "SignOffGoLive";
+            gridViewDateTimeColumn7.IsAutoGenerated = true;
+            gridViewDateTimeColumn7.Name = "SignOffGoLive";
+            gridViewDateTimeColumn7.Width = 198;
+            gridViewDecimalColumn22.DataType = typeof(int);
+            gridViewDecimalColumn22.EnableExpressionEditor = false;
+            gridViewDecimalColumn22.FieldName = "NoOfUsers";
+            gridViewDecimalColumn22.HeaderText = "NoOfUsers";
+            gridViewDecimalColumn22.IsAutoGenerated = true;
+            gridViewDecimalColumn22.Name = "NoOfUsers";
+            gridViewDecimalColumn22.Width = 198;
+            gridViewDecimalColumn23.EnableExpressionEditor = false;
+            gridViewDecimalColumn23.FieldName = "BasePrice";
+            gridViewDecimalColumn23.HeaderText = "BasePrice";
+            gridViewDecimalColumn23.IsAutoGenerated = true;
+            gridViewDecimalColumn23.Name = "BasePrice";
+            gridViewDecimalColumn23.Width = 198;
+            gridViewDecimalColumn24.DataType = typeof(int);
+            gridViewDecimalColumn24.EnableExpressionEditor = false;
+            gridViewDecimalColumn24.FieldName = "BaseUsers";
+            gridViewDecimalColumn24.HeaderText = "BaseUsers";
+            gridViewDecimalColumn24.IsAutoGenerated = true;
+            gridViewDecimalColumn24.Name = "BaseUsers";
+            gridViewDecimalColumn24.Width = 198;
+            gridViewDecimalColumn25.EnableExpressionEditor = false;
+            gridViewDecimalColumn25.FieldName = "CostExtraUser";
+            gridViewDecimalColumn25.HeaderText = "CostExtraUser";
+            gridViewDecimalColumn25.IsAutoGenerated = true;
+            gridViewDecimalColumn25.Name = "CostExtraUser";
+            gridViewDecimalColumn25.Width = 198;
+            gridViewDecimalColumn26.EnableExpressionEditor = false;
+            gridViewDecimalColumn26.FieldName = "MonthlyCharge";
+            gridViewDecimalColumn26.HeaderText = "MonthlyCharge";
+            gridViewDecimalColumn26.IsAutoGenerated = true;
+            gridViewDecimalColumn26.Name = "MonthlyCharge";
+            gridViewDecimalColumn26.Width = 198;
+            gridViewDecimalColumn27.EnableExpressionEditor = false;
+            gridViewDecimalColumn27.FieldName = "RRARR";
+            gridViewDecimalColumn27.HeaderText = "RRARR";
+            gridViewDecimalColumn27.IsAutoGenerated = true;
+            gridViewDecimalColumn27.Name = "RRARR";
+            gridViewDecimalColumn27.Width = 201;
+            this.rgContracts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewDecimalColumn20,
+            gridViewDecimalColumn21,
+            gridViewDateTimeColumn7,
+            gridViewDecimalColumn22,
+            gridViewDecimalColumn23,
+            gridViewDecimalColumn24,
+            gridViewDecimalColumn25,
+            gridViewDecimalColumn26,
+            gridViewDecimalColumn27});
+            this.rgContracts.MasterTemplate.DataSource = this.contractDetailsBindingSource;
+            this.rgContracts.MasterTemplate.EnableGrouping = false;
+            this.rgContracts.MasterTemplate.ViewDefinition = tableViewDefinition6;
+            this.rgContracts.Name = "rgContracts";
+            this.rgContracts.ReadOnly = true;
+            this.rgContracts.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rgContracts.Size = new System.Drawing.Size(1404, 219);
+            this.rgContracts.TabIndex = 22;
+            this.rgContracts.Text = "radGridView1";
+            this.rgContracts.SelectionChanged += new System.EventHandler(this.rgContracts_SelectionChanged);
+            // 
+            // btnAddContracts
+            // 
+            this.btnAddContracts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddContracts.Location = new System.Drawing.Point(4, 247);
+            this.btnAddContracts.Name = "btnAddContracts";
+            this.btnAddContracts.Size = new System.Drawing.Size(125, 24);
+            this.btnAddContracts.TabIndex = 24;
+            this.btnAddContracts.Text = "Add Contracts";
+            this.btnAddContracts.Click += new System.EventHandler(this.btnAddContracts_Click);
+            // 
+            // customerDbDataSet17
+            // 
+            this.customerDbDataSet17.DataSetName = "customerDbDataSet17";
+            this.customerDbDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // contractDetailsBindingSource
+            // 
+            this.contractDetailsBindingSource.DataMember = "ContractDetails";
+            this.contractDetailsBindingSource.DataSource = this.customerDbDataSet17;
+            // 
+            // contractDetailsTableAdapter
+            // 
+            this.contractDetailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Location = new System.Drawing.Point(3, 162);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(22, 18);
+            this.radLabel7.TabIndex = 13;
+            this.radLabel7.Text = "Zip";
+            // 
+            // txtZip
+            // 
+            this.txtZip.Location = new System.Drawing.Point(106, 162);
+            this.txtZip.Name = "txtZip";
+            this.txtZip.Size = new System.Drawing.Size(90, 20);
+            this.txtZip.TabIndex = 12;
+            // 
             // frmCustomerService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2398,6 +2542,8 @@
             this.splitPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rgCustomers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel2)).EndInit();
             this.splitPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPageView2)).EndInit();
@@ -2406,12 +2552,6 @@
             this.radPageViewPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rdDateJoined)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMobile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaveCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
@@ -2433,12 +2573,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAddContacts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgContacts.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgContacts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet8)).EndInit();
             this.radPageViewPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteImplentation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditImplentation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImplentation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdImplentations.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdImplentations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.implementationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet2)).EndInit();
             this.radPageViewPage5.ResumeLayout(false);
             this.pnlRevenue.ResumeLayout(false);
             this.pnlRevenueNotAllowed.ResumeLayout(false);
@@ -2448,60 +2592,64 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAddRevenue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdRevenue.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdRevenue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.revenueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet7)).EndInit();
             this.radPageViewPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteAddon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditAddon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddAddon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgAddons.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgAddons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet6)).EndInit();
             this.radPageViewPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radButton8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditProgramTypes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddProgramTypes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgProgramTypes.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgProgramTypes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progamTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet5)).EndInit();
             this.radPageViewPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCounties.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCounties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerCountysBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet3)).EndInit();
             this.radPageViewPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteNote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditNote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgNotes.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgNotes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet9)).EndInit();
             this.radPageViewPage9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteCustomFields)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomFieldEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomFieldAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgCustomFields.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgCustomFields)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customFieldsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet5BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.implementationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.revenueBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progamTypesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerCountysBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customFieldsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource)).EndInit();
+            this.radPageViewPage10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditContract)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgContracts.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgContracts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddContracts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtZip)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2562,12 +2710,6 @@
         private Telerik.WinControls.UI.RadButton btnAddImplentation;
         private Telerik.WinControls.UI.RadGridView grdImplentations;
         private Telerik.WinControls.UI.RadButton btnAddCustomer;
-        private Telerik.WinControls.UI.RadLabel radLabel9;
-        private Telerik.WinControls.UI.RadTextBox txtEmail;
-        private Telerik.WinControls.UI.RadLabel radLabel8;
-        private Telerik.WinControls.UI.RadTextBox txtMobile;
-        private Telerik.WinControls.UI.RadLabel radLabel7;
-        private Telerik.WinControls.UI.RadTextBox txtPhone;
         private Telerik.WinControls.UI.RadDateTimePicker rdDateJoined;
         private Telerik.WinControls.UI.RadLabel radLabel10;
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPage8;
@@ -2643,6 +2785,16 @@
         private customerDbDataSet16 customerDbDataSet16;
         private System.Windows.Forms.BindingSource customFieldsBindingSource;
         private customerDbDataSet16TableAdapters.CustomFieldsTableAdapter customFieldsTableAdapter;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage10;
+        private Telerik.WinControls.UI.RadButton btnAddContracts;
+        private Telerik.WinControls.UI.RadButton radButton1;
+        private Telerik.WinControls.UI.RadButton btnEditContract;
+        private Telerik.WinControls.UI.RadGridView rgContracts;
+        private customerDbDataSet17 customerDbDataSet17;
+        private System.Windows.Forms.BindingSource contractDetailsBindingSource;
+        private customerDbDataSet17TableAdapters.ContractDetailsTableAdapter contractDetailsTableAdapter;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
+        private Telerik.WinControls.UI.RadTextBox txtZip;
     }
 }
 

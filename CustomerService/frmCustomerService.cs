@@ -1,5 +1,5 @@
 ﻿using CustomerService.Classes;
-
+using CustomerService.Forms;
 using CustomerService.Forms.AddOnForm;
 using CustomerService.Forms.Contacts;
 using CustomerService.Forms.County;
@@ -41,6 +41,7 @@ namespace CustomerService
         public int AddOnId { get; set; }
         public int NotesId { get; set; }
         public int  CutomFieldId  { get; set; }
+        public int ContractId { get; set; }
         public frmCustomerService()
         {
             InitializeComponent();
@@ -48,6 +49,8 @@ namespace CustomerService
 
         private void frmCustomerService_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'customerDbDataSet17.ContractDetails' table. You can move, or remove it, as needed.
+            this.contractDetailsTableAdapter.Fill(this.customerDbDataSet17.ContractDetails);
             // TODO: This line of code loads data into the 'customerDbDataSet16.CustomFields' table. You can move, or remove it, as needed.
             this.customFieldsTableAdapter.Fill(this.customerDbDataSet16.CustomFields);
 
@@ -95,6 +98,7 @@ namespace CustomerService
                 BindContacts(CustomerId);
                 BindNotes(CustomerId);
                 BindCustomFields(CustomerId);
+                BindContracts(CustomerId);
                 IsNewCustomer = false;
 
             }
@@ -127,6 +131,14 @@ namespace CustomerService
 
 
         }
+        public void BindContracts(int id)
+        {
+            rgContracts.DataSource = CustomerDb.GetAllContractsById (id);
+            rgContracts.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+
+
+        }
+
         public void BindCustomFields(int id)
         {
             rgContacts.DataSource = CustomerDb.GetAllCustomFieldsByCustomer(id);
@@ -141,13 +153,11 @@ namespace CustomerService
             if (q != null)
             {
                 txtCustomerName.Text = q.CustomerName;
-                txtEmail.Text = q.EmailAddress;
-                txtAddress1.Text = q.Address1;
+                  txtAddress1.Text = q.Address1;
                 txtAddress2.Text = q.Address2;
                 txtCounty.Text = q.County;
-                txtMobile.Text = q.MobileNumber;
-                txtPhone.Text = q.PhoneNumber;
-              
+                txtZip.Text = q.Zip;
+               
                 rdDateJoined.Value = q.CustomerJoined.HasValue ? (DateTime)q.CustomerJoined : DateTime.MinValue;
               
                 txtState.Text = q.State;
@@ -334,9 +344,7 @@ namespace CustomerService
             _cust.Address1 = txtAddress1.Text;
             _cust.Address2 = txtAddress2.Text;
             _cust.County = txtCounty.Text;
-            _cust.PhoneNumber = txtPhone.Text;
-            _cust.EmailAddress = txtEmail.Text;
-            _cust.CustomerJoined = rdDateJoined.Value;
+              _cust.CustomerJoined = rdDateJoined.Value;
           
             _cust.State = txtState.Text;
             _cust.isActive = true;
@@ -723,6 +731,41 @@ namespace CustomerService
             _frmCustomFieldEdit.CustomFieldId = CutomFieldId;
             _frmCustomFieldEdit.ShowDialog();
             BindCustomFields(CustomerId);
+        }
+
+        private void rgContracts_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (rgContracts.SelectedRows.Count > 0)
+            {
+                if (rgContracts.CurrentRow.Cells[0].Value != null)
+                {
+                    this.ContractId = (int)rgContracts.CurrentRow.Cells[0].Value;
+                    
+                }
+            }
+        }
+
+        private void btnAddContracts_Click(object sender, EventArgs e)
+        {
+            frmContracts _frmContract = new frmContracts();
+            _frmContract.StartPosition = FormStartPosition.CenterScreen;
+            _frmContract.ContractId = ContractId;
+            _frmContract.IsEdit = false;
+            _frmContract.CustomerId = CustomerId;
+            _frmContract.ShowDialog();
+            BindContracts(CustomerId);
+        }
+
+        private void btnEditContract_Click(object sender, EventArgs e)
+        {
+            frmContracts _frmContract = new frmContracts();
+            _frmContract.StartPosition = FormStartPosition.CenterScreen;
+            _frmContract.ContractId = ContractId;
+            _frmContract.IsEdit = true;
+            _frmContract.CustomerId = CustomerId;
+            _frmContract.ShowDialog();
+            BindContracts(CustomerId);
         }
     }
 }
