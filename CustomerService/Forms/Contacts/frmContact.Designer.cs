@@ -55,7 +55,7 @@
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(12, 102);
+            this.radLabel2.Location = new System.Drawing.Point(99, 102);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(38, 18);
             this.radLabel2.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(12, 139);
+            this.radLabel3.Location = new System.Drawing.Point(104, 139);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(33, 18);
             this.radLabel3.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(12, 179);
+            this.radLabel4.Location = new System.Drawing.Point(51, 179);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(86, 18);
             this.radLabel4.TabIndex = 4;
@@ -79,21 +79,21 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(107, 107);
+            this.txtPhone.Location = new System.Drawing.Point(167, 102);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(186, 20);
             this.txtPhone.TabIndex = 2;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(107, 144);
+            this.txtEmail.Location = new System.Drawing.Point(167, 139);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(284, 20);
             this.txtEmail.TabIndex = 3;
             // 
             // isPrimary
             // 
-            this.isPrimary.Location = new System.Drawing.Point(107, 179);
+            this.isPrimary.Location = new System.Drawing.Point(167, 177);
             this.isPrimary.Name = "isPrimary";
             this.isPrimary.Size = new System.Drawing.Size(86, 20);
             this.isPrimary.TabIndex = 4;
@@ -102,18 +102,18 @@
             // cboPrimaryContact
             // 
             this.cboPrimaryContact.FormattingEnabled = true;
-            this.cboPrimaryContact.Location = new System.Drawing.Point(106, 17);
+            this.cboPrimaryContact.Location = new System.Drawing.Point(167, 12);
             this.cboPrimaryContact.Name = "cboPrimaryContact";
             this.cboPrimaryContact.Size = new System.Drawing.Size(186, 21);
             this.cboPrimaryContact.TabIndex = 0;
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(12, 12);
+            this.radLabel5.Location = new System.Drawing.Point(7, 12);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(44, 18);
+            this.radLabel5.Size = new System.Drawing.Size(130, 18);
             this.radLabel5.TabIndex = 2;
-            this.radLabel5.Text = "Postion";
+            this.radLabel5.Text = "Pimrary Point Of Contact";
             // 
             // btnSave
             // 
@@ -135,14 +135,14 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(107, 67);
+            this.txtName.Location = new System.Drawing.Point(167, 62);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(186, 20);
             this.txtName.TabIndex = 1;
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(12, 62);
+            this.radLabel1.Location = new System.Drawing.Point(101, 62);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(36, 18);
             this.radLabel1.TabIndex = 9;
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 262);
+            this.ClientSize = new System.Drawing.Size(545, 279);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.btnCancel);
