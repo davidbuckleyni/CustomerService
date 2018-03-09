@@ -188,7 +188,7 @@ namespace CustomerService.Classes
                         select new
                         {
                             Code = lookup.id,
-                            Description = lookup.code,
+                            Description = lookup.description,
                             Value = lookup.description,
                         };
 

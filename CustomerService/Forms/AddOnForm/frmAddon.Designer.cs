@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.btnSave = new Telerik.WinControls.UI.RadButton();
             this.chkrxnt = new System.Windows.Forms.CheckBox();
@@ -57,6 +57,7 @@
             this.radButton2.Size = new System.Drawing.Size(110, 24);
             this.radButton2.TabIndex = 7;
             this.radButton2.Text = "Cancel";
+            this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
             // btnSave
             // 
@@ -115,16 +116,16 @@
             // 
             // cboPeriscopeStatus
             // 
-            radListDataItem1.Text = "Contacts";
-            radListDataItem2.Text = "Program Types";
-            radListDataItem3.Text = "Addons";
-            radListDataItem4.Text = "Customer";
-            radListDataItem5.Text = "Revenue";
-            this.cboPeriscopeStatus.Items.Add(radListDataItem1);
-            this.cboPeriscopeStatus.Items.Add(radListDataItem2);
-            this.cboPeriscopeStatus.Items.Add(radListDataItem3);
-            this.cboPeriscopeStatus.Items.Add(radListDataItem4);
-            this.cboPeriscopeStatus.Items.Add(radListDataItem5);
+            radListDataItem6.Text = "Contacts";
+            radListDataItem7.Text = "Program Types";
+            radListDataItem8.Text = "Addons";
+            radListDataItem9.Text = "Customer";
+            radListDataItem10.Text = "Revenue";
+            this.cboPeriscopeStatus.Items.Add(radListDataItem6);
+            this.cboPeriscopeStatus.Items.Add(radListDataItem7);
+            this.cboPeriscopeStatus.Items.Add(radListDataItem8);
+            this.cboPeriscopeStatus.Items.Add(radListDataItem9);
+            this.cboPeriscopeStatus.Items.Add(radListDataItem10);
             this.cboPeriscopeStatus.Location = new System.Drawing.Point(144, 50);
             this.cboPeriscopeStatus.Name = "cboPeriscopeStatus";
             this.cboPeriscopeStatus.Size = new System.Drawing.Size(227, 20);

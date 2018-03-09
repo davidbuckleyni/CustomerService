@@ -67,7 +67,7 @@ namespace CustomerService.Forms.AddOnForm
 
 
 
-            cboPeriscopeStatus.DataSource = _db.GetStandardLookupByGroup(3);
+            cboPeriscopeStatus.DataSource = _db.GetStandardLookupByGroup(5);
 
 
             AddOn _newAddon = new Model.AddOn();
@@ -88,8 +88,9 @@ namespace CustomerService.Forms.AddOnForm
 
         }
 
-
-
-    
-}
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }
