@@ -126,6 +126,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDbDataSet12.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customerDbDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet16.xsd</DependentUpon>
+    </Compile>
     <Compile Include="customerDbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,6 +203,18 @@
     </Compile>
     <Compile Include="Forms\County\frmCounty.Designer.cs">
       <DependentUpon>frmCounty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomFields\frmCustomFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomFields\frmCustomFields.Designer.cs">
+      <DependentUpon>frmCustomFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomFields\frmCustomFieldsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomFields\frmCustomFieldsEditor.Designer.cs">
+      <DependentUpon>frmCustomFieldsEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Implementation\frmImplementation.cs">
       <SubType>Form</SubType>
@@ -324,6 +356,12 @@
     <EmbeddedResource Include="Forms\County\frmCounty.resx">
       <DependentUpon>frmCounty.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomFields\frmCustomFields.resx">
+      <DependentUpon>frmCustomFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomFields\frmCustomFieldsEditor.resx">
+      <DependentUpon>frmCustomFieldsEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Implementation\frmImplementation.resx">
       <DependentUpon>frmImplementation.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,6 +471,50 @@
     </None>
     <None Include="customerDbDataSet12.xss">
       <DependentUpon>customerDbDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet13.xsc">
+      <DependentUpon>customerDbDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet13.xss">
+      <DependentUpon>customerDbDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet14.xsc">
+      <DependentUpon>customerDbDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet14.xss">
+      <DependentUpon>customerDbDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet15.xsc">
+      <DependentUpon>customerDbDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet15.xss">
+      <DependentUpon>customerDbDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet16.xsc">
+      <DependentUpon>customerDbDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet16.xss">
+      <DependentUpon>customerDbDataSet16.xsd</DependentUpon>
     </None>
     <None Include="customerDbDataSet2.xsc">
       <DependentUpon>customerDbDataSet2.xsd</DependentUpon>
@@ -564,7 +646,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\CustomFields\" />
+    <Folder Include="Forms\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

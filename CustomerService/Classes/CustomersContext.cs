@@ -22,7 +22,7 @@ namespace CustomerService.Classes
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.Customers.ToList();
+                q = myContext.Customers.OrderBy(o=>o.CustomerName).ToList();
             }
 
             return q;
@@ -384,7 +384,33 @@ namespace CustomerService.Classes
                 throw;
             }
         }
-       
+
+        public void SaveCustomFields(CustomField _CustomFields)
+        {
+            try
+            {
+                using (var ctx = new customerDbEntities())
+                {
+                    ctx.CustomFields.Add(_CustomFields);
+                    ctx.Entry(_CustomFields).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+        }
         public void SaveCustomerCounty(CustomerCounty _customerCounty)
         {
             try
@@ -648,6 +674,18 @@ namespace CustomerService.Classes
 
             return q;
         }
+        public CustomField GetCustomFieldById(int id)
+        {
+            CustomField q = new CustomField();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.CustomFields.Where(w => w.id == id).FirstOrDefault();
+
+            }
+
+            return q;
+        }
+
 
         public Note GetNotesById(int id)
         {
@@ -687,6 +725,27 @@ namespace CustomerService.Classes
             using (var myContext = new customerDbEntities())
             {
                 myContext.Users.Add(newUser);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
+        public void AddToCustomFields(CustomField custField)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.CustomFields.Add(custField);
                 try
                 {
                     myContext.SaveChanges();
@@ -856,7 +915,28 @@ namespace CustomerService.Classes
                 }
             }
         }
-
+        public void DeleteCustomField(CustomField customFiled)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.CustomFields.Attach(customFiled);
+                myContext.CustomFields.Remove(customFiled);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
         public void DeleteImplmentation(Implentat deleteImplentation)
         {
             using (var myContext = new customerDbEntities())
@@ -1021,8 +1101,28 @@ namespace CustomerService.Classes
             return q;
 
         }
+        public List<CustomField> GetAllCustomFieldsByCustomer(int Id)
+        {
+            List<CustomField> q = new List<CustomField>();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.CustomFields.Where(w => w.CustomerId == Id).ToList();
+            }
+            return q;
+
+        }
 
 
+        public List<CustomField> GetAllCustomFields()
+        {
+            List<CustomField> q = new List<CustomField>();
+            using (var myContext = new customerDbEntities())
+            {
+                q = myContext.CustomFields.ToList();
+            }
+            return q;
+
+        }
         public List<StandardLookup> GetAllLookupsById(int Id)
         {
             List<StandardLookup> q = new List<StandardLookup>();

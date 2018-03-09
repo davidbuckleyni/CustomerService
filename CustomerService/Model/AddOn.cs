@@ -22,5 +22,6 @@ namespace CustomerService.Model
         public Nullable<bool> RxNT { get; set; }
         public Nullable<bool> OQAnalyst { get; set; }
         public Nullable<bool> Availity { get; set; }
+        public Nullable<int> PeriscopeStatus { get; set; }
     }
 }

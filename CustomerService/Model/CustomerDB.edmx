@@ -17,6 +17,7 @@
           <Property Name="RxNT" Type="bit" />
           <Property Name="OQAnalyst" Type="bit" />
           <Property Name="Availity" Type="bit" />
+          <Property Name="PeriscopeStatus" Type="int" />
         </EntityType>
         <EntityType Name="ContractDetails">
           <Key>
@@ -81,15 +82,19 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Field_Name" Type="nvarchar" MaxLength="250" />
-          <Property Name="Field_Value_String" Type="nvarchar" MaxLength="350" />
-          <Property Name="Field_Value_Int" Type="int" />
-          <Property Name="Field_Value_Dec" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="FieldTable" Type="nvarchar" MaxLength="50" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="150" />
+          <Property Name="FieldName" Type="nvarchar" MaxLength="250" />
+          <Property Name="FieldValue" Type="nvarchar" MaxLength="150" />
+          <Property Name="FieldType" Type="int" />
+          <Property Name="boolValue" Type="bit" />
+          <Property Name="decimalValue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TextValue" Type="nvarchar(max)" />
+          <Property Name="isVisible" Type="bit" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="CreatedBy" Type="date" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="isActive" Type="bit" />
-          <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="Implentat">
           <Key>
@@ -339,6 +344,7 @@
           <Property Name="RxNT" Type="Boolean" />
           <Property Name="OQAnalyst" Type="Boolean" />
           <Property Name="Availity" Type="Boolean" />
+          <Property Name="PeriscopeStatus" Type="Int32" />
         </EntityType>
         <EntityType Name="ProgamType">
           <Key>
@@ -372,16 +378,20 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Field_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Field_Value_String" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
-          <Property Name="Field_Value_Int" Type="Int32" />
-          <Property Name="Field_Value_Dec" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FieldTable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="TableName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FieldName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FieldValue" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FieldType" Type="Int32" />
+          <Property Name="boolValue" Type="Boolean" />
+          <Property Name="decimalValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TextValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isVisible" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="CreatedBy" Type="DateTime" Precision="0" />
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="isActive" Type="Boolean" />
-          <Property Name="isDeleted" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -517,6 +527,7 @@
           <EntitySetMapping Name="AddOns">
             <EntityTypeMapping TypeName="customerDbModel.AddOn">
               <MappingFragment StoreEntitySet="AddOns">
+                <ScalarProperty Name="PeriscopeStatus" ColumnName="PeriscopeStatus" />
                 <ScalarProperty Name="Availity" ColumnName="Availity" />
                 <ScalarProperty Name="OQAnalyst" ColumnName="OQAnalyst" />
                 <ScalarProperty Name="RxNT" ColumnName="RxNT" />
@@ -561,15 +572,19 @@
           <EntitySetMapping Name="CustomFields">
             <EntityTypeMapping TypeName="customerDbModel.CustomField">
               <MappingFragment StoreEntitySet="CustomFields">
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="FieldTable" ColumnName="FieldTable" />
-                <ScalarProperty Name="Field_Value_Dec" ColumnName="Field_Value_Dec" />
-                <ScalarProperty Name="Field_Value_Int" ColumnName="Field_Value_Int" />
-                <ScalarProperty Name="Field_Value_String" ColumnName="Field_Value_String" />
-                <ScalarProperty Name="Field_Name" ColumnName="Field_Name" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="isVisible" ColumnName="isVisible" />
+                <ScalarProperty Name="TextValue" ColumnName="TextValue" />
+                <ScalarProperty Name="decimalValue" ColumnName="decimalValue" />
+                <ScalarProperty Name="boolValue" ColumnName="boolValue" />
+                <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+                <ScalarProperty Name="FieldValue" ColumnName="FieldValue" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -46,6 +46,8 @@ namespace CustomerService.Forms.Users
                     _frmCustomerService.isAdmin = (bool)validUser.isAdmin;
                     _frmCustomerService.ShowDialog();
                     Cursor.Current = Cursors.Default;
+                    Properties.Settings.Default.UserName = validUser.FullName.Trim();
+ 
                 }
                 else
                     MessageBox.Show("Invalid Login", "Sorry the login information was incorrect, Please try again.", MessageBoxButtons.OK, MessageBoxIcon.Warning);

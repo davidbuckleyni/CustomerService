@@ -15,14 +15,18 @@ namespace CustomerService.Model
     public partial class CustomField
     {
         public int id { get; set; }
-        public string Field_Name { get; set; }
-        public string Field_Value_String { get; set; }
-        public Nullable<int> Field_Value_Int { get; set; }
-        public Nullable<decimal> Field_Value_Dec { get; set; }
-        public string FieldTable { get; set; }
-        public string CreatedBy { get; set; }
+        public Nullable<int> CustomerId { get; set; }
+        public string TableName { get; set; }
+        public string FieldName { get; set; }
+        public string FieldValue { get; set; }
+        public Nullable<int> FieldType { get; set; }
+        public Nullable<bool> boolValue { get; set; }
+        public Nullable<decimal> decimalValue { get; set; }
+        public string TextValue { get; set; }
+        public Nullable<bool> isVisible { get; set; }
+        public Nullable<bool> isDeleted { get; set; }
+        public Nullable<System.DateTime> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<bool> isActive { get; set; }
-        public Nullable<bool> isDeleted { get; set; }
     }
 }

@@ -74,7 +74,7 @@ namespace CustomerService.Forms.Implementation
            
             _imp.ImplentationFee =Convert.ToDecimal(txtFee.Text);
 
-            _imp.DataMigrationLead = (int)cboDataMIgrationLead.SelectedValue;
+         //   _imp.DataMigrationLead = (int)cboDataMIgrationLead.SelectedValue;
             _imp.ProjectManager = (int)cboProjectManager.SelectedValue;
               _imp.Paid = chkIsPaid.Checked;
             _imp.Live = chkIsLive.Checked;

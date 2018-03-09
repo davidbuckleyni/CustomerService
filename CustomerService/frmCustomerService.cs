@@ -3,6 +3,7 @@
 using CustomerService.Forms.AddOnForm;
 using CustomerService.Forms.Contacts;
 using CustomerService.Forms.County;
+using CustomerService.Forms.CustomFields;
 using CustomerService.Forms.Implementation;
 using CustomerService.Forms.Notes;
 using CustomerService.Forms.ProgramTypes;
@@ -39,6 +40,7 @@ namespace CustomerService
         public bool isAdmin { get; set; }
         public int AddOnId { get; set; }
         public int NotesId { get; set; }
+        public int  CutomFieldId  { get; set; }
         public frmCustomerService()
         {
             InitializeComponent();
@@ -46,7 +48,9 @@ namespace CustomerService
 
         private void frmCustomerService_Load(object sender, EventArgs e)
         {
-            
+            // TODO: This line of code loads data into the 'customerDbDataSet16.CustomFields' table. You can move, or remove it, as needed.
+            this.customFieldsTableAdapter.Fill(this.customerDbDataSet16.CustomFields);
+
 
             if (isAdmin==false)
 
@@ -63,6 +67,7 @@ namespace CustomerService
             BindCustomers();
             IsNewCustomer = false;
             rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            userNameStatus.Text = Properties.Settings.Default.UserName.ToString();
 
         }
 
@@ -89,6 +94,8 @@ namespace CustomerService
                 BindAddOns(CustomerId);
                 BindContacts(CustomerId);
                 BindNotes(CustomerId);
+                BindCustomFields(CustomerId);
+                IsNewCustomer = false;
 
             }
 
@@ -120,6 +127,14 @@ namespace CustomerService
 
 
         }
+        public void BindCustomFields(int id)
+        {
+            rgContacts.DataSource = CustomerDb.GetAllCustomFieldsByCustomer(id);
+            rgContacts.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+
+
+        }
+
         private void BindCustomerDetail(int Id)
         {
             Customer q = CustomerDb.GetCustomerById(Id);
@@ -283,8 +298,9 @@ namespace CustomerService
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             IsNewCustomer = true;
+            ClearTextBoxes();
 
-           
+
         }
         private void ClearTextBoxes()
         {
@@ -339,6 +355,7 @@ namespace CustomerService
                 MessageBox.Show("Customer Updated", "Customer has been updates for the information entered", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            BindCustomers();
         }
 
         private void radButtonElement2_Click(object sender, EventArgs e)
@@ -663,6 +680,49 @@ namespace CustomerService
             frmStandardLookupEditor _frmStandardLookup = new frmStandardLookupEditor();
             _frmStandardLookup.LookupType = Costants.DataMigrationList;
             _frmStandardLookup.ShowDialog();
+        }
+
+        private void btnDeleteCustomFields_Click(object sender, EventArgs e)
+        {
+            CustomField _CustomField = new CustomField();
+            _CustomField = CustomerDb.GetCustomFieldById(CutomFieldId);
+            DialogResult dialogResult = MessageBox.Show("Delete Custom Field","Are you sure you wish to CustomField ", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CustomerDb.DeleteCustomField(_CustomField);
+                BindAddOns(CustomerId);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
+            BindCustomFields(CustomerId);
+        }
+
+        private void btnCustomFieldEdit_Click(object sender, EventArgs e)
+        {
+            frmCustomFieldsEditor _frmCustomFieldEdit = new frmCustomFieldsEditor();
+            _frmCustomFieldEdit.CustomerId = CustomerId;
+            _frmCustomFieldEdit.IsEdit = true;
+            _frmCustomFieldEdit.CustomFieldId = CutomFieldId;
+            _frmCustomFieldEdit.ShowDialog();
+            BindCustomFields(CustomerId);
+        }
+
+        private void radPageViewPage9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCustomFieldAdd_Click(object sender, EventArgs e)
+        {
+            frmCustomFieldsEditor _frmCustomFieldEdit = new frmCustomFieldsEditor();
+            _frmCustomFieldEdit.CustomerId = CustomerId;
+            _frmCustomFieldEdit.IsEdit = false;
+            _frmCustomFieldEdit.CustomFieldId = CutomFieldId;
+            _frmCustomFieldEdit.ShowDialog();
+            BindCustomFields(CustomerId);
         }
     }
 }
