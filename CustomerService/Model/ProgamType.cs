@@ -22,5 +22,8 @@ namespace CustomerService.Model
         public Nullable<bool> isActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public string CreatedBy { get; set; }
+        public Nullable<bool> FosterCare { get; set; }
+        public Nullable<bool> Residential { get; set; }
+        public Nullable<bool> SubstanceAbuse { get; set; }
     }
 }

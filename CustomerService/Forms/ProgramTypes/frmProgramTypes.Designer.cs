@@ -35,7 +35,9 @@
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
             this.btnSave = new Telerik.WinControls.UI.RadButton();
             this.txtNotes = new Telerik.WinControls.UI.RadRichTextEditor();
-            this.chkStatus = new System.Windows.Forms.CheckBox();
+            this.chkFosterCare = new System.Windows.Forms.CheckBox();
+            this.chkResidential = new System.Windows.Forms.CheckBox();
+            this.chkSubstanceAbuse = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -77,19 +79,19 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(341, 258);
+            this.btnCancel.Location = new System.Drawing.Point(343, 298);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 24);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(212, 258);
+            this.btnSave.Location = new System.Drawing.Point(214, 298);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 24);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -102,22 +104,44 @@
             this.txtNotes.Size = new System.Drawing.Size(354, 139);
             this.txtNotes.TabIndex = 1;
             // 
-            // chkStatus
+            // chkFosterCare
             // 
-            this.chkStatus.AutoSize = true;
-            this.chkStatus.Location = new System.Drawing.Point(99, 230);
-            this.chkStatus.Name = "chkStatus";
-            this.chkStatus.Size = new System.Drawing.Size(56, 17);
-            this.chkStatus.TabIndex = 2;
-            this.chkStatus.Text = "Status";
-            this.chkStatus.UseVisualStyleBackColor = true;
+            this.chkFosterCare.AutoSize = true;
+            this.chkFosterCare.Location = new System.Drawing.Point(99, 230);
+            this.chkFosterCare.Name = "chkFosterCare";
+            this.chkFosterCare.Size = new System.Drawing.Size(80, 17);
+            this.chkFosterCare.TabIndex = 2;
+            this.chkFosterCare.Text = "Foster Care";
+            this.chkFosterCare.UseVisualStyleBackColor = true;
+            // 
+            // chkResidential
+            // 
+            this.chkResidential.AutoSize = true;
+            this.chkResidential.Location = new System.Drawing.Point(205, 230);
+            this.chkResidential.Name = "chkResidential";
+            this.chkResidential.Size = new System.Drawing.Size(78, 17);
+            this.chkResidential.TabIndex = 3;
+            this.chkResidential.Text = "Residential";
+            this.chkResidential.UseVisualStyleBackColor = true;
+            // 
+            // chkSubstanceAbuse
+            // 
+            this.chkSubstanceAbuse.AutoSize = true;
+            this.chkSubstanceAbuse.Location = new System.Drawing.Point(343, 230);
+            this.chkSubstanceAbuse.Name = "chkSubstanceAbuse";
+            this.chkSubstanceAbuse.Size = new System.Drawing.Size(110, 17);
+            this.chkSubstanceAbuse.TabIndex = 4;
+            this.chkSubstanceAbuse.Text = "Substance Abuse";
+            this.chkSubstanceAbuse.UseVisualStyleBackColor = true;
             // 
             // frmProgramTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 294);
-            this.Controls.Add(this.chkStatus);
+            this.ClientSize = new System.Drawing.Size(466, 349);
+            this.Controls.Add(this.chkSubstanceAbuse);
+            this.Controls.Add(this.chkResidential);
+            this.Controls.Add(this.chkFosterCare);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -150,6 +174,8 @@
         private Telerik.WinControls.UI.RadButton btnCancel;
         private Telerik.WinControls.UI.RadButton btnSave;
         private Telerik.WinControls.UI.RadRichTextEditor txtNotes;
-        private System.Windows.Forms.CheckBox chkStatus;
+        private System.Windows.Forms.CheckBox chkFosterCare;
+        private System.Windows.Forms.CheckBox chkResidential;
+        private System.Windows.Forms.CheckBox chkSubstanceAbuse;
     }
 }

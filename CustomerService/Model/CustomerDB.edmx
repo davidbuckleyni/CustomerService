@@ -139,6 +139,9 @@
           <Property Name="isActive" Type="bit" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="FosterCare" Type="bit" />
+          <Property Name="Residential" Type="bit" />
+          <Property Name="SubstanceAbuse" Type="bit" />
         </EntityType>
         <EntityType Name="revenue">
           <Key>
@@ -305,6 +308,9 @@
           <Property Name="isActive" Type="Boolean" />
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FosterCare" Type="Boolean" />
+          <Property Name="Residential" Type="Boolean" />
+          <Property Name="SubstanceAbuse" Type="Boolean" />
         </EntityType>
         <EntityType Name="Note">
           <Key>
@@ -485,6 +491,9 @@
           <EntitySetMapping Name="ProgamTypes">
             <EntityTypeMapping TypeName="customerDbModel.ProgamType">
               <MappingFragment StoreEntitySet="ProgamTypes">
+                <ScalarProperty Name="SubstanceAbuse" ColumnName="SubstanceAbuse" />
+                <ScalarProperty Name="Residential" ColumnName="Residential" />
+                <ScalarProperty Name="FosterCare" ColumnName="FosterCare" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />

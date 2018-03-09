@@ -32,7 +32,9 @@ namespace CustomerService.Forms.ProgramTypes
                 _newProgType = _db.GetProgramTypeById(ProgramTypeId);
                 txtDescription.Text = _newProgType.ProgramTypesDescription;
                 txtNotes.Text = _newProgType.Notes;
-                chkStatus.Checked = (bool)_newProgType.ProgramTypeStatus;
+                chkFosterCare.Checked = (bool)_newProgType.FosterCare;
+                chkResidential.Checked = (bool)_newProgType.Residential;
+                chkSubstanceAbuse.Checked = (bool)_newProgType.SubstanceAbuse;
 
             }
 
@@ -48,7 +50,9 @@ namespace CustomerService.Forms.ProgramTypes
             _newProgType.ProgramTypesDescription = txtDescription.Text;
             _newProgType.Notes = txtNotes.Text;
             _newProgType.CustomerId = CustomerId;
-                _newProgType.ProgramTypeStatus = chkStatus.Checked;
+                _newProgType.FosterCare = chkFosterCare.Checked;
+            _newProgType.SubstanceAbuse = chkSubstanceAbuse.Checked;
+            _newProgType.Residential = chkResidential.Checked;
 
             if (IsEditMode == true)
             {
