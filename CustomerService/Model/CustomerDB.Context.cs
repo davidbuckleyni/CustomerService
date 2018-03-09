@@ -25,7 +25,6 @@ namespace CustomerService.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<CustomerContact> CustomerContacts { get; set; }
         public virtual DbSet<ContractDetail> ContractDetails { get; set; }
         public virtual DbSet<StandardLookup> StandardLookups { get; set; }
@@ -33,9 +32,10 @@ namespace CustomerService.Model
         public virtual DbSet<Implentat> Implentats { get; set; }
         public virtual DbSet<revenue> revenues { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<AddOn> AddOns { get; set; }
         public virtual DbSet<ProgamType> ProgamTypes { get; set; }
         public virtual DbSet<Note> Notes { get; set; }
         public virtual DbSet<CustomField> CustomFields { get; set; }
+        public virtual DbSet<AddOn> AddOns { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
     }
 }

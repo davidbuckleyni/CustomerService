@@ -32,13 +32,12 @@ namespace CustomerService.Forms.AddOnForm
             {
                 _newAddon = _db.GetAddOnById(AddOnId);
             }
-            _newAddon.Description = txtDescription.Text;
-            _newAddon.Amount = Convert.ToDecimal(txtAmount.Text);
+             _newAddon.PeriscopeCost = Convert.ToDecimal(txtPeriScopeAmount.Text);
             _newAddon.OQAnalyst = chkoqanalyst.Checked;
             _newAddon.RxNT = chkrxnt.Checked;
             _newAddon.Availity = chkavaility.Checked;
             _newAddon.CustomerId = CustomerId;
-            _newAddon.Status = txtStatus.Text;
+            _newAddon.PeriscopeStatus =(int) cboPeriscopeStatus.SelectedValue;
             if (IsEditMode == true)
             {
 
@@ -61,17 +60,27 @@ namespace CustomerService.Forms.AddOnForm
 
         private void frmAddon_Load(object sender, EventArgs e)
         {
+
+
+            cboPeriscopeStatus.DisplayMember = "Description";
+            cboPeriscopeStatus.ValueMember = "Code";
+
+
+
+            cboPeriscopeStatus.DataSource = _db.GetStandardLookupByGroup(3);
+
+
             AddOn _newAddon = new Model.AddOn();
             if (IsEditMode == true)
             {
                 _newAddon = _db.GetAddOnById(AddOnId);
          
-            txtDescription.Text = _newAddon.Description;
-                txtAmount.Text = _newAddon.Amount.ToString();
+                 txtPeriScopeAmount.Text = _newAddon.PeriscopeCost.ToString();
                 chkavaility.Checked = (bool)_newAddon.Availity;
                 chkoqanalyst.Checked = (bool)_newAddon.OQAnalyst;
                 chkrxnt.Checked = (bool)_newAddon.RxNT;
-                txtStatus.Text = _newAddon.Status;
+                cboPeriscopeStatus.SelectedValue = _newAddon.PeriscopeStatus;
+                
             }
 
 

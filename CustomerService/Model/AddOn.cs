@@ -17,11 +17,11 @@ namespace CustomerService.Model
         public int id { get; set; }
         public Nullable<int> CustomerId { get; set; }
         public string Description { get; set; }
-        public Nullable<decimal> Amount { get; set; }
-        public string Status { get; set; }
+        public Nullable<decimal> PeriscopeCost { get; set; }
         public Nullable<bool> RxNT { get; set; }
         public Nullable<bool> OQAnalyst { get; set; }
         public Nullable<bool> Availity { get; set; }
         public Nullable<int> PeriscopeStatus { get; set; }
+        public string PeriscopeStatusOther { get; set; }
     }
 }

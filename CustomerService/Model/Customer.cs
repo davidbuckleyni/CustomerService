@@ -19,7 +19,6 @@ namespace CustomerService.Model
         public Nullable<System.DateTime> CustomerJoined { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
-        public string Town { get; set; }
         public string County { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }

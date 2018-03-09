@@ -12,12 +12,12 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CustomerId" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" />
-          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="Status" Type="nvarchar" MaxLength="250" />
+          <Property Name="PeriscopeCost" Type="decimal" Precision="18" Scale="2" />
           <Property Name="RxNT" Type="bit" />
           <Property Name="OQAnalyst" Type="bit" />
           <Property Name="Availity" Type="bit" />
           <Property Name="PeriscopeStatus" Type="int" />
+          <Property Name="PeriscopeStatusOther" Type="nvarchar" MaxLength="350" />
         </EntityType>
         <EntityType Name="ContractDetails">
           <Key>
@@ -41,7 +41,6 @@
           <Property Name="CustomerJoined" Type="date" />
           <Property Name="Address1" Type="nvarchar" MaxLength="250" />
           <Property Name="Address2" Type="nvarchar" MaxLength="250" />
-          <Property Name="Town" Type="nvarchar" MaxLength="150" />
           <Property Name="County" Type="nvarchar" MaxLength="150" />
           <Property Name="State" Type="nvarchar" MaxLength="50" />
           <Property Name="Zip" Type="nvarchar" MaxLength="15" />
@@ -201,29 +200,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="customerDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Customer">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerName" Type="String" MaxLength="650" FixedLength="false" Unicode="true" />
-          <Property Name="CustomerJoined" Type="DateTime" Precision="0" />
-          <Property Name="Address1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Address2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Town" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="County" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="isActive" Type="Boolean" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
-          <Property Name="CustomerLocations" Type="Int32" />
-        </EntityType>
         <EntityContainer Name="customerDbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="CustomerContacts" EntityType="customerDbModel.CustomerContact" />
           <EntitySet Name="ContractDetails" EntityType="customerDbModel.ContractDetail" />
           <EntitySet Name="StandardLookups" EntityType="customerDbModel.StandardLookup" />
@@ -231,10 +208,11 @@
           <EntitySet Name="Implentats" EntityType="customerDbModel.Implentat" />
           <EntitySet Name="revenues" EntityType="customerDbModel.revenue" />
           <EntitySet Name="Users" EntityType="customerDbModel.User" />
-          <EntitySet Name="AddOns" EntityType="customerDbModel.AddOn" />
           <EntitySet Name="ProgamTypes" EntityType="customerDbModel.ProgamType" />
           <EntitySet Name="Notes" EntityType="customerDbModel.Note" />
           <EntitySet Name="CustomFields" EntityType="customerDbModel.CustomField" />
+          <EntitySet Name="AddOns" EntityType="customerDbModel.AddOn" />
+          <EntitySet Name="Customers" EntityType="customerDbModel.Customer" />
         </EntityContainer>
         <EntityType Name="CustomerContact">
           <Key>
@@ -332,20 +310,6 @@
           <Property Name="LoginAttempts" Type="Int32" />
           <Property Name="IpAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="AddOn">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerId" Type="Int32" />
-          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Status" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="RxNT" Type="Boolean" />
-          <Property Name="OQAnalyst" Type="Boolean" />
-          <Property Name="Availity" Type="Boolean" />
-          <Property Name="PeriscopeStatus" Type="Int32" />
-        </EntityType>
         <EntityType Name="ProgamType">
           <Key>
             <PropertyRef Name="id" />
@@ -393,34 +357,46 @@
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="isActive" Type="Boolean" />
         </EntityType>
+        <EntityType Name="AddOn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PeriscopeCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RxNT" Type="Boolean" />
+          <Property Name="OQAnalyst" Type="Boolean" />
+          <Property Name="Availity" Type="Boolean" />
+          <Property Name="PeriscopeStatus" Type="Int32" />
+          <Property Name="PeriscopeStatusOther" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="650" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerJoined" Type="DateTime" Precision="0" />
+          <Property Name="Address1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerLocations" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="customerDbModelStoreContainer" CdmEntityContainer="customerDbEntities">
-          <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="customerDbModel.Customer">
-              <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="CustomerLocations" ColumnName="CustomerLocations" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="CustomerJoined" ColumnName="CustomerJoined" />
-                <ScalarProperty Name="Address1" ColumnName="Address1" />
-                <ScalarProperty Name="Address2" ColumnName="Address2" />
-                <ScalarProperty Name="Town" ColumnName="Town" />
-                <ScalarProperty Name="County" ColumnName="County" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="Zip" ColumnName="Zip" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
-                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-                <ScalarProperty Name="Notes" ColumnName="Notes" />
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CustomerContacts">
             <EntityTypeMapping TypeName="customerDbModel.CustomerContact">
               <MappingFragment StoreEntitySet="CustomerContacts">
@@ -524,21 +500,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AddOns">
-            <EntityTypeMapping TypeName="customerDbModel.AddOn">
-              <MappingFragment StoreEntitySet="AddOns">
-                <ScalarProperty Name="PeriscopeStatus" ColumnName="PeriscopeStatus" />
-                <ScalarProperty Name="Availity" ColumnName="Availity" />
-                <ScalarProperty Name="OQAnalyst" ColumnName="OQAnalyst" />
-                <ScalarProperty Name="RxNT" ColumnName="RxNT" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ProgamTypes">
             <EntityTypeMapping TypeName="customerDbModel.ProgamType">
               <MappingFragment StoreEntitySet="ProgamTypes">
@@ -585,6 +546,42 @@
                 <ScalarProperty Name="FieldName" ColumnName="FieldName" />
                 <ScalarProperty Name="TableName" ColumnName="TableName" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddOns">
+            <EntityTypeMapping TypeName="customerDbModel.AddOn">
+              <MappingFragment StoreEntitySet="AddOns">
+                <ScalarProperty Name="PeriscopeStatusOther" ColumnName="PeriscopeStatusOther" />
+                <ScalarProperty Name="PeriscopeStatus" ColumnName="PeriscopeStatus" />
+                <ScalarProperty Name="Availity" ColumnName="Availity" />
+                <ScalarProperty Name="OQAnalyst" ColumnName="OQAnalyst" />
+                <ScalarProperty Name="RxNT" ColumnName="RxNT" />
+                <ScalarProperty Name="PeriscopeCost" ColumnName="PeriscopeCost" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="customerDbModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerLocations" ColumnName="CustomerLocations" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="CustomerJoined" ColumnName="CustomerJoined" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
