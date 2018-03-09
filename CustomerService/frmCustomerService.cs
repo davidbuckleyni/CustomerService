@@ -141,16 +141,15 @@ namespace CustomerService
             if (q != null)
             {
                 txtCustomerName.Text = q.CustomerName;
-                txtEmail.Text = q.EmailAddress;
-                txtAddress1.Text = q.Address1;
+                 txtAddress1.Text = q.Address1;
                 txtAddress2.Text = q.Address2;
-                txtCounty.Text = q.County;
-                txtMobile.Text = q.MobileNumber;
-                txtPhone.Text = q.PhoneNumber;
+                txtZip.Text = txtZip.Text;
+               
               
                 rdDateJoined.Value = q.CustomerJoined.HasValue ? (DateTime)q.CustomerJoined : DateTime.MinValue;
               
                 txtState.Text = q.State;
+           
                 
                
             }
@@ -332,13 +331,9 @@ namespace CustomerService
             if (!IsNewCustomer)
                 _cust = CustomerDb.GetCustomerById(CustomerId);
             _cust.Address1 = txtAddress1.Text;
-            _cust.Address2 = txtAddress2.Text;
-            _cust.County = txtCounty.Text;
-            _cust.PhoneNumber = txtPhone.Text;
-            _cust.EmailAddress = txtEmail.Text;
-            _cust.CustomerJoined = rdDateJoined.Value;
-          
+            _cust.Address2 = txtAddress2.Text;                             
             _cust.State = txtState.Text;
+            _cust.Zip = txtZip.Text;
             _cust.isActive = true;
             
 
@@ -722,7 +717,7 @@ namespace CustomerService
             _frmCustomFieldEdit.IsEdit = false;
             _frmCustomFieldEdit.CustomFieldId = CutomFieldId;
             _frmCustomFieldEdit.ShowDialog();
-            BindCustomFields(CustomerId);
+            BindCustomFields(CustomerId);   
         }
     }
 }
