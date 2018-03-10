@@ -52,6 +52,11 @@
           <Property Name="isActive" Type="bit" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="CustomerLocations" Type="int" />
+          <Property Name="La" Type="bit" />
+          <Property Name="OrangeCounty" Type="bit" />
+          <Property Name="RiverSide" Type="bit" />
+          <Property Name="SanBernardino" Type="bit" />
+          <Property Name="otherCounties" Type="bit" />
         </EntityType>
         <EntityType Name="CustomerContacts">
           <Key>
@@ -367,6 +372,11 @@
           <Property Name="isActive" Type="Boolean" />
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="CustomerLocations" Type="Int32" />
+          <Property Name="La" Type="Boolean" />
+          <Property Name="OrangeCounty" Type="Boolean" />
+          <Property Name="RiverSide" Type="Boolean" />
+          <Property Name="SanBernardino" Type="Boolean" />
+          <Property Name="otherCounties" Type="Boolean" />
         </EntityType>
         <EntityType Name="Implentat">
           <Key>
@@ -547,6 +557,11 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="customerDbModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="otherCounties" ColumnName="otherCounties" />
+                <ScalarProperty Name="SanBernardino" ColumnName="SanBernardino" />
+                <ScalarProperty Name="RiverSide" ColumnName="RiverSide" />
+                <ScalarProperty Name="OrangeCounty" ColumnName="OrangeCounty" />
+                <ScalarProperty Name="La" ColumnName="La" />
                 <ScalarProperty Name="CustomerLocations" ColumnName="CustomerLocations" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />

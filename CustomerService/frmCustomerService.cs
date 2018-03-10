@@ -40,7 +40,7 @@ namespace CustomerService
         public bool isAdmin { get; set; }
         public int AddOnId { get; set; }
         public int NotesId { get; set; }
-        public int  CutomFieldId  { get; set; }
+        public int CutomFieldId { get; set; }
         public int ContractId { get; set; }
         public frmCustomerService()
         {
@@ -55,7 +55,7 @@ namespace CustomerService
             this.customFieldsTableAdapter.Fill(this.customerDbDataSet16.CustomFields);
 
 
-            if (isAdmin==false)
+            if (isAdmin == false)
 
             {
                 pnlRevenueNotAllowed.Visible = true;
@@ -63,7 +63,7 @@ namespace CustomerService
             }
 
             this.rgAddons.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
-            
+
 
 
             this.customerContactsTableAdapter.Fill(this.customerDbDataSet.CustomerContacts);
@@ -78,7 +78,7 @@ namespace CustomerService
         {
             rgCustomers.DataSource = CustomerDb.GetALLCustomers();
             rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-             
+
 
         }
 
@@ -89,7 +89,7 @@ namespace CustomerService
             {
                 CustomerId = (int)rgCustomers.CurrentRow.Cells[0].Value;
 
-                
+
                 BindCustomerDetail(CustomerId);
                 BindCountiesForCustomer();
                 BindImplentationsForCustomer(CustomerId);
@@ -133,7 +133,7 @@ namespace CustomerService
         }
         public void BindContracts(int id)
         {
-            rgContracts.DataSource = CustomerDb.GetAllContractsById (id);
+            rgContracts.DataSource = CustomerDb.GetAllContractsById(id);
             rgContracts.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
 
@@ -152,21 +152,33 @@ namespace CustomerService
             Customer q = CustomerDb.GetCustomerById(Id);
             if (q != null)
             {
+                bool defaultValue = false;
                 txtCustomerName.Text = q.CustomerName;
-                  txtAddress1.Text = q.Address1;
+                txtAddress1.Text = q.Address1;
                 txtAddress2.Text = q.Address2;
+
                 txtCounty.Text = q.County;
                 txtZip.Text = q.Zip;
-               
+
                 rdDateJoined.Value = q.CustomerJoined.HasValue ? (DateTime)q.CustomerJoined : DateTime.MinValue;
-              
+         
                 txtState.Text = q.State;
                 
-               
+                chkRiverSide.Checked = (bool)q.RiverSide.HasValue ? (bool) q.RiverSide : false;
+                
+                chkSanBernardino.Checked = (bool)q.SanBernardino.HasValue ? (bool)  q.SanBernardino : false;
+
+                chkLa.Checked = (bool)q.La.HasValue  ? (bool)q.La :false;
+
+                if (q.OrangeCounty != null)
+                    chkOrange.Checked = (bool)q.OrangeCounty ? true : false;
+
+
+
             }
 
         }
-      
+
 
         private void btnAddContacts_Click(object sender, EventArgs e)
         {
@@ -324,16 +336,16 @@ namespace CustomerService
                     else
                         func(control.Controls);
 
-                  foreach (Control control2 in controls)
+                foreach (Control control2 in controls)
                     if (control2 is RichTextBox)
-                    (control2 as RichTextBox).Clear();
+                        (control2 as RichTextBox).Clear();
 
-                 
-               
+
+
             };
 
             func(Controls);
-         
+
         }
 
         private void btnSaveCustomer_Click(object sender, EventArgs e)
@@ -344,11 +356,15 @@ namespace CustomerService
             _cust.Address1 = txtAddress1.Text;
             _cust.Address2 = txtAddress2.Text;
             _cust.County = txtCounty.Text;
-              _cust.CustomerJoined = rdDateJoined.Value;
-          
+            _cust.CustomerJoined = rdDateJoined.Value;
+            _cust.SanBernardino = chkSanBernardino.Checked;
+            _cust.La = chkLa.Checked;
+            _cust.OrangeCounty = chkOrange.Checked;
+            _cust.RiverSide = chkRiverSide.Checked;
+            _cust.Zip = txtZip.Text;
             _cust.State = txtState.Text;
             _cust.isActive = true;
-            
+
 
             if (IsNewCustomer)
             {
@@ -356,9 +372,10 @@ namespace CustomerService
                 CustomerDb.SaveChanges();
                 MessageBox.Show("Customer Created", "Customer has been created for the information entered", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }else
+            }
+            else
             {
-                 CustomerDb.SaveCustomer(_cust);
+                CustomerDb.SaveCustomer(_cust);
                 CustomerDb.SaveChanges();
                 MessageBox.Show("Customer Updated", "Customer has been updates for the information entered", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -368,21 +385,21 @@ namespace CustomerService
 
         private void radButtonElement2_Click(object sender, EventArgs e)
         {
-             
+
 
             ReportPrintTool printTool = new ReportPrintTool(new RevenueReport());
 
-              // Invoke the Ribbon Print Preview form modally  
+            // Invoke the Ribbon Print Preview form modally  
             // with the specified look and feel settings.  
             printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
-  
+
         }
 
         private void btnAddAddon_Click(object sender, EventArgs e)
         {
-            frmAddon _frmAddOn = new  frmAddon();
+            frmAddon _frmAddOn = new frmAddon();
             _frmAddOn.CustomerId = CustomerId;
-            
+
             _frmAddOn.IsEditMode = false;
 
             _frmAddOn.ShowDialog();
@@ -413,15 +430,15 @@ namespace CustomerService
 
         private void rgProgramTypes_SelectionChanged(object sender, EventArgs e)
         {
-          
 
-                if (rgProgramTypes.CurrentRow.Cells[0].Value != null)
-                {
-                    this.ProgramTypeId = (int)rgProgramTypes.CurrentRow.Cells[0].Value;
 
-                }
-           
-            
+            if (rgProgramTypes.CurrentRow.Cells[0].Value != null)
+            {
+                this.ProgramTypeId = (int)rgProgramTypes.CurrentRow.Cells[0].Value;
+
+            }
+
+
         }
 
         private void rgAddons_SelectionChanged(object sender, EventArgs e)
@@ -458,7 +475,7 @@ namespace CustomerService
         {
             CustomerContact _DeleteContact = new CustomerContact();
             _DeleteContact = CustomerDb.GetCustomerContactById(ContactId);
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Contact ", "Delete Contact", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Contact ", "Delete Contact", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 CustomerDb.DeleteContact(_DeleteContact);
@@ -668,8 +685,9 @@ namespace CustomerService
             {
                 frmUsers _frmUser = new frmUsers();
                 _frmUser.ShowDialog();
-            }else
-                MessageBox.Show(this, "Only admins can modify users. Please contact Nick or an admin.","Authorization Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+                MessageBox.Show(this, "Only admins can modify users. Please contact Nick or an admin.", "Authorization Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
 
@@ -694,7 +712,7 @@ namespace CustomerService
         {
             CustomField _CustomField = new CustomField();
             _CustomField = CustomerDb.GetCustomFieldById(CutomFieldId);
-            DialogResult dialogResult = MessageBox.Show("Delete Custom Field","Are you sure you wish to CustomField ", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show("Delete Custom Field", "Are you sure you wish to CustomField ", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 CustomerDb.DeleteCustomField(_CustomField);
@@ -741,7 +759,7 @@ namespace CustomerService
                 if (rgContracts.CurrentRow.Cells[0].Value != null)
                 {
                     this.ContractId = (int)rgContracts.CurrentRow.Cells[0].Value;
-                    
+
                 }
             }
         }

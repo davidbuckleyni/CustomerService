@@ -91,6 +91,16 @@
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn9 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn10 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn20 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn21 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn7 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn22 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn23 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn24 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn25 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn26 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn27 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn28 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -131,16 +141,6 @@
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn17 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn18 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition10 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn20 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn21 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn7 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn22 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn23 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn24 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn25 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn26 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn27 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup4 = new Telerik.WinControls.UI.RadRibbonBarGroup();
@@ -174,6 +174,8 @@
             this.splitPanel2 = new Telerik.WinControls.UI.SplitPanel();
             this.radPageView2 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.txtZip = new Telerik.WinControls.UI.RadTextBox();
             this.rdDateJoined = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddCustomer = new Telerik.WinControls.UI.RadButton();
@@ -222,6 +224,13 @@
             this.rgAddons = new Telerik.WinControls.UI.RadGridView();
             this.addOnsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.customerDbDataSet6 = new CustomerService.customerDbDataSet6();
+            this.radPageViewPage10 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnAddContracts = new Telerik.WinControls.UI.RadButton();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.btnEditContract = new Telerik.WinControls.UI.RadButton();
+            this.rgContracts = new Telerik.WinControls.UI.RadGridView();
+            this.contractDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDbDataSet17 = new CustomerService.customerDbDataSet17();
             this.radPageViewPage6 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radButton8 = new Telerik.WinControls.UI.RadButton();
             this.btnEditProgramTypes = new Telerik.WinControls.UI.RadButton();
@@ -229,7 +238,7 @@
             this.rgProgramTypes = new Telerik.WinControls.UI.RadGridView();
             this.progamTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerDbDataSet5 = new CustomerService.customerDbDataSet5();
-            this.radPageViewPage7 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.rpCounty = new Telerik.WinControls.UI.RadPageViewPage();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radButton6 = new Telerik.WinControls.UI.RadButton();
             this.grdCounties = new Telerik.WinControls.UI.RadGridView();
@@ -269,16 +278,14 @@
             this.customerContactsTableAdapter1 = new CustomerService.customerDbDataSet8TableAdapters.CustomerContactsTableAdapter();
             this.notesTableAdapter = new CustomerService.customerDbDataSet9TableAdapters.NotesTableAdapter();
             this.customFieldsTableAdapter = new CustomerService.customerDbDataSet16TableAdapters.CustomFieldsTableAdapter();
-            this.radPageViewPage10 = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
-            this.btnEditContract = new Telerik.WinControls.UI.RadButton();
-            this.rgContracts = new Telerik.WinControls.UI.RadGridView();
-            this.btnAddContracts = new Telerik.WinControls.UI.RadButton();
-            this.customerDbDataSet17 = new CustomerService.customerDbDataSet17();
-            this.contractDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contractDetailsTableAdapter = new CustomerService.customerDbDataSet17TableAdapters.ContractDetailsTableAdapter();
-            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-            this.txtZip = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
+            this.chkLa = new System.Windows.Forms.CheckBox();
+            this.chkOrange = new System.Windows.Forms.CheckBox();
+            this.chkRiverSide = new System.Windows.Forms.CheckBox();
+            this.chkSanBernardino = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitContainer1)).BeginInit();
             this.radSplitContainer1.SuspendLayout();
@@ -293,6 +300,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPageView2)).BeginInit();
             this.radPageView2.SuspendLayout();
             this.radPageViewPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtZip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdDateJoined)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddCustomer)).BeginInit();
@@ -344,6 +353,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.rgAddons.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet6)).BeginInit();
+            this.radPageViewPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddContracts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditContract)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgContracts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgContracts.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet17)).BeginInit();
             this.radPageViewPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditProgramTypes)).BeginInit();
@@ -352,7 +369,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rgProgramTypes.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progamTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet5)).BeginInit();
-            this.radPageViewPage7.SuspendLayout();
+            this.rpCounty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCounties)).BeginInit();
@@ -382,16 +399,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource)).BeginInit();
-            this.radPageViewPage10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditContract)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgContracts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgContracts.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddContracts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractDetailsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtZip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // radRibbonBar1
@@ -824,19 +833,26 @@
             this.radPageView2.Controls.Add(this.radPageViewPage1);
             this.radPageView2.Controls.Add(this.radPageViewPage10);
             this.radPageView2.Controls.Add(this.radPageViewPage6);
-            this.radPageView2.Controls.Add(this.radPageViewPage7);
+            this.radPageView2.Controls.Add(this.rpCounty);
             this.radPageView2.Controls.Add(this.radPageViewPage8);
             this.radPageView2.Controls.Add(this.radPageViewPage9);
             this.radPageView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPageView2.Location = new System.Drawing.Point(0, 0);
             this.radPageView2.Name = "radPageView2";
-            this.radPageView2.SelectedPage = this.radPageViewPage2;
+            this.radPageView2.SelectedPage = this.rpCounty;
             this.radPageView2.Size = new System.Drawing.Size(1433, 333);
             this.radPageView2.TabIndex = 0;
             this.radPageView2.Text = "Customer";
             // 
             // radPageViewPage2
             // 
+            this.radPageViewPage2.Controls.Add(this.radTextBox1);
+            this.radPageViewPage2.Controls.Add(this.checkBox1);
+            this.radPageViewPage2.Controls.Add(this.chkSanBernardino);
+            this.radPageViewPage2.Controls.Add(this.chkRiverSide);
+            this.radPageViewPage2.Controls.Add(this.chkOrange);
+            this.radPageViewPage2.Controls.Add(this.chkLa);
+            this.radPageViewPage2.Controls.Add(this.radLabel8);
             this.radPageViewPage2.Controls.Add(this.radLabel7);
             this.radPageViewPage2.Controls.Add(this.txtZip);
             this.radPageViewPage2.Controls.Add(this.rdDateJoined);
@@ -860,6 +876,21 @@
             this.radPageViewPage2.Name = "radPageViewPage2";
             this.radPageViewPage2.Size = new System.Drawing.Size(1412, 285);
             this.radPageViewPage2.Text = "Customer";
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Location = new System.Drawing.Point(3, 162);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(22, 18);
+            this.radLabel7.TabIndex = 13;
+            this.radLabel7.Text = "Zip";
+            // 
+            // txtZip
+            // 
+            this.txtZip.Location = new System.Drawing.Point(106, 162);
+            this.txtZip.Name = "txtZip";
+            this.txtZip.Size = new System.Drawing.Size(90, 20);
+            this.txtZip.TabIndex = 12;
             // 
             // rdDateJoined
             // 
@@ -1664,6 +1695,160 @@
             this.customerDbDataSet6.DataSetName = "customerDbDataSet6";
             this.customerDbDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // radPageViewPage10
+            // 
+            this.radPageViewPage10.Controls.Add(this.btnAddContracts);
+            this.radPageViewPage10.Controls.Add(this.radButton1);
+            this.radPageViewPage10.Controls.Add(this.btnEditContract);
+            this.radPageViewPage10.Controls.Add(this.rgContracts);
+            this.radPageViewPage10.ItemSize = new System.Drawing.SizeF(64F, 28F);
+            this.radPageViewPage10.Location = new System.Drawing.Point(10, 37);
+            this.radPageViewPage10.Name = "radPageViewPage10";
+            this.radPageViewPage10.Size = new System.Drawing.Size(1412, 285);
+            this.radPageViewPage10.Text = "Contracts";
+            // 
+            // btnAddContracts
+            // 
+            this.btnAddContracts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddContracts.Location = new System.Drawing.Point(4, 247);
+            this.btnAddContracts.Name = "btnAddContracts";
+            this.btnAddContracts.Size = new System.Drawing.Size(125, 24);
+            this.btnAddContracts.TabIndex = 24;
+            this.btnAddContracts.Text = "Add Contracts";
+            this.btnAddContracts.Click += new System.EventHandler(this.btnAddContracts_Click);
+            // 
+            // radButton1
+            // 
+            this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.radButton1.Location = new System.Drawing.Point(265, 247);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(125, 24);
+            this.radButton1.TabIndex = 24;
+            this.radButton1.Text = "Delete Contracts";
+            // 
+            // btnEditContract
+            // 
+            this.btnEditContract.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditContract.Location = new System.Drawing.Point(134, 247);
+            this.btnEditContract.Name = "btnEditContract";
+            this.btnEditContract.Size = new System.Drawing.Size(125, 24);
+            this.btnEditContract.TabIndex = 23;
+            this.btnEditContract.Text = "Edit Contracts";
+            this.btnEditContract.Click += new System.EventHandler(this.btnEditContract_Click);
+            // 
+            // rgContracts
+            // 
+            this.rgContracts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rgContracts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(249)))));
+            this.rgContracts.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rgContracts.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.rgContracts.ForeColor = System.Drawing.Color.Black;
+            this.rgContracts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rgContracts.Location = new System.Drawing.Point(4, 13);
+            // 
+            // 
+            // 
+            this.rgContracts.MasterTemplate.AllowAddNewRow = false;
+            this.rgContracts.MasterTemplate.AllowColumnChooser = false;
+            this.rgContracts.MasterTemplate.AllowColumnResize = false;
+            this.rgContracts.MasterTemplate.AllowDragToGroup = false;
+            this.rgContracts.MasterTemplate.AllowRowResize = false;
+            this.rgContracts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewDecimalColumn20.DataType = typeof(int);
+            gridViewDecimalColumn20.EnableExpressionEditor = false;
+            gridViewDecimalColumn20.FieldName = "id";
+            gridViewDecimalColumn20.HeaderText = "id";
+            gridViewDecimalColumn20.IsAutoGenerated = true;
+            gridViewDecimalColumn20.IsVisible = false;
+            gridViewDecimalColumn20.Name = "id";
+            gridViewDecimalColumn20.ReadOnly = true;
+            gridViewDecimalColumn20.Width = 201;
+            gridViewDecimalColumn21.DataType = typeof(int);
+            gridViewDecimalColumn21.EnableExpressionEditor = false;
+            gridViewDecimalColumn21.FieldName = "CustomerId";
+            gridViewDecimalColumn21.HeaderText = "CustomerId";
+            gridViewDecimalColumn21.IsAutoGenerated = true;
+            gridViewDecimalColumn21.IsVisible = false;
+            gridViewDecimalColumn21.Name = "CustomerId";
+            gridViewDecimalColumn21.Width = 305;
+            gridViewDateTimeColumn7.EnableExpressionEditor = false;
+            gridViewDateTimeColumn7.FieldName = "SignOffGoLive";
+            gridViewDateTimeColumn7.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn7.HeaderText = "SignOffGoLive";
+            gridViewDateTimeColumn7.IsAutoGenerated = true;
+            gridViewDateTimeColumn7.Name = "SignOffGoLive";
+            gridViewDateTimeColumn7.Width = 198;
+            gridViewDecimalColumn22.DataType = typeof(int);
+            gridViewDecimalColumn22.EnableExpressionEditor = false;
+            gridViewDecimalColumn22.FieldName = "NoOfUsers";
+            gridViewDecimalColumn22.HeaderText = "NoOfUsers";
+            gridViewDecimalColumn22.IsAutoGenerated = true;
+            gridViewDecimalColumn22.Name = "NoOfUsers";
+            gridViewDecimalColumn22.Width = 198;
+            gridViewDecimalColumn23.EnableExpressionEditor = false;
+            gridViewDecimalColumn23.FieldName = "BasePrice";
+            gridViewDecimalColumn23.HeaderText = "BasePrice";
+            gridViewDecimalColumn23.IsAutoGenerated = true;
+            gridViewDecimalColumn23.Name = "BasePrice";
+            gridViewDecimalColumn23.Width = 198;
+            gridViewDecimalColumn24.DataType = typeof(int);
+            gridViewDecimalColumn24.EnableExpressionEditor = false;
+            gridViewDecimalColumn24.FieldName = "BaseUsers";
+            gridViewDecimalColumn24.HeaderText = "BaseUsers";
+            gridViewDecimalColumn24.IsAutoGenerated = true;
+            gridViewDecimalColumn24.Name = "BaseUsers";
+            gridViewDecimalColumn24.Width = 198;
+            gridViewDecimalColumn25.EnableExpressionEditor = false;
+            gridViewDecimalColumn25.FieldName = "CostExtraUser";
+            gridViewDecimalColumn25.HeaderText = "CostExtraUser";
+            gridViewDecimalColumn25.IsAutoGenerated = true;
+            gridViewDecimalColumn25.Name = "CostExtraUser";
+            gridViewDecimalColumn25.Width = 198;
+            gridViewDecimalColumn26.EnableExpressionEditor = false;
+            gridViewDecimalColumn26.FieldName = "MonthlyCharge";
+            gridViewDecimalColumn26.HeaderText = "MonthlyCharge";
+            gridViewDecimalColumn26.IsAutoGenerated = true;
+            gridViewDecimalColumn26.Name = "MonthlyCharge";
+            gridViewDecimalColumn26.Width = 198;
+            gridViewDecimalColumn27.EnableExpressionEditor = false;
+            gridViewDecimalColumn27.FieldName = "RRARR";
+            gridViewDecimalColumn27.HeaderText = "RRARR";
+            gridViewDecimalColumn27.IsAutoGenerated = true;
+            gridViewDecimalColumn27.Name = "RRARR";
+            gridViewDecimalColumn27.Width = 201;
+            this.rgContracts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewDecimalColumn20,
+            gridViewDecimalColumn21,
+            gridViewDateTimeColumn7,
+            gridViewDecimalColumn22,
+            gridViewDecimalColumn23,
+            gridViewDecimalColumn24,
+            gridViewDecimalColumn25,
+            gridViewDecimalColumn26,
+            gridViewDecimalColumn27});
+            this.rgContracts.MasterTemplate.DataSource = this.contractDetailsBindingSource;
+            this.rgContracts.MasterTemplate.EnableGrouping = false;
+            this.rgContracts.MasterTemplate.ViewDefinition = tableViewDefinition6;
+            this.rgContracts.Name = "rgContracts";
+            this.rgContracts.ReadOnly = true;
+            this.rgContracts.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rgContracts.Size = new System.Drawing.Size(1404, 219);
+            this.rgContracts.TabIndex = 22;
+            this.rgContracts.Text = "radGridView1";
+            this.rgContracts.SelectionChanged += new System.EventHandler(this.rgContracts_SelectionChanged);
+            // 
+            // contractDetailsBindingSource
+            // 
+            this.contractDetailsBindingSource.DataMember = "ContractDetails";
+            this.contractDetailsBindingSource.DataSource = this.customerDbDataSet17;
+            // 
+            // customerDbDataSet17
+            // 
+            this.customerDbDataSet17.DataSetName = "customerDbDataSet17";
+            this.customerDbDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // radPageViewPage6
             // 
             this.radPageViewPage6.Controls.Add(this.radButton8);
@@ -1813,16 +1998,16 @@
             this.customerDbDataSet5.DataSetName = "customerDbDataSet5";
             this.customerDbDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // radPageViewPage7
+            // rpCounty
             // 
-            this.radPageViewPage7.Controls.Add(this.radButton2);
-            this.radPageViewPage7.Controls.Add(this.radButton6);
-            this.radPageViewPage7.Controls.Add(this.grdCounties);
-            this.radPageViewPage7.ItemSize = new System.Drawing.SizeF(52F, 28F);
-            this.radPageViewPage7.Location = new System.Drawing.Point(10, 37);
-            this.radPageViewPage7.Name = "radPageViewPage7";
-            this.radPageViewPage7.Size = new System.Drawing.Size(1412, 285);
-            this.radPageViewPage7.Text = "County";
+            this.rpCounty.Controls.Add(this.radButton2);
+            this.rpCounty.Controls.Add(this.radButton6);
+            this.rpCounty.Controls.Add(this.grdCounties);
+            this.rpCounty.ItemSize = new System.Drawing.SizeF(52F, 28F);
+            this.rpCounty.Location = new System.Drawing.Point(10, 37);
+            this.rpCounty.Name = "rpCounty";
+            this.rpCounty.Size = new System.Drawing.Size(1412, 285);
+            this.rpCounty.Text = "County";
             // 
             // radButton2
             // 
@@ -2351,178 +2536,74 @@
             // 
             this.customFieldsTableAdapter.ClearBeforeFill = true;
             // 
-            // radPageViewPage10
-            // 
-            this.radPageViewPage10.Controls.Add(this.btnAddContracts);
-            this.radPageViewPage10.Controls.Add(this.radButton1);
-            this.radPageViewPage10.Controls.Add(this.btnEditContract);
-            this.radPageViewPage10.Controls.Add(this.rgContracts);
-            this.radPageViewPage10.ItemSize = new System.Drawing.SizeF(64F, 28F);
-            this.radPageViewPage10.Location = new System.Drawing.Point(10, 37);
-            this.radPageViewPage10.Name = "radPageViewPage10";
-            this.radPageViewPage10.Size = new System.Drawing.Size(1412, 285);
-            this.radPageViewPage10.Text = "Contracts";
-            // 
-            // radButton1
-            // 
-            this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radButton1.Location = new System.Drawing.Point(265, 247);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(125, 24);
-            this.radButton1.TabIndex = 24;
-            this.radButton1.Text = "Delete Contracts";
-            // 
-            // btnEditContract
-            // 
-            this.btnEditContract.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditContract.Location = new System.Drawing.Point(134, 247);
-            this.btnEditContract.Name = "btnEditContract";
-            this.btnEditContract.Size = new System.Drawing.Size(125, 24);
-            this.btnEditContract.TabIndex = 23;
-            this.btnEditContract.Text = "Edit Contracts";
-            this.btnEditContract.Click += new System.EventHandler(this.btnEditContract_Click);
-            // 
-            // rgContracts
-            // 
-            this.rgContracts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rgContracts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(249)))));
-            this.rgContracts.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rgContracts.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rgContracts.ForeColor = System.Drawing.Color.Black;
-            this.rgContracts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rgContracts.Location = new System.Drawing.Point(4, 13);
-            // 
-            // 
-            // 
-            this.rgContracts.MasterTemplate.AllowAddNewRow = false;
-            this.rgContracts.MasterTemplate.AllowColumnChooser = false;
-            this.rgContracts.MasterTemplate.AllowColumnResize = false;
-            this.rgContracts.MasterTemplate.AllowDragToGroup = false;
-            this.rgContracts.MasterTemplate.AllowRowResize = false;
-            this.rgContracts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn20.DataType = typeof(int);
-            gridViewDecimalColumn20.EnableExpressionEditor = false;
-            gridViewDecimalColumn20.FieldName = "id";
-            gridViewDecimalColumn20.HeaderText = "id";
-            gridViewDecimalColumn20.IsAutoGenerated = true;
-            gridViewDecimalColumn20.IsVisible = false;
-            gridViewDecimalColumn20.Name = "id";
-            gridViewDecimalColumn20.ReadOnly = true;
-            gridViewDecimalColumn20.Width = 201;
-            gridViewDecimalColumn21.DataType = typeof(int);
-            gridViewDecimalColumn21.EnableExpressionEditor = false;
-            gridViewDecimalColumn21.FieldName = "CustomerId";
-            gridViewDecimalColumn21.HeaderText = "CustomerId";
-            gridViewDecimalColumn21.IsAutoGenerated = true;
-            gridViewDecimalColumn21.IsVisible = false;
-            gridViewDecimalColumn21.Name = "CustomerId";
-            gridViewDecimalColumn21.Width = 305;
-            gridViewDateTimeColumn7.EnableExpressionEditor = false;
-            gridViewDateTimeColumn7.FieldName = "SignOffGoLive";
-            gridViewDateTimeColumn7.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn7.HeaderText = "SignOffGoLive";
-            gridViewDateTimeColumn7.IsAutoGenerated = true;
-            gridViewDateTimeColumn7.Name = "SignOffGoLive";
-            gridViewDateTimeColumn7.Width = 198;
-            gridViewDecimalColumn22.DataType = typeof(int);
-            gridViewDecimalColumn22.EnableExpressionEditor = false;
-            gridViewDecimalColumn22.FieldName = "NoOfUsers";
-            gridViewDecimalColumn22.HeaderText = "NoOfUsers";
-            gridViewDecimalColumn22.IsAutoGenerated = true;
-            gridViewDecimalColumn22.Name = "NoOfUsers";
-            gridViewDecimalColumn22.Width = 198;
-            gridViewDecimalColumn23.EnableExpressionEditor = false;
-            gridViewDecimalColumn23.FieldName = "BasePrice";
-            gridViewDecimalColumn23.HeaderText = "BasePrice";
-            gridViewDecimalColumn23.IsAutoGenerated = true;
-            gridViewDecimalColumn23.Name = "BasePrice";
-            gridViewDecimalColumn23.Width = 198;
-            gridViewDecimalColumn24.DataType = typeof(int);
-            gridViewDecimalColumn24.EnableExpressionEditor = false;
-            gridViewDecimalColumn24.FieldName = "BaseUsers";
-            gridViewDecimalColumn24.HeaderText = "BaseUsers";
-            gridViewDecimalColumn24.IsAutoGenerated = true;
-            gridViewDecimalColumn24.Name = "BaseUsers";
-            gridViewDecimalColumn24.Width = 198;
-            gridViewDecimalColumn25.EnableExpressionEditor = false;
-            gridViewDecimalColumn25.FieldName = "CostExtraUser";
-            gridViewDecimalColumn25.HeaderText = "CostExtraUser";
-            gridViewDecimalColumn25.IsAutoGenerated = true;
-            gridViewDecimalColumn25.Name = "CostExtraUser";
-            gridViewDecimalColumn25.Width = 198;
-            gridViewDecimalColumn26.EnableExpressionEditor = false;
-            gridViewDecimalColumn26.FieldName = "MonthlyCharge";
-            gridViewDecimalColumn26.HeaderText = "MonthlyCharge";
-            gridViewDecimalColumn26.IsAutoGenerated = true;
-            gridViewDecimalColumn26.Name = "MonthlyCharge";
-            gridViewDecimalColumn26.Width = 198;
-            gridViewDecimalColumn27.EnableExpressionEditor = false;
-            gridViewDecimalColumn27.FieldName = "RRARR";
-            gridViewDecimalColumn27.HeaderText = "RRARR";
-            gridViewDecimalColumn27.IsAutoGenerated = true;
-            gridViewDecimalColumn27.Name = "RRARR";
-            gridViewDecimalColumn27.Width = 201;
-            this.rgContracts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn20,
-            gridViewDecimalColumn21,
-            gridViewDateTimeColumn7,
-            gridViewDecimalColumn22,
-            gridViewDecimalColumn23,
-            gridViewDecimalColumn24,
-            gridViewDecimalColumn25,
-            gridViewDecimalColumn26,
-            gridViewDecimalColumn27});
-            this.rgContracts.MasterTemplate.DataSource = this.contractDetailsBindingSource;
-            this.rgContracts.MasterTemplate.EnableGrouping = false;
-            this.rgContracts.MasterTemplate.ViewDefinition = tableViewDefinition6;
-            this.rgContracts.Name = "rgContracts";
-            this.rgContracts.ReadOnly = true;
-            this.rgContracts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rgContracts.Size = new System.Drawing.Size(1404, 219);
-            this.rgContracts.TabIndex = 22;
-            this.rgContracts.Text = "radGridView1";
-            this.rgContracts.SelectionChanged += new System.EventHandler(this.rgContracts_SelectionChanged);
-            // 
-            // btnAddContracts
-            // 
-            this.btnAddContracts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddContracts.Location = new System.Drawing.Point(4, 247);
-            this.btnAddContracts.Name = "btnAddContracts";
-            this.btnAddContracts.Size = new System.Drawing.Size(125, 24);
-            this.btnAddContracts.TabIndex = 24;
-            this.btnAddContracts.Text = "Add Contracts";
-            this.btnAddContracts.Click += new System.EventHandler(this.btnAddContracts_Click);
-            // 
-            // customerDbDataSet17
-            // 
-            this.customerDbDataSet17.DataSetName = "customerDbDataSet17";
-            this.customerDbDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // contractDetailsBindingSource
-            // 
-            this.contractDetailsBindingSource.DataMember = "ContractDetails";
-            this.contractDetailsBindingSource.DataSource = this.customerDbDataSet17;
-            // 
             // contractDetailsTableAdapter
             // 
             this.contractDetailsTableAdapter.ClearBeforeFill = true;
             // 
-            // radLabel7
+            // radLabel8
             // 
-            this.radLabel7.Location = new System.Drawing.Point(3, 162);
-            this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(22, 18);
-            this.radLabel7.TabIndex = 13;
-            this.radLabel7.Text = "Zip";
+            this.radLabel8.Location = new System.Drawing.Point(396, 91);
+            this.radLabel8.Name = "radLabel8";
+            this.radLabel8.Size = new System.Drawing.Size(50, 18);
+            this.radLabel8.TabIndex = 15;
+            this.radLabel8.Text = "Counties";
             // 
-            // txtZip
+            // chkLa
             // 
-            this.txtZip.Location = new System.Drawing.Point(106, 162);
-            this.txtZip.Name = "txtZip";
-            this.txtZip.Size = new System.Drawing.Size(90, 20);
-            this.txtZip.TabIndex = 12;
+            this.chkLa.AutoSize = true;
+            this.chkLa.Location = new System.Drawing.Point(410, 115);
+            this.chkLa.Name = "chkLa";
+            this.chkLa.Size = new System.Drawing.Size(37, 17);
+            this.chkLa.TabIndex = 16;
+            this.chkLa.Text = "La";
+            this.chkLa.UseVisualStyleBackColor = true;
+            // 
+            // chkOrange
+            // 
+            this.chkOrange.AutoSize = true;
+            this.chkOrange.Location = new System.Drawing.Point(473, 115);
+            this.chkOrange.Name = "chkOrange";
+            this.chkOrange.Size = new System.Drawing.Size(105, 17);
+            this.chkOrange.TabIndex = 17;
+            this.chkOrange.Text = "Orange County";
+            this.chkOrange.UseVisualStyleBackColor = true;
+            // 
+            // chkRiverSide
+            // 
+            this.chkRiverSide.AutoSize = true;
+            this.chkRiverSide.Location = new System.Drawing.Point(604, 115);
+            this.chkRiverSide.Name = "chkRiverSide";
+            this.chkRiverSide.Size = new System.Drawing.Size(76, 17);
+            this.chkRiverSide.TabIndex = 18;
+            this.chkRiverSide.Text = "River Side";
+            this.chkRiverSide.UseVisualStyleBackColor = true;
+            // 
+            // chkSanBernardino
+            // 
+            this.chkSanBernardino.AutoSize = true;
+            this.chkSanBernardino.Location = new System.Drawing.Point(410, 153);
+            this.chkSanBernardino.Name = "chkSanBernardino";
+            this.chkSanBernardino.Size = new System.Drawing.Size(106, 17);
+            this.chkSanBernardino.TabIndex = 19;
+            this.chkSanBernardino.Text = "San Bernardino";
+            this.chkSanBernardino.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(522, 153);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(56, 17);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Other";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // radTextBox1
+            // 
+            this.radTextBox1.Location = new System.Drawing.Point(584, 150);
+            this.radTextBox1.Name = "radTextBox1";
+            this.radTextBox1.Size = new System.Drawing.Size(251, 20);
+            this.radTextBox1.TabIndex = 21;
             // 
             // frmCustomerService
             // 
@@ -2550,6 +2631,8 @@
             this.radPageView2.ResumeLayout(false);
             this.radPageViewPage2.ResumeLayout(false);
             this.radPageViewPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtZip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdDateJoined)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddCustomer)).EndInit();
@@ -2602,6 +2685,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.rgAddons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet6)).EndInit();
+            this.radPageViewPage10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddContracts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditContract)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgContracts.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgContracts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet17)).EndInit();
             this.radPageViewPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radButton8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditProgramTypes)).EndInit();
@@ -2610,7 +2701,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rgProgramTypes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progamTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet5)).EndInit();
-            this.radPageViewPage7.ResumeLayout(false);
+            this.rpCounty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCounties.MasterTemplate)).EndInit();
@@ -2640,16 +2731,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsBindingSource)).EndInit();
-            this.radPageViewPage10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditContract)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgContracts.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgContracts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddContracts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDbDataSet17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractDetailsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtZip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2699,7 +2782,7 @@
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPage1;
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPage6;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
-        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage7;
+        private Telerik.WinControls.UI.RadPageViewPage rpCounty;
         private Telerik.WinControls.UI.RadGridView grdCounties;
         private customerDbDataSet3 customerDbDataSet3;
         private System.Windows.Forms.BindingSource customerCountysBindingSource;
@@ -2795,6 +2878,13 @@
         private customerDbDataSet17TableAdapters.ContractDetailsTableAdapter contractDetailsTableAdapter;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadTextBox txtZip;
+        private Telerik.WinControls.UI.RadLabel radLabel8;
+        private Telerik.WinControls.UI.RadTextBox radTextBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkSanBernardino;
+        private System.Windows.Forms.CheckBox chkRiverSide;
+        private System.Windows.Forms.CheckBox chkOrange;
+        private System.Windows.Forms.CheckBox chkLa;
     }
 }
 

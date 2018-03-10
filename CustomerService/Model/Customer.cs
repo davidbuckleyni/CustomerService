@@ -29,5 +29,10 @@ namespace CustomerService.Model
         public Nullable<bool> isActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> CustomerLocations { get; set; }
+        public Nullable<bool> La { get; set; }
+        public Nullable<bool> OrangeCounty { get; set; }
+        public Nullable<bool> RiverSide { get; set; }
+        public Nullable<bool> SanBernardino { get; set; }
+        public Nullable<bool> otherCounties { get; set; }
     }
 }
