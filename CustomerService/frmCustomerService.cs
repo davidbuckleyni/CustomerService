@@ -49,10 +49,7 @@ namespace CustomerService
 
         private void frmCustomerService_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'customerDbDataSet17.ContractDetails' table. You can move, or remove it, as needed.
-            this.contractDetailsTableAdapter.Fill(this.customerDbDataSet17.ContractDetails);
-            // TODO: This line of code loads data into the 'customerDbDataSet16.CustomFields' table. You can move, or remove it, as needed.
-            this.customFieldsTableAdapter.Fill(this.customerDbDataSet16.CustomFields);
+             
 
 
             if (isAdmin == false)
@@ -91,8 +88,7 @@ namespace CustomerService
 
 
                 BindCustomerDetail(CustomerId);
-                BindCountiesForCustomer();
-                BindImplentationsForCustomer(CustomerId);
+                  BindImplentationsForCustomer(CustomerId);
                 rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
                 BindAddOns(CustomerId);
                 BindContacts(CustomerId);
@@ -230,8 +226,7 @@ namespace CustomerService
             frmCounty _frmCounty = new frmCounty();
             _frmCounty.CustomerId = CustomerId;
             _frmCounty.ShowDialog();
-            BindCountiesForCustomer();
-
+           
         }
 
         private void BindImplentationsForCustomer(int customerid)
@@ -240,12 +235,7 @@ namespace CustomerService
 
             grdImplentations.DataSource = CustomerDb.GetAllImpentationsByCustomerId(customerid);
         }
-        public void BindCountiesForCustomer()
-        {
-
-            grdCounties.DataSource = CustomerDb.GetALLCustomerCountiesForList(this.CustomerId);
-
-        }
+        
 
         private void radStatusStrip1_StatusBarClick(object sender, Telerik.WinControls.UI.RadStatusBarClickEventArgs args)
         {
@@ -361,11 +351,28 @@ namespace CustomerService
             _cust.La = chkLa.Checked;
             _cust.OrangeCounty = chkOrange.Checked;
             _cust.RiverSide = chkRiverSide.Checked;
+
+            if (chkCountyOther.Checked == true)
+                _cust.otherCountiesText = txtOtherCounty.Text;
             _cust.Zip = txtZip.Text;
             _cust.State = txtState.Text;
             _cust.isActive = true;
+            //concatanate all the counties for easier reporting.
+            List<String> counties = new List<string>();
+            
+            
+            if (chkLa.Checked)
+                counties.Add("La");
+            if (chkOrange.Checked)
+                counties.Add("Orange County");
+            if(chkRiverSide.Checked)
+                counties.Add("RiverSide");
+            if (chkSanBernardino.Checked)
+                counties.Add("La");
 
 
+            string Countiesjoined = string.Join(",", counties);
+            _cust.CountiesForReport = Countiesjoined;
             if (IsNewCustomer)
             {
                 CustomerDb.AddToCustomer(_cust);

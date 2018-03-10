@@ -18,6 +18,7 @@
           <Property Name="Availity" Type="bit" />
           <Property Name="PeriscopeStatus" Type="int" />
           <Property Name="PeriscopeStatusOther" Type="nvarchar" MaxLength="350" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="ContractDetails">
           <Key>
@@ -32,6 +33,7 @@
           <Property Name="CostExtraUser" Type="decimal" Precision="18" Scale="2" />
           <Property Name="MonthlyCharge" Type="decimal" Precision="18" Scale="2" />
           <Property Name="RRARR" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -57,6 +59,9 @@
           <Property Name="RiverSide" Type="bit" />
           <Property Name="SanBernardino" Type="bit" />
           <Property Name="otherCounties" Type="bit" />
+          <Property Name="otherCountiesText" Type="nvarchar" MaxLength="350" />
+          <Property Name="databaseID" Type="int" />
+          <Property Name="CountiesForReport" Type="nvarchar" MaxLength="450" />
         </EntityType>
         <EntityType Name="CustomerContacts">
           <Key>
@@ -72,6 +77,7 @@
           <Property Name="isActive" Type="bit" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="CustomerCountys">
           <Key>
@@ -100,6 +106,7 @@
           <Property Name="CreatedBy" Type="date" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="isActive" Type="bit" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="Implentat">
           <Key>
@@ -117,6 +124,7 @@
           <Property Name="CreatedDate" Type="date" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
           <Property Name="ProjectManager" Type="nvarchar" MaxLength="350" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="Notes">
           <Key>
@@ -132,6 +140,7 @@
           <Property Name="Status" Type="int" />
           <Property Name="isActive" Type="bit" />
           <Property Name="isAdminOnly" Type="bit" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="ProgamTypes">
           <Key>
@@ -148,6 +157,7 @@
           <Property Name="FosterCare" Type="bit" />
           <Property Name="Residential" Type="bit" />
           <Property Name="SubstanceAbuse" Type="bit" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="revenue">
           <Key>
@@ -162,6 +172,7 @@
           <Property Name="Year" Type="int" />
           <Property Name="Users" Type="decimal" Precision="18" Scale="2" />
           <Property Name="RevenueAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="StandardLookups">
           <Key>
@@ -175,6 +186,15 @@
           <Property Name="isActive" Type="bit" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
           <Property Name="CreatedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="UserDatabases">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="DatabaseName" Type="nvarchar" MaxLength="250" />
+          <Property Name="databaseID" Type="int" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -203,6 +223,7 @@
           <EntitySet Name="ProgamTypes" EntityType="Self.ProgamTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="revenue" EntityType="Self.revenue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StandardLookups" EntityType="Self.StandardLookups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDatabases" EntityType="Self.UserDatabases" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -222,6 +243,7 @@
           <EntitySet Name="Customers" EntityType="customerDbModel.Customer" />
           <EntitySet Name="Implentats" EntityType="customerDbModel.Implentat" />
           <EntitySet Name="ContractDetails" EntityType="customerDbModel.ContractDetail" />
+          <EntitySet Name="UserDatabases" EntityType="customerDbModel.UserDatabas" />
         </EntityContainer>
         <EntityType Name="CustomerContact">
           <Key>
@@ -237,6 +259,7 @@
           <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="PoistionId" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="databaseID" Type="Int32" />
         </EntityType>
         <EntityType Name="StandardLookup">
           <Key>
@@ -273,6 +296,7 @@
           <Property Name="Year" Type="Int32" />
           <Property Name="Users" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="RevenueAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="databaseID" Type="Int32" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -304,6 +328,7 @@
           <Property Name="FosterCare" Type="Boolean" />
           <Property Name="Residential" Type="Boolean" />
           <Property Name="SubstanceAbuse" Type="Boolean" />
+          <Property Name="databaseID" Type="Int32" />
         </EntityType>
         <EntityType Name="Note">
           <Key>
@@ -319,6 +344,7 @@
           <Property Name="Status" Type="Int32" />
           <Property Name="isActive" Type="Boolean" />
           <Property Name="isAdminOnly" Type="Boolean" />
+          <Property Name="databaseID" Type="Int32" />
         </EntityType>
         <EntityType Name="CustomField">
           <Key>
@@ -338,6 +364,7 @@
           <Property Name="CreatedBy" Type="DateTime" Precision="0" />
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="isActive" Type="Boolean" />
+          <Property Name="databaseID" Type="Int32" />
         </EntityType>
         <EntityType Name="AddOn">
           <Key>
@@ -352,6 +379,7 @@
           <Property Name="Availity" Type="Boolean" />
           <Property Name="PeriscopeStatus" Type="Int32" />
           <Property Name="PeriscopeStatusOther" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="databaseID" Type="Int32" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -377,6 +405,9 @@
           <Property Name="RiverSide" Type="Boolean" />
           <Property Name="SanBernardino" Type="Boolean" />
           <Property Name="otherCounties" Type="Boolean" />
+          <Property Name="otherCountiesText" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="databaseID" Type="Int32" />
+          <Property Name="CountiesForReport" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Implentat">
           <Key>
@@ -394,6 +425,7 @@
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="ProjectManager" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="databaseID" Type="Int32" />
         </EntityType>
         <EntityType Name="ContractDetail">
           <Key>
@@ -408,6 +440,16 @@
           <Property Name="CostExtraUser" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="MonthlyCharge" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="RRARR" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="databaseID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UserDatabas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="DatabaseName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="databaseID" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -418,6 +460,7 @@
           <EntitySetMapping Name="CustomerContacts">
             <EntityTypeMapping TypeName="customerDbModel.CustomerContact">
               <MappingFragment StoreEntitySet="CustomerContacts">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="PoistionId" ColumnName="PoistionId" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -458,6 +501,7 @@
           <EntitySetMapping Name="revenues">
             <EntityTypeMapping TypeName="customerDbModel.revenue">
               <MappingFragment StoreEntitySet="revenue">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="RevenueAmount" ColumnName="RevenueAmount" />
                 <ScalarProperty Name="Users" ColumnName="Users" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
@@ -489,6 +533,7 @@
           <EntitySetMapping Name="ProgamTypes">
             <EntityTypeMapping TypeName="customerDbModel.ProgamType">
               <MappingFragment StoreEntitySet="ProgamTypes">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="SubstanceAbuse" ColumnName="SubstanceAbuse" />
                 <ScalarProperty Name="Residential" ColumnName="Residential" />
                 <ScalarProperty Name="FosterCare" ColumnName="FosterCare" />
@@ -506,6 +551,7 @@
           <EntitySetMapping Name="Notes">
             <EntityTypeMapping TypeName="customerDbModel.Note">
               <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="isAdminOnly" ColumnName="isAdminOnly" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
@@ -522,6 +568,7 @@
           <EntitySetMapping Name="CustomFields">
             <EntityTypeMapping TypeName="customerDbModel.CustomField">
               <MappingFragment StoreEntitySet="CustomFields">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -542,6 +589,7 @@
           <EntitySetMapping Name="AddOns">
             <EntityTypeMapping TypeName="customerDbModel.AddOn">
               <MappingFragment StoreEntitySet="AddOns">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="PeriscopeStatusOther" ColumnName="PeriscopeStatusOther" />
                 <ScalarProperty Name="PeriscopeStatus" ColumnName="PeriscopeStatus" />
                 <ScalarProperty Name="Availity" ColumnName="Availity" />
@@ -557,6 +605,9 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="customerDbModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CountiesForReport" ColumnName="CountiesForReport" />
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
+                <ScalarProperty Name="otherCountiesText" ColumnName="otherCountiesText" />
                 <ScalarProperty Name="otherCounties" ColumnName="otherCounties" />
                 <ScalarProperty Name="SanBernardino" ColumnName="SanBernardino" />
                 <ScalarProperty Name="RiverSide" ColumnName="RiverSide" />
@@ -583,6 +634,7 @@
           <EntitySetMapping Name="Implentats">
             <EntityTypeMapping TypeName="customerDbModel.Implentat">
               <MappingFragment StoreEntitySet="Implentat">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -601,6 +653,7 @@
           <EntitySetMapping Name="ContractDetails">
             <EntityTypeMapping TypeName="customerDbModel.ContractDetail">
               <MappingFragment StoreEntitySet="ContractDetails">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="RRARR" ColumnName="RRARR" />
                 <ScalarProperty Name="MonthlyCharge" ColumnName="MonthlyCharge" />
                 <ScalarProperty Name="CostExtraUser" ColumnName="CostExtraUser" />
@@ -610,6 +663,16 @@
                 <ScalarProperty Name="SignOffGoLive" ColumnName="SignOffGoLive" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDatabases">
+            <EntityTypeMapping TypeName="customerDbModel.UserDatabas">
+              <MappingFragment StoreEntitySet="UserDatabases">
+                <ScalarProperty Name="databaseID" ColumnName="databaseID" />
+                <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

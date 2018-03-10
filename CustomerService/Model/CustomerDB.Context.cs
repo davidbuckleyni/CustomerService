@@ -37,5 +37,6 @@ namespace CustomerService.Model
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Implentat> Implentats { get; set; }
         public virtual DbSet<ContractDetail> ContractDetails { get; set; }
+        public virtual DbSet<UserDatabas> UserDatabases { get; set; }
     }
 }

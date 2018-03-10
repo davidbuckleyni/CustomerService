@@ -28,5 +28,6 @@ namespace CustomerService.Model
         public Nullable<System.DateTime> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<bool> isActive { get; set; }
+        public Nullable<int> databaseID { get; set; }
     }
 }

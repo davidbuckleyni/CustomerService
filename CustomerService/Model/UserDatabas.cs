@@ -12,18 +12,11 @@ namespace CustomerService.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Note
+    public partial class UserDatabas
     {
-        public int id { get; set; }
-        public Nullable<int> CustomerId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Notes { get; set; }
-        public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<int> Status { get; set; }
-        public Nullable<bool> isActive { get; set; }
-        public Nullable<bool> isAdminOnly { get; set; }
+        public int ID { get; set; }
+        public Nullable<int> userId { get; set; }
+        public string DatabaseName { get; set; }
         public Nullable<int> databaseID { get; set; }
     }
 }

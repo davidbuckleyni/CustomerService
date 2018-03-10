@@ -24,5 +24,6 @@ namespace CustomerService.Model
         public string CreatedBy { get; set; }
         public Nullable<int> PoistionId { get; set; }
         public string Name { get; set; }
+        public Nullable<int> databaseID { get; set; }
     }
 }

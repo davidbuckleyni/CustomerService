@@ -25,5 +25,6 @@ namespace CustomerService.Model
         public Nullable<bool> FosterCare { get; set; }
         public Nullable<bool> Residential { get; set; }
         public Nullable<bool> SubstanceAbuse { get; set; }
+        public Nullable<int> databaseID { get; set; }
     }
 }

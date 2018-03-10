@@ -344,6 +344,9 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>CustomerDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\UserDatabas.cs">
+      <DependentUpon>CustomerDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\ReportDesigner.cs">

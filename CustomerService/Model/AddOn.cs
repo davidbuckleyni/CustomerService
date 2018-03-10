@@ -23,5 +23,6 @@ namespace CustomerService.Model
         public Nullable<bool> Availity { get; set; }
         public Nullable<int> PeriscopeStatus { get; set; }
         public string PeriscopeStatusOther { get; set; }
+        public Nullable<int> databaseID { get; set; }
     }
 }

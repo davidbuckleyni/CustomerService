@@ -26,5 +26,6 @@ namespace CustomerService.Model
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public string CreatedBy { get; set; }
         public string ProjectManager { get; set; }
+        public Nullable<int> databaseID { get; set; }
     }
 }

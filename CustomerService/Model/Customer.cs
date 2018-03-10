@@ -34,5 +34,8 @@ namespace CustomerService.Model
         public Nullable<bool> RiverSide { get; set; }
         public Nullable<bool> SanBernardino { get; set; }
         public Nullable<bool> otherCounties { get; set; }
+        public string otherCountiesText { get; set; }
+        public Nullable<int> databaseID { get; set; }
+        public string CountiesForReport { get; set; }
     }
 }

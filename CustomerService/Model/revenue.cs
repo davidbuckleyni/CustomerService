@@ -23,5 +23,6 @@ namespace CustomerService.Model
         public Nullable<int> Year { get; set; }
         public Nullable<decimal> Users { get; set; }
         public Nullable<decimal> RevenueAmount { get; set; }
+        public Nullable<int> databaseID { get; set; }
     }
 }
