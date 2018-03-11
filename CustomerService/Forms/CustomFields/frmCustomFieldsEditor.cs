@@ -21,6 +21,7 @@ namespace CustomerService.Forms.CustomFields
         public bool IsEdit { get; set; }
         public int CustomFieldId { get; set; }
         public int CustomerId { get; set; }
+        public int DatabaseId { get; set; }
         public frmCustomFieldsEditor()
         {
             InitializeComponent();
@@ -61,7 +62,7 @@ namespace CustomerService.Forms.CustomFields
                 _newCustomField.FieldValue = txtFieldValue.Text;
                 _newCustomField.TableName = rdTableName.Text;
                 _newCustomField.CustomerId = CustomerId;
-
+                _newCustomField.databaseID = DatabaseId;
 
                 if (IsEdit == true)
                 {

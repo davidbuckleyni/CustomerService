@@ -18,6 +18,7 @@ namespace CustomerService.Forms.Contacts
         public int CustomerId { get; set; }
         public int ContactId { get; set; }
         public bool IsEditMode { get; set; }
+        public int databaseId { get; set; }
         public frmContact()
         {
             InitializeComponent();

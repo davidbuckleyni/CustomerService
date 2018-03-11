@@ -42,6 +42,7 @@ namespace CustomerService
         public int NotesId { get; set; }
         public int CutomFieldId { get; set; }
         public int ContractId { get; set; }
+        public int DatabaseId { get; set; }
         public frmCustomerService()
         {
             InitializeComponent();
@@ -49,8 +50,6 @@ namespace CustomerService
 
         private void frmCustomerService_Load(object sender, EventArgs e)
         {
-             
-
 
             if (isAdmin == false)
 
@@ -62,18 +61,18 @@ namespace CustomerService
             this.rgAddons.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
 
 
-
-            this.customerContactsTableAdapter.Fill(this.customerDbDataSet.CustomerContacts);
             BindCustomers();
             IsNewCustomer = false;
             rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             userNameStatus.Text = Properties.Settings.Default.UserName.ToString();
 
+            BindDatabases();
+
         }
 
         private void BindCustomers()
         {
-            rgCustomers.DataSource = CustomerDb.GetALLCustomers();
+            rgCustomers.DataSource = CustomerDb.GetALLCustomers(DatabaseId);
             rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
 
@@ -85,10 +84,10 @@ namespace CustomerService
             if (rgCustomers.CurrentRow.Cells[0].Value != null)
             {
                 CustomerId = (int)rgCustomers.CurrentRow.Cells[0].Value;
+                lbldatabaseName.Text = CustomerDb.GetDatabaseNames(DatabaseId);
 
-
-                BindCustomerDetail(CustomerId);
-                  BindImplentationsForCustomer(CustomerId);
+                BindCustomerDetail(CustomerId,DatabaseId);
+                BindImplentationsForCustomer(CustomerId);
                 rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
                 BindAddOns(CustomerId);
                 BindContacts(CustomerId);
@@ -103,49 +102,60 @@ namespace CustomerService
         public void BindNotes(int id)
         {
 
-            rgNotes.DataSource = CustomerDb.GetAlLNotesByCustomerId(id);
+            rgNotes.DataSource = CustomerDb.GetAlLNotesByCustomerId(id, DatabaseId);
             rgNotes.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
         }
+
+
         public void BindAddOns(int id)
         {
 
-            rgAddons.DataSource = CustomerDb.GetAllAddonsByCustomerId(id);
+            rgAddons.DataSource = CustomerDb.GetAllAddonsByCustomerId(id, DatabaseId);
             rgAddons.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
         }
         public void BindRevenue(int id)
         {
-            grdRevenue.DataSource = CustomerDb.GetAlLRevenuByCustomerId(id);
+            grdRevenue.DataSource = CustomerDb.GetAlLRevenuByCustomerId(id, DatabaseId);
             grdRevenue.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
         }
         public void BindContacts(int id)
         {
-            rgContacts.DataSource = CustomerDb.GetAlLContactsByCustomerId(id);
+            rgContacts.DataSource = CustomerDb.GetAlLContactsByCustomerId(id, DatabaseId);
             rgContacts.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
 
         }
         public void BindContracts(int id)
         {
-            rgContracts.DataSource = CustomerDb.GetAllContractsById(id);
+            rgContracts.DataSource = CustomerDb.GetAllContractsById(id, DatabaseId);
             rgContracts.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
 
         }
 
+        public void BindDatabases()
+        {
+            cboDatabases.ValueMember = "Code";
+            cboDatabases.DisplayMember = "Description";
+            int UserId = Properties.Settings.Default.UserId;
+            cboDatabases.DataSource = CustomerDb.GetAllDatabasesForSearchByUser(UserId);
+
+        }
+
         public void BindCustomFields(int id)
         {
-            rgContacts.DataSource = CustomerDb.GetAllCustomFieldsByCustomer(id);
+            rgContacts.DataSource = CustomerDb.GetAllCustomFieldsByCustomer(id, DatabaseId);
             rgContacts.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
 
         }
 
-        private void BindCustomerDetail(int Id)
+        private void BindCustomerDetail(int Id,int databaseiD)
         {
-            Customer q = CustomerDb.GetCustomerById(Id);
+            Customer q = CustomerDb.GetCustomerById(Id, databaseiD);
             if (q != null)
             {
                 bool defaultValue = false;
@@ -157,14 +167,14 @@ namespace CustomerService
                 txtZip.Text = q.Zip;
 
                 rdDateJoined.Value = q.CustomerJoined.HasValue ? (DateTime)q.CustomerJoined : DateTime.MinValue;
-         
-                txtState.Text = q.State;
-                
-                chkRiverSide.Checked = (bool)q.RiverSide.HasValue ? (bool) q.RiverSide : false;
-                
-                chkSanBernardino.Checked = (bool)q.SanBernardino.HasValue ? (bool)  q.SanBernardino : false;
 
-                chkLa.Checked = (bool)q.La.HasValue  ? (bool)q.La :false;
+                txtState.Text = q.State;
+
+                chkRiverSide.Checked = (bool)q.RiverSide.HasValue ? (bool)q.RiverSide : false;
+
+                chkSanBernardino.Checked = (bool)q.SanBernardino.HasValue ? (bool)q.SanBernardino : false;
+
+                chkLa.Checked = (bool)q.La.HasValue ? (bool)q.La : false;
 
                 if (q.OrangeCounty != null)
                     chkOrange.Checked = (bool)q.OrangeCounty ? true : false;
@@ -181,6 +191,7 @@ namespace CustomerService
             frmContact _frmContacts = new frmContact();
             _frmContacts.StartPosition = FormStartPosition.CenterScreen;
             _frmContacts.CustomerId = CustomerId;
+            _frmContacts.databaseId = DatabaseId;
             _frmContacts.IsEditMode = false;
             _frmContacts.ShowDialog();
             BindContacts(CustomerId);
@@ -195,6 +206,7 @@ namespace CustomerService
             _frmContacts.StartPosition = FormStartPosition.CenterScreen;
             _frmContacts.CustomerId = CustomerId;
             _frmContacts.ContactId = ContactId;
+            _frmContacts.databaseId = DatabaseId;
             _frmContacts.IsEditMode = true;
             _frmContacts.ShowDialog();
             BindContacts(CustomerId);
@@ -226,16 +238,16 @@ namespace CustomerService
             frmCounty _frmCounty = new frmCounty();
             _frmCounty.CustomerId = CustomerId;
             _frmCounty.ShowDialog();
-           
+
         }
 
         private void BindImplentationsForCustomer(int customerid)
 
         {
 
-            grdImplentations.DataSource = CustomerDb.GetAllImpentationsByCustomerId(customerid);
+            grdImplentations.DataSource = CustomerDb.GetAllImpentationsByCustomerId(customerid, DatabaseId);
         }
-        
+
 
         private void radStatusStrip1_StatusBarClick(object sender, Telerik.WinControls.UI.RadStatusBarClickEventArgs args)
         {
@@ -251,6 +263,7 @@ namespace CustomerService
         {
             frmImplementation _frmImp = new frmImplementation();
             _frmImp.CustomerId = this.CustomerId;
+            _frmImp.databaseId = DatabaseId;
             _frmImp.IsEdit = false;
             _frmImp.ShowDialog();
             BindImplentationsForCustomer(CustomerId);
@@ -275,6 +288,7 @@ namespace CustomerService
             frmImplementation _frmImp = new frmImplementation();
             _frmImp.CustomerId = this.CustomerId;
             _frmImp.RecordId = this.ImplentationiD;
+            _frmImp.databaseId = DatabaseId;
             _frmImp.IsEdit = true;
             _frmImp.ShowDialog();
             BindImplentationsForCustomer(CustomerId);
@@ -286,6 +300,7 @@ namespace CustomerService
             _frmRevenue.CustomerId = CustomerId;
             _frmRevenue.RecordId = Revenueid;
             _frmRevenue.IsEdit = false;
+            _frmRevenue.databaseId = DatabaseId;
             _frmRevenue.ShowDialog();
 
             BindRevenue(CustomerId);
@@ -342,7 +357,8 @@ namespace CustomerService
         {
             Customer _cust = new Customer();
             if (!IsNewCustomer)
-                _cust = CustomerDb.GetCustomerById(CustomerId);
+                _cust = CustomerDb.GetCustomerById(CustomerId, DatabaseId);
+            _cust.CustomerName = txtCustomerName.Text;
             _cust.Address1 = txtAddress1.Text;
             _cust.Address2 = txtAddress2.Text;
             _cust.County = txtCounty.Text;
@@ -351,6 +367,7 @@ namespace CustomerService
             _cust.La = chkLa.Checked;
             _cust.OrangeCounty = chkOrange.Checked;
             _cust.RiverSide = chkRiverSide.Checked;
+            _cust.databaseID = DatabaseId;
 
             if (chkCountyOther.Checked == true)
                 _cust.otherCountiesText = txtOtherCounty.Text;
@@ -359,13 +376,13 @@ namespace CustomerService
             _cust.isActive = true;
             //concatanate all the counties for easier reporting.
             List<String> counties = new List<string>();
-            
-            
+
+
             if (chkLa.Checked)
                 counties.Add("La");
             if (chkOrange.Checked)
                 counties.Add("Orange County");
-            if(chkRiverSide.Checked)
+            if (chkRiverSide.Checked)
                 counties.Add("RiverSide");
             if (chkSanBernardino.Checked)
                 counties.Add("La");
@@ -406,7 +423,7 @@ namespace CustomerService
         {
             frmAddon _frmAddOn = new frmAddon();
             _frmAddOn.CustomerId = CustomerId;
-
+            _frmAddOn.databaseId = DatabaseId;
             _frmAddOn.IsEditMode = false;
 
             _frmAddOn.ShowDialog();
@@ -420,7 +437,7 @@ namespace CustomerService
             _frmAddOn.CustomerId = CustomerId;
             _frmAddOn.AddOnId = AddOnId;
             _frmAddOn.IsEditMode = true;
-
+            _frmAddOn.databaseId = DatabaseId;
             _frmAddOn.ShowDialog();
             BindAddOns(CustomerId);
         }
@@ -432,6 +449,7 @@ namespace CustomerService
             _frmPrograType.ProgramTypeId = ProgramTypeId;
             _frmPrograType.CustomerId = CustomerId;
             _frmPrograType.IsEditMode = true;
+            _frmPrograType.databaseId = DatabaseId;
             _frmPrograType.ShowDialog();
         }
 
@@ -463,7 +481,7 @@ namespace CustomerService
         private void btnDeleteAddon_Click(object sender, EventArgs e)
         {
             AddOn _DeleteAddOn = new AddOn();
-            _DeleteAddOn = CustomerDb.GetAddOnById(AddOnId);
+            _DeleteAddOn = CustomerDb.GetAddOnById(AddOnId, DatabaseId);
             DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Addon ", "Delete Addon", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
@@ -498,7 +516,7 @@ namespace CustomerService
         private void btnDeleteRevenue_Click(object sender, EventArgs e)
         {
             revenue _deleteRevenue = new revenue();
-            _deleteRevenue = CustomerDb.GetRevenueById(Revenueid);
+            _deleteRevenue = CustomerDb.GetRevenueById(Revenueid, DatabaseId);
             DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Revenue ", "Delete Revenue", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
@@ -515,7 +533,7 @@ namespace CustomerService
         private void btnDeleteImplentation_Click(object sender, EventArgs e)
         {
             Implentat _deleteImplentat = new Implentat();
-            _deleteImplentat = CustomerDb.GetImplentationById(ImplentationiD);
+            _deleteImplentat = CustomerDb.GetImplentationById(ImplentationiD, DatabaseId);
             DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Implentation ", "Delete Implentation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
@@ -533,7 +551,7 @@ namespace CustomerService
         {
 
             Implentat _deleteImplentat = new Implentat();
-            _deleteImplentat = CustomerDb.GetImplentationById(ImplentationiD);
+            _deleteImplentat = CustomerDb.GetImplentationById(ImplentationiD, DatabaseId);
             DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Implentation ", "Delete Implentation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
@@ -552,6 +570,7 @@ namespace CustomerService
             frmProgramTypes _frmPrograType = new frmProgramTypes();
             _frmPrograType.ProgramTypeId = ProgramTypeId;
             _frmPrograType.CustomerId = CustomerId;
+            _frmPrograType.databaseId = DatabaseId;
             _frmPrograType.IsEditMode = false;
             _frmPrograType.ShowDialog();
         }
@@ -611,6 +630,7 @@ namespace CustomerService
             _frmnotes.CustomerId = CustomerId;
             _frmnotes.NotesId = NotesId;
             _frmnotes.IsEditMode = false;
+            _frmnotes.databaseId = DatabaseId;
             _frmnotes.ShowDialog();
             BindNotes(CustomerId);
         }
@@ -621,6 +641,7 @@ namespace CustomerService
             _frmnotes.StartPosition = FormStartPosition.CenterScreen;
             _frmnotes.CustomerId = CustomerId;
             _frmnotes.NotesId = NotesId;
+            _frmnotes.databaseId = DatabaseId;
             _frmnotes.IsEditMode = true;
             _frmnotes.ShowDialog();
             BindNotes(CustomerId);
@@ -755,6 +776,7 @@ namespace CustomerService
             _frmCustomFieldEdit.IsEdit = false;
             _frmCustomFieldEdit.CustomFieldId = CutomFieldId;
             _frmCustomFieldEdit.ShowDialog();
+            _frmCustomFieldEdit.DatabaseId = DatabaseId;
             BindCustomFields(CustomerId);
         }
 
@@ -778,6 +800,7 @@ namespace CustomerService
             _frmContract.ContractId = ContractId;
             _frmContract.IsEdit = false;
             _frmContract.CustomerId = CustomerId;
+            _frmContract.databaseId = DatabaseId;
             _frmContract.ShowDialog();
             BindContracts(CustomerId);
         }
@@ -788,9 +811,48 @@ namespace CustomerService
             _frmContract.StartPosition = FormStartPosition.CenterScreen;
             _frmContract.ContractId = ContractId;
             _frmContract.IsEdit = true;
+            _frmContract.databaseId = DatabaseId;
             _frmContract.CustomerId = CustomerId;
             _frmContract.ShowDialog();
             BindContracts(CustomerId);
+        }
+
+        private void btnAddRevenue_Click_1(object sender, EventArgs e)
+        {
+            frmRevenue _frmRevenue = new frmRevenue();
+            _frmRevenue.CustomerId = CustomerId;
+            _frmRevenue.RecordId = Revenueid;
+            _frmRevenue.IsEdit = false;
+            _frmRevenue.databaseId = DatabaseId;
+            _frmRevenue.ShowDialog();
+
+            BindRevenue(CustomerId);
+
+        }
+
+        private void btnEditRevenue_Click_1(object sender, EventArgs e)
+        {
+            frmRevenue _frmRevenue = new frmRevenue();
+            _frmRevenue.CustomerId = CustomerId;
+            _frmRevenue.RecordId = Revenueid;
+            _frmRevenue.IsEdit = true;
+            _frmRevenue.databaseId = DatabaseId;
+            _frmRevenue.ShowDialog();
+
+            BindRevenue(CustomerId);
+        }
+
+        private void chkCountyOther_CheckedChanged(object sender, EventArgs e)
+        {
+            txtOtherCounty.Enabled = chkCountyOther.Checked;
+        }
+
+        private void cboDatabases_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DatabaseId = (int) cboDatabases.SelectedValue;
+
+            BindCustomers();
+            lbldatabaseName.Text = CustomerDb.GetDatabaseNames(DatabaseId);
         }
     }
 }

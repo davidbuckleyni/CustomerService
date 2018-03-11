@@ -19,6 +19,7 @@ namespace CustomerService.Forms
         public int LookupId { get; set; }
         public int CustomerId { get; set; }
         public int ContractId { get; set; }
+        public int databaseId { get; set; }
         public bool IsEdit { get; set; }
         public frmContracts()
         {
@@ -64,6 +65,7 @@ namespace CustomerService.Forms
             _newContract.BaseUsers = Convert.ToInt32(txtBaseUsers.Text);
             _newContract.CostExtraUser = Convert.ToDecimal(txtCostOfExtraUser.Text);
             _newContract.MonthlyCharge = Convert.ToDecimal(txtMonthlyCharge.Text);
+            _newContract.databaseID = databaseId;
             if (IsEdit == true)
             {
 

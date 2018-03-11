@@ -15,14 +15,14 @@ namespace CustomerService.Classes
     {
         customerDbEntities _db = new customerDbEntities();
 
-        public List<Customer> GetALLCustomers()
+        public List<Customer> GetALLCustomers(int databaseId)
         {
             List<Customer> q = new List<Customer>();
 
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.Customers.OrderBy(o=>o.CustomerName).ToList();
+                q = myContext.Customers.Where(w=>w.databaseID ==databaseId).OrderBy(o=>o.CustomerName).ToList();
             }
 
             return q;
@@ -31,14 +31,31 @@ namespace CustomerService.Classes
 
 
         }
-           public List<ContractDetail> GetAllContractsById(int id)
+
+        public string GetDatabaseNames(int databaseId)
+        {
+            UserDatabas q;
+
+            using (var myContext = new customerDbEntities())
+            {
+
+                q = myContext.UserDatabases.Where(w => w.databaseID == databaseId).SingleOrDefault();
+            }
+
+            return q.DatabaseName;
+
+
+
+
+        }
+        public List<ContractDetail> GetAllContractsById(int id,int databaseId)
         {
             List<ContractDetail> q = new List<ContractDetail>();
 
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.ContractDetails.Where(w => w.CustomerId == id).ToList();
+                q = myContext.ContractDetails.Where(w => w.CustomerId == id && w.databaseID == databaseId).ToList();
             }
 
             return q;
@@ -47,14 +64,14 @@ namespace CustomerService.Classes
 
 
         }
-        public List<ProgamType> GetALLProgramTypesById(int id)
+        public List<ProgamType> GetALLProgramTypesById(int id,int databaseId)
         {
             List<ProgamType> q = new List<ProgamType>();
 
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.ProgamTypes.Where(w => w.CustomerId == id).ToList();
+                q = myContext.ProgamTypes.Where(w => w.CustomerId == id && w.databaseID == databaseId).ToList();
             }
 
             return q;
@@ -82,14 +99,14 @@ namespace CustomerService.Classes
         }
 
 
-        public List<AddOn> GetAllAddonsByCustomerId(int id)
+        public List<AddOn> GetAllAddonsByCustomerId(int id,int databaseId)
         {
             List<AddOn> q = new List<AddOn>();
 
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.AddOns.Where(w => w.CustomerId == id).ToList();
+                q = myContext.AddOns.Where(w => w.CustomerId == id && w.databaseID == databaseId).ToList();
             }
 
             return q;
@@ -99,14 +116,14 @@ namespace CustomerService.Classes
 
         }
 
-        public List<ProgamType> GetAllProgramTypesByCustomerId(int id)
+        public List<ProgamType> GetAllProgramTypesByCustomerId(int id,int databaseId)
         {
             List<ProgamType> q = new List<ProgamType>();
 
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.ProgamTypes.Where(w => w.CustomerId == id).ToList();
+                q = myContext.ProgamTypes.Where(w => w.CustomerId == id && w.databaseID == databaseId).ToList();
             }
 
             return q;
@@ -116,14 +133,14 @@ namespace CustomerService.Classes
 
         }
 
-        public List<Implentat> GetAllImpentationsByCustomerId(int CustomerId)
+        public List<Implentat> GetAllImpentationsByCustomerId(int CustomerId,int databaseId)
         {
             List<Implentat> q = new List<Implentat>();
 
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.Implentats.Where(w => w.customerId == CustomerId).ToList();
+                q = myContext.Implentats.Where(w => w.customerId == CustomerId && w.databaseID == databaseId).ToList();
             }
 
             return q;
@@ -133,14 +150,14 @@ namespace CustomerService.Classes
 
         }
 
-        public List<revenue> GetAlLRevenuByCustomerId(int CustomerId)
+        public List<revenue> GetAlLRevenuByCustomerId(int CustomerId,int databaseId)
         {
             List<revenue> q = new List<revenue>();
 
             using (var myContext = new customerDbEntities())
             {
 
-                q = myContext.revenues.Where(w => w.customerid == CustomerId).ToList();
+                q = myContext.revenues.Where(w => w.customerid == CustomerId && w.databaseID == databaseId).ToList();
             }
 
             return q;
@@ -149,47 +166,7 @@ namespace CustomerService.Classes
 
 
         }
-        public List<CustomerCounty> GetALLCustomerCountiesForList(int CustomerId)
-        {
-            List<CustomerCounty> lookups = new List<CustomerCounty>();
-            var q = new List<CustomerCounty>();
-            using (var myContext = new customerDbEntities())
-            {
-
-                q = myContext.CustomerCountys.Where(w => w.CustomerId == CustomerId).ToList();
-            }
-
-            return q;
-
-
-        }
-
-        public BindingList<StandardLookups> GetALLCustomerCounties()
-        {
-            BindingList<StandardLookups> lookups = new BindingList<StandardLookups>();
-
-            using (var myContext = new customerDbEntities())
-            {
-                var q = from lookup in myContext.StandardLookups
-                        where lookup.lookupgroup == 1
-                        orderby lookup.id ascending
-                        select new
-                        {
-                            Code = lookup.id,
-                            Description = lookup.code,
-                            Value = lookup.description,
-                        };
-
-                if (q != null)
-                {
-                    Array.ForEach(q.ToArray(), l =>
-                    {
-                        lookups.Add(new StandardLookups(l.Code ,l.Description, l.Value));
-                    });
-                }
-            }
-            return lookups;
-        }
+      
 
         public BindingList<StandardLookups> GetStandardLookupByGroup(int groups)
         {
@@ -218,34 +195,33 @@ namespace CustomerService.Classes
             return lookups;
         }
 
+ 
 
-        public BindingList<StandardLookups> GetALLCustomerCountiesForList()
+        public BindingList<StandardLookups> GetAllDatabasesForSearchByUser(int UserId)
         {
             BindingList<StandardLookups> lookups = new BindingList<StandardLookups>();
 
             using (var myContext = new customerDbEntities())
             {
-                var q = from lookup in myContext.StandardLookups
-                        where lookup.lookupgroup == 1
-                        orderby lookup.id ascending
+                var q = from lookup in myContext.UserDatabases
+                        where lookup.userId == UserId
+                        orderby lookup.ID ascending
                         select new
-                         {
-                            Code = lookup.id,
-                            Description = lookup.code,
-                            Value = lookup.description,
+                        {
+                            Code = lookup.ID,
+                            Description = lookup.DatabaseName,
                         };
 
                 if (q != null)
                 {
                     Array.ForEach(q.ToArray(), l =>
                     {
-                        lookups.Add(new StandardLookups(l.Code ,l.Description, l.Value));
+                        lookups.Add(new StandardLookups(l.Code, l.Description, ""));
                     });
                 }
             }
             return lookups;
         }
-
         public BindingList<StandardLookups> GetAlCustomersForSearch()
         {
             BindingList<StandardLookups> lookups = new BindingList<StandardLookups>();
@@ -620,11 +596,11 @@ namespace CustomerService.Classes
             }
 
         }
-        public ProgamType GetProgramTypeById(int Id)
+        public ProgamType GetProgramTypeById(int Id ,int databaseId)
         {
             using (var myContext = new customerDbEntities())
             {
-                ProgamType q = myContext.ProgamTypes.Where(w => w.CustomerId == Id).FirstOrDefault();
+                ProgamType q = myContext.ProgamTypes.Where(w => w.CustomerId == Id && w.databaseID == databaseId).FirstOrDefault();
                 return q;
             }
         }
@@ -638,40 +614,40 @@ namespace CustomerService.Classes
         }
 
 
-        public AddOn GetAddOnById(int Id)
+        public AddOn GetAddOnById(int Id,int databaseId)
         {
             using (var myContext = new customerDbEntities())
             {
-                AddOn q = myContext.AddOns.Where(w => w.id == Id).FirstOrDefault();
+                AddOn q = myContext.AddOns.Where(w => w.id == Id && w.databaseID == databaseId).FirstOrDefault();
                 return q;
             }
         }
 
-        public Implentat GetImplentationById(int Id)
+        public Implentat GetImplentationById(int Id,int databaseId)
         {
             using (var myContext = new customerDbEntities())
             {
-                Implentat q = myContext.Implentats.Where(w => w.id == Id).FirstOrDefault();
+                Implentat q = myContext.Implentats.Where(w => w.id == Id && w.databaseID == databaseId).FirstOrDefault();
                 return q;
             }
         }
 
-        public Customer GetCustomerById(int Id)
+        public Customer GetCustomerById(int Id ,int databaseId)
         {
             using (var myContext = new customerDbEntities())
             {
-                Customer q = myContext.Customers.Where(w => w.id == Id).FirstOrDefault();
+                Customer q = myContext.Customers.Where(w => w.id == Id && w.databaseID== databaseId).FirstOrDefault();
                 return q;
             }
         }
 
 
-        public revenue GetRevenueById(int id)
+        public revenue GetRevenueById(int id,int databaseId)
         {
             revenue q = new revenue();
             using (var myContext = new customerDbEntities())
             {
-                q = myContext.revenues.Where(w => w.id == id).FirstOrDefault();
+                q = myContext.revenues.Where(w => w.id == id && w.databaseID ==databaseId).FirstOrDefault();
 
             }
 
@@ -1165,22 +1141,22 @@ namespace CustomerService.Classes
                 }
             }
         }
-        public List<CustomerContact> GetAlLContactsByCustomerId(int Id)
+        public List<CustomerContact> GetAlLContactsByCustomerId(int Id,int databaseId)
         {
             List<CustomerContact> q = new List<CustomerContact>();
             using (var myContext = new customerDbEntities())
             {
-                q = myContext.CustomerContacts.Where(w => w.CustomerId == Id).ToList();
+                q = myContext.CustomerContacts.Where(w => w.CustomerId == Id && w.databaseID==databaseId).ToList();
             }
             return q;
 
         }
-        public List<CustomField> GetAllCustomFieldsByCustomer(int Id)
+        public List<CustomField> GetAllCustomFieldsByCustomer(int Id, int databaseId)
         {
             List<CustomField> q = new List<CustomField>();
             using (var myContext = new customerDbEntities())
             {
-                q = myContext.CustomFields.Where(w => w.CustomerId == Id).ToList();
+                q = myContext.CustomFields.Where(w => w.CustomerId == Id && w.databaseID == databaseId).ToList();
             }
             return q;
 
@@ -1218,12 +1194,12 @@ namespace CustomerService.Classes
             return q;
 
         }
-        public List<Note> GetAlLNotesByCustomerId(int Id)
+        public List<Note> GetAlLNotesByCustomerId(int Id,int databaseId)
         {
             List<Note> q = new List<Note>();
             using (var myContext = new customerDbEntities())
             {
-                q = myContext.Notes.Where(w => w.CustomerId == Id).ToList();
+                q = myContext.Notes.Where(w => w.CustomerId == Id && w.databaseID == databaseId).ToList();
             }
             return q;
 

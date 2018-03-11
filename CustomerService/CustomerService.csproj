@@ -151,6 +151,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDbDataSet17.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customerDbDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet18.xsd</DependentUpon>
+    </Compile>
     <Compile Include="customerDbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -543,6 +548,17 @@
     </None>
     <None Include="customerDbDataSet17.xss">
       <DependentUpon>customerDbDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet18.xsc">
+      <DependentUpon>customerDbDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet18.xss">
+      <DependentUpon>customerDbDataSet18.xsd</DependentUpon>
     </None>
     <None Include="customerDbDataSet2.xsc">
       <DependentUpon>customerDbDataSet2.xsd</DependentUpon>

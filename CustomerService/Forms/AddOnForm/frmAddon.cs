@@ -17,6 +17,7 @@ namespace CustomerService.Forms.AddOnForm
         public int CustomerId { get; set; }
         public int AddOnId { get; set; }
         public bool IsEditMode { get; set; }
+        public int databaseId { get; set; }
         CustomersContext _db = new CustomersContext();
 
 
@@ -30,7 +31,7 @@ namespace CustomerService.Forms.AddOnForm
             AddOn _newAddon = new Model.AddOn();
             if (IsEditMode == true)
             {
-                _newAddon = _db.GetAddOnById(AddOnId);
+                _newAddon = _db.GetAddOnById(AddOnId,databaseId);
             }
              _newAddon.PeriscopeCost = Convert.ToDecimal(txtPeriScopeAmount.Text);
             _newAddon.OQAnalyst = chkoqanalyst.Checked;
@@ -73,7 +74,7 @@ namespace CustomerService.Forms.AddOnForm
             AddOn _newAddon = new Model.AddOn();
             if (IsEditMode == true)
             {
-                _newAddon = _db.GetAddOnById(AddOnId);
+                _newAddon = _db.GetAddOnById(AddOnId, databaseId);
          
                  txtPeriScopeAmount.Text = _newAddon.PeriscopeCost.ToString();
                 chkavaility.Checked = (bool)_newAddon.Availity;

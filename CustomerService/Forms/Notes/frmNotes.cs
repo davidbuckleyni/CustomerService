@@ -19,6 +19,7 @@ namespace CustomerService.Forms.Notes
         public int CustomerId { get; set; }
         public int NotesId { get; set; }
         public bool IsEditMode { get; set; }
+        public int databaseId { get; set; }
         public frmNotes()
         {
             InitializeComponent();
@@ -57,6 +58,7 @@ namespace CustomerService.Forms.Notes
             _note.Description = txtDescription.Text;
             _note.CustomerId = CustomerId;
             _note.CreatedDate = DateTime.Now;
+            _note.databaseID = databaseId;
             if (IsEditMode == true)
             {
 

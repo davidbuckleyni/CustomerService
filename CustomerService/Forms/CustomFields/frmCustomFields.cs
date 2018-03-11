@@ -18,6 +18,7 @@ namespace CustomerService.Forms.CustomFields
         public int LookupId { get; set; }
         public int  CustomerId { get; set; }
         public int CutomFieldId { get; set; }
+        public int databaseID { get; set; }
         public frmCustomFields()
         {
             InitializeComponent();

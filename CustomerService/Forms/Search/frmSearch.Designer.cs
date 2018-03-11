@@ -44,6 +44,7 @@
             // 
             // 
             // 
+            this.grdSearch.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.grdSearch.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.grdSearch.Name = "grdSearch";
             this.grdSearch.Size = new System.Drawing.Size(512, 191);
@@ -66,6 +67,7 @@
             this.radButton2.Size = new System.Drawing.Size(110, 24);
             this.radButton2.TabIndex = 2;
             this.radButton2.Text = "Cancel";
+            this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
             // frmSearch
             // 
@@ -76,6 +78,7 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.grdSearch);
             this.Name = "frmSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
             this.Load += new System.EventHandler(this.frmSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdSearch.MasterTemplate)).EndInit();

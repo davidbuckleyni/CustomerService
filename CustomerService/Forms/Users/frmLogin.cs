@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CustomerService.Forms.Search;
 
 namespace CustomerService.Forms.Users
 {
@@ -41,9 +42,19 @@ namespace CustomerService.Forms.Users
                 User validUser = _db.ValidateUser(txtLogin.Text, txtPassword.Text);
                 if (validUser != null  )
                 {
-                    
-                    frmCustomerService _frmCustomerService = new frmCustomerService();
+
+                    frmSearch _frmSearch = new frmSearch();
+                    _frmSearch.SearchType = 2;
+                    _frmSearch.UserId = validUser.id;
+                    Properties.Settings.Default.UserId = validUser.id;
+                    _frmSearch.ShowDialog();
+                    int UserSelecteddatabaseId = _frmSearch.ReturnId;
+
+
+
+                    frmCustomerService _frmCustomerService = new frmCustomerService();                    
                     _frmCustomerService.isAdmin = (bool)validUser.isAdmin;
+                    _frmCustomerService.DatabaseId = UserSelecteddatabaseId;
                     _frmCustomerService.ShowDialog();
                     Cursor.Current = Cursors.Default;
                     Properties.Settings.Default.UserName = validUser.FullName.Trim();

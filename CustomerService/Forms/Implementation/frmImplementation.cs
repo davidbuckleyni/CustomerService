@@ -18,6 +18,7 @@ namespace CustomerService.Forms.Implementation
         public bool IsEdit { get; set; }
         public int CustomerId { get; set; }
         public int RecordId { get; set; }
+        public int databaseId { get; set; }
         public frmImplementation()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace CustomerService.Forms.Implementation
             {
                 Implentat _newImp = new Implentat();
 
-                _newImp = _db.GetImplentationById(RecordId);
+                _newImp = _db.GetImplentationById(RecordId,databaseId);
                 txtFee.Text = _newImp.ImplentationFee.ToString();
                 chkIsLive.Checked = _newImp.Live ?? false;
                 chkIsPaid.Checked = _newImp.Paid ?? false;
@@ -65,7 +66,7 @@ namespace CustomerService.Forms.Implementation
 
             Implentat _imp = new Implentat();
             if (this.IsEdit)
-                _imp = _db.GetImplentationById(RecordId);
+                _imp = _db.GetImplentationById(RecordId,databaseId);
 
             _imp.customerId = this.CustomerId;
            
@@ -75,6 +76,7 @@ namespace CustomerService.Forms.Implementation
             _imp.ProjectManager = txtProjectManager.Text;   
               _imp.Paid = chkIsPaid.Checked;
             _imp.Live = chkIsLive.Checked;
+            _imp.databaseID = databaseId;
             _imp.OldEhr =Int32.Parse(txtOldEhr.Text);
              
             if (this.IsEdit)

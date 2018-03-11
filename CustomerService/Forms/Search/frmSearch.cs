@@ -21,16 +21,20 @@ namespace CustomerService.Forms.Search
         public int ReturnId { get; set; }
         public string   ReturnString { get; set; }
         public int CustomerId { get; set; }
+        public int UserId { get; set; }
         private void frmSearch_Load(object sender, EventArgs e)
         {
-
-
+            this.StartPosition = FormStartPosition.CenterScreen;
+            
             switch (SearchType)
             {
                 case 1: //customers
                     grdSearch.DataSource = _db.GetAlCustomersForSearch();
-
-                break;
+                    break;
+                case 2: //databases
+                    this.Text = "Please select Database";
+                     grdSearch.DataSource = _db.GetAllDatabasesForSearchByUser(UserId);                                  
+                     break;
                     
               
             }
@@ -46,7 +50,19 @@ namespace CustomerService.Forms.Search
 
                     break;
 
+                case 2://database
+                    ReturnId = (int)grdSearch.CurrentRow.Cells["Code"].Value;
+                    ReturnString = grdSearch.CurrentRow.Cells["Description"].Value.ToString();
+                    break;
+
             }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

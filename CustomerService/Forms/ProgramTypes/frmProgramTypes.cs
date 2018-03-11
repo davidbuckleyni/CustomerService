@@ -17,6 +17,7 @@ namespace CustomerService.Forms.ProgramTypes
         public int CustomerId { get; set; }
         public int ProgramTypeId { get; set; }
         public bool IsEditMode { get; set; }
+        public int databaseId { get; set; }
         CustomersContext _db = new CustomersContext();
 
         public frmProgramTypes()
@@ -29,7 +30,7 @@ namespace CustomerService.Forms.ProgramTypes
             ProgamType _newProgType = new ProgamType();
             if (IsEditMode == true)
             {
-                _newProgType = _db.GetProgramTypeById(ProgramTypeId);
+                _newProgType = _db.GetProgramTypeById(ProgramTypeId,databaseId);
                 txtDescription.Text = _newProgType.ProgramTypesDescription;
                 txtNotes.Text = _newProgType.Notes;
                 chkFosterCare.Checked = (bool)_newProgType.FosterCare;
@@ -45,7 +46,7 @@ namespace CustomerService.Forms.ProgramTypes
             ProgamType _newProgType = new ProgamType();
             if (IsEditMode == true)
             {
-                _newProgType = _db.GetProgramTypeById(ProgramTypeId);
+                _newProgType = _db.GetProgramTypeById(ProgramTypeId,databaseId);
             }
             _newProgType.ProgramTypesDescription = txtDescription.Text;
             _newProgType.Notes = txtNotes.Text;
@@ -53,7 +54,7 @@ namespace CustomerService.Forms.ProgramTypes
                 _newProgType.FosterCare = chkFosterCare.Checked;
             _newProgType.SubstanceAbuse = chkSubstanceAbuse.Checked;
             _newProgType.Residential = chkResidential.Checked;
-
+            _newProgType.databaseID = databaseId;
             if (IsEditMode == true)
             {
                 _db.SaveProgramTypes(_newProgType);

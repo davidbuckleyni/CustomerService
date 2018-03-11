@@ -16,6 +16,7 @@ namespace CustomerService.Forms.County
 
         CustomersContext _db = new CustomersContext();
         public int CustomerId { get; set; }
+        public int databaseId { get; set; }
         public frmCounty()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace CustomerService.Forms.County
  
        
 
-            cboCountys.DataSource = _db.GetALLCustomerCounties();
+           // cboCountys.DataSource = _db.GetALLCustomerCounties(databaseId);
 
 
         }

@@ -23,13 +23,14 @@ namespace CustomerService.Forms.Revenue
         public int CustomerId { get; set; }
         public int RecordId { get; set; }
         public bool IsEdit { get; set; }
+        public int databaseId { get; set; }
         private void frmRevenue_Load(object sender, EventArgs e)
         {
 
             if (IsEdit)
             {
                 revenue _revenue = new revenue();
-                _revenue = _db.GetRevenueById(this.RecordId);
+                _revenue = _db.GetRevenueById(this.RecordId,databaseId);
                 txtUsers.Text = _revenue.Users.ToString();
                 txtRevenue.Text = _revenue.RevenueAmount.ToString();
                 cboYear.SelectedText = _revenue.Year.ToString();
@@ -50,7 +51,7 @@ namespace CustomerService.Forms.Revenue
             revenue _revenue = new revenue();
             if (IsEdit == true)
             {
-                _revenue = _db.GetRevenueById(this.RecordId);
+                _revenue = _db.GetRevenueById(this.RecordId,databaseId);
             }
             _revenue.Users = Convert.ToInt32(txtUsers.Text);
             _revenue.PriceFixedUntil = rdPriceFixedUnitl.Value;
@@ -59,6 +60,7 @@ namespace CustomerService.Forms.Revenue
             _revenue.Year =Convert.ToInt16(cboYear.Text);
             _revenue.isActive = true;
             _revenue.CreatedDate = DateTime.Now;
+            _revenue.databaseID = databaseId;
             if (IsEdit == false)
             {
                 _db.AddToRevenue(_revenue);
