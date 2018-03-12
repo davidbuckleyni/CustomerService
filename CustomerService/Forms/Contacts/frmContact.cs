@@ -64,6 +64,7 @@ namespace CustomerService.Forms.Contacts
             CustomerContactRecord.isActive = true;
             CustomerContactRecord.CustomerId = CustomerId;
             CustomerContactRecord.PoistionId = (int) cboPrimaryContact.SelectedValue;
+            CustomerContactRecord.databaseID = databaseId;
             if (IsEditMode == true)
             {
 

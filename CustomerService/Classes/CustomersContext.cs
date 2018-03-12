@@ -600,7 +600,7 @@ namespace CustomerService.Classes
         {
             using (var myContext = new customerDbEntities())
             {
-                ProgamType q = myContext.ProgamTypes.Where(w => w.CustomerId == Id && w.databaseID == databaseId).FirstOrDefault();
+                ProgamType q = myContext.ProgamTypes.Where(w => w.id == Id && w.databaseID == databaseId).FirstOrDefault();
                 return q;
             }
         }
@@ -641,6 +641,14 @@ namespace CustomerService.Classes
             }
         }
 
+                 public string GetStandardLookupDescription(int Id)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                StandardLookup q = myContext.StandardLookups.Where(w => w.id == Id).Single();
+                return q.description;
+            }
+        }
 
         public revenue GetRevenueById(int id,int databaseId)
         {
@@ -921,6 +929,28 @@ namespace CustomerService.Classes
             }
         }
 
+        public void DeleteContract(ContractDetail contractDetail)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.ContractDetails.Attach(contractDetail);
+                myContext.ContractDetails.Remove(contractDetail);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
         public void DeleteContact(CustomerContact deleteContact)
         {
             using (var myContext = new customerDbEntities())
@@ -1054,6 +1084,28 @@ namespace CustomerService.Classes
             }
         }
 
+        public void DeleteProgramType(ProgamType progtypes)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                myContext.ProgamTypes.Attach(progtypes);
+                myContext.ProgamTypes.Remove(progtypes);
+                try
+                {
+                    myContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+        }
 
 
         public void DeleteUser(User deleteUser)
@@ -1163,12 +1215,12 @@ namespace CustomerService.Classes
         }
 
 
-        public List<CustomField> GetAllCustomFields()
+        public List<CustomField> GetAllCustomFields(int databaseId)
         {
             List<CustomField> q = new List<CustomField>();
             using (var myContext = new customerDbEntities())
             {
-                q = myContext.CustomFields.ToList();
+                q = myContext.CustomFields.Where(w=>w.databaseID ==databaseId).ToList();
             }
             return q;
 

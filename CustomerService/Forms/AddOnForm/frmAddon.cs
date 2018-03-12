@@ -39,6 +39,7 @@ namespace CustomerService.Forms.AddOnForm
             _newAddon.Availity = chkavaility.Checked;
             _newAddon.CustomerId = CustomerId;
             _newAddon.PeriscopeStatus =(int) cboPeriscopeStatus.SelectedValue;
+            _newAddon.databaseID = databaseId;
             if (IsEditMode == true)
             {
 

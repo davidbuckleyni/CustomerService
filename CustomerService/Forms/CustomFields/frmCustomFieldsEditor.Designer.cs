@@ -34,6 +34,8 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
             this.txtFieldValue = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.txtName = new Telerik.WinControls.UI.RadTextBox();
@@ -62,7 +64,7 @@
             this.txtFieldValue.Location = new System.Drawing.Point(129, 101);
             this.txtFieldValue.Name = "txtFieldValue";
             this.txtFieldValue.Size = new System.Drawing.Size(227, 20);
-            this.txtFieldValue.TabIndex = 12;
+            this.txtFieldValue.TabIndex = 2;
             // 
             // radLabel2
             // 
@@ -77,7 +79,7 @@
             this.txtName.Location = new System.Drawing.Point(127, 65);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 20);
-            this.txtName.TabIndex = 10;
+            this.txtName.TabIndex = 1;
             // 
             // radLabel3
             // 
@@ -89,20 +91,21 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(264, 209);
+            this.btnSave.Location = new System.Drawing.Point(273, 144);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 24);
-            this.btnSave.TabIndex = 19;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // radButton2
             // 
-            this.radButton2.Location = new System.Drawing.Point(397, 209);
+            this.radButton2.Location = new System.Drawing.Point(406, 144);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(110, 24);
-            this.radButton2.TabIndex = 20;
+            this.radButton2.TabIndex = 4;
             this.radButton2.Text = "Cancel";
+            this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
             // standardLookupsBindingSource
             // 
@@ -125,15 +128,19 @@
             radListDataItem3.Text = "Addons";
             radListDataItem4.Text = "Customer";
             radListDataItem5.Text = "Revenue";
+            radListDataItem6.Text = "Implmentation";
+            radListDataItem7.Text = "Contracts";
             this.rdTableName.Items.Add(radListDataItem1);
             this.rdTableName.Items.Add(radListDataItem2);
             this.rdTableName.Items.Add(radListDataItem3);
             this.rdTableName.Items.Add(radListDataItem4);
             this.rdTableName.Items.Add(radListDataItem5);
+            this.rdTableName.Items.Add(radListDataItem6);
+            this.rdTableName.Items.Add(radListDataItem7);
             this.rdTableName.Location = new System.Drawing.Point(127, 29);
             this.rdTableName.Name = "rdTableName";
             this.rdTableName.Size = new System.Drawing.Size(227, 20);
-            this.rdTableName.TabIndex = 24;
+            this.rdTableName.TabIndex = 0;
             // 
             // radLabel4
             // 
@@ -147,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 245);
+            this.ClientSize = new System.Drawing.Size(535, 191);
             this.Controls.Add(this.rdTableName);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.radButton2);

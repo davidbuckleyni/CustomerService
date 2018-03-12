@@ -60,15 +60,15 @@ namespace CustomerService.Forms.ProgramTypes
                 _db.SaveProgramTypes(_newProgType);
                 _db.SaveChanges();
 
-                MessageBox.Show("Program Types Saved", "Program Types has been updated ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show(this,"Program Types Saved", "Program Types has been updated ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
                 _db.AddToProgramType(_newProgType);
                 _db.SaveChanges();
-                MessageBox.Show("Program Types Saved", "Program Types has been Created ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show(this, "Program Types Saved", "Program Types has been Created ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
 

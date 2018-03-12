@@ -49,7 +49,7 @@ namespace CustomerService.Forms.Users
                     Properties.Settings.Default.UserId = validUser.id;
                     _frmSearch.ShowDialog();
                     int UserSelecteddatabaseId = _frmSearch.ReturnId;
-
+                    
 
 
                     frmCustomerService _frmCustomerService = new frmCustomerService();                    
@@ -58,13 +58,13 @@ namespace CustomerService.Forms.Users
                     _frmCustomerService.ShowDialog();
                     Cursor.Current = Cursors.Default;
                     Properties.Settings.Default.UserName = validUser.FullName.Trim();
- 
+                    this.Close();
                 }
                 else
-                    MessageBox.Show("Invalid Login", "Sorry the login information was incorrect, Please try again.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(this,"Invalid Login", "Sorry the login information was incorrect, Please try again.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
-                this.Close();
+               
             }
 
 

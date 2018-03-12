@@ -44,6 +44,7 @@
           <Property Name="CustomerJoined" Type="date" />
           <Property Name="Address1" Type="nvarchar" MaxLength="250" />
           <Property Name="Address2" Type="nvarchar" MaxLength="250" />
+          <Property Name="City" Type="nvarchar" MaxLength="250" />
           <Property Name="County" Type="nvarchar" MaxLength="150" />
           <Property Name="State" Type="nvarchar" MaxLength="50" />
           <Property Name="Zip" Type="nvarchar" MaxLength="15" />
@@ -408,6 +409,7 @@
           <Property Name="otherCountiesText" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
           <Property Name="databaseID" Type="Int32" />
           <Property Name="CountiesForReport" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Implentat">
           <Key>
@@ -605,6 +607,7 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="customerDbModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="CountiesForReport" ColumnName="CountiesForReport" />
                 <ScalarProperty Name="databaseID" ColumnName="databaseID" />
                 <ScalarProperty Name="otherCountiesText" ColumnName="otherCountiesText" />

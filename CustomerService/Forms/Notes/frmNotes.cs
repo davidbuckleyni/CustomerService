@@ -65,7 +65,7 @@ namespace CustomerService.Forms.Notes
                 _db.SaveNote(_note);
                 _db.SaveChanges();
 
-                MessageBox.Show("Contact Saved", "Note has been Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this,"Contact Saved", "Note has been Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             }
@@ -73,10 +73,15 @@ namespace CustomerService.Forms.Notes
             {
                 _db.AddToNotes(_note);
                 _db.SaveNote(_note);
-                MessageBox.Show("Note Saved", "Note has been Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Note Saved", "Note has been Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             }
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

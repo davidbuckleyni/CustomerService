@@ -26,12 +26,8 @@ namespace CustomerService.Forms.CustomFields
 
         private void frmCustomFields_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'customerDbDataSet14.CustomFields' table. You can move, or remove it, as needed.
-            this.customFieldsTableAdapter1.Fill(this.customerDbDataSet14.CustomFields);
-            // TODO: This line of code loads data into the 'customerDbDataSet13.CustomFields' table. You can move, or remove it, as needed.
-            this.customFieldsTableAdapter.Fill(this.customerDbDataSet13.CustomFields);
-
-            grdCustomFields.DataSource = _db.GetAllCustomFields();
+      
+            grdCustomFields.DataSource = _db.GetAllCustomFields(databaseID);
             
         }
 

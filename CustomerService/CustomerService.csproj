@@ -156,10 +156,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDbDataSet18.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customerDbDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet19.xsd</DependentUpon>
+    </Compile>
     <Compile Include="customerDbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDbDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDbDataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDbDataSet23.xsd</DependentUpon>
     </Compile>
     <Compile Include="customerDbDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -353,6 +378,11 @@
       <DependentUpon>CustomerDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="programtypes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>programtypes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\ReportDesigner.cs">
       <SubType>Form</SubType>
@@ -560,6 +590,17 @@
     <None Include="customerDbDataSet18.xss">
       <DependentUpon>customerDbDataSet18.xsd</DependentUpon>
     </None>
+    <None Include="customerDbDataSet19.xsc">
+      <DependentUpon>customerDbDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet19.xss">
+      <DependentUpon>customerDbDataSet19.xsd</DependentUpon>
+    </None>
     <None Include="customerDbDataSet2.xsc">
       <DependentUpon>customerDbDataSet2.xsd</DependentUpon>
     </None>
@@ -570,6 +611,50 @@
     </None>
     <None Include="customerDbDataSet2.xss">
       <DependentUpon>customerDbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet20.xsc">
+      <DependentUpon>customerDbDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet20.xss">
+      <DependentUpon>customerDbDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet21.xsc">
+      <DependentUpon>customerDbDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet21.xss">
+      <DependentUpon>customerDbDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet22.xsc">
+      <DependentUpon>customerDbDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet22.xss">
+      <DependentUpon>customerDbDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet23.xsc">
+      <DependentUpon>customerDbDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="customerDbDataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDbDataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerDbDataSet23.xss">
+      <DependentUpon>customerDbDataSet23.xsd</DependentUpon>
     </None>
     <None Include="customerDbDataSet3.xsc">
       <DependentUpon>customerDbDataSet3.xsd</DependentUpon>
@@ -652,6 +737,17 @@
       <DependentUpon>CustomerDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="programtypes.xsc">
+      <DependentUpon>programtypes.xsd</DependentUpon>
+    </None>
+    <None Include="programtypes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>programtypes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="programtypes.xss">
+      <DependentUpon>programtypes.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\CustomerService.Classes.StandardLookups.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -680,6 +776,7 @@
       <DependentUpon>CustomerDB.edmx</DependentUpon>
       <LastGenOutput>CustomerDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\periscope.png" />
     <None Include="Resources\database.png" />
     <None Include="Resources\calendar.png" />
     <None Include="Resources\united-states-of-america.png" />

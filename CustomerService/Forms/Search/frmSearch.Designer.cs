@@ -40,13 +40,27 @@
             // 
             // grdSearch
             // 
+            this.grdSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.grdSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.grdSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.grdSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.grdSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.grdSearch.Location = new System.Drawing.Point(6, 13);
             // 
             // 
             // 
+            this.grdSearch.MasterTemplate.AllowAddNewRow = false;
+            this.grdSearch.MasterTemplate.AllowColumnChooser = false;
+            this.grdSearch.MasterTemplate.AllowColumnReorder = false;
+            this.grdSearch.MasterTemplate.AllowColumnResize = false;
+            this.grdSearch.MasterTemplate.AllowDragToGroup = false;
             this.grdSearch.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.grdSearch.MasterTemplate.EnableGrouping = false;
+            this.grdSearch.MasterTemplate.EnableSorting = false;
             this.grdSearch.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.grdSearch.Name = "grdSearch";
+            this.grdSearch.ReadOnly = true;
+            this.grdSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.grdSearch.Size = new System.Drawing.Size(512, 191);
             this.grdSearch.TabIndex = 0;
             this.grdSearch.Text = "gr";

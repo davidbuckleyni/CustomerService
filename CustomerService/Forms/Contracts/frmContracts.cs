@@ -43,6 +43,8 @@ namespace CustomerService.Forms
                     txtRRARR.Text = _newContract.RRARR.ToString();
                     txtMonthlyCharge.Text = _newContract.MonthlyCharge.ToString();
 
+                    if (_newContract.SignOffGoLive != null)
+                        dtSignOffDate.Value =(DateTime) _newContract.SignOffGoLive;
 
                 }
             }
@@ -65,6 +67,9 @@ namespace CustomerService.Forms
             _newContract.BaseUsers = Convert.ToInt32(txtBaseUsers.Text);
             _newContract.CostExtraUser = Convert.ToDecimal(txtCostOfExtraUser.Text);
             _newContract.MonthlyCharge = Convert.ToDecimal(txtMonthlyCharge.Text);
+            _newContract.NoOfUsers = Convert.ToInt32(txtNumberOfUsers.Text);
+            _newContract.SignOffGoLive = dtSignOffDate.Value;
+            _newContract.RRARR =Convert.ToDecimal(txtRRARR.Text);
             _newContract.databaseID = databaseId;
             if (IsEdit == true)
             {
@@ -72,7 +77,7 @@ namespace CustomerService.Forms
                 _db.SaveContractType(_newContract);
                 _db.SaveChanges();
                 MessageBox.Show("Contract has been Update", "Contract Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                this.Close();
 
             }
             else
@@ -82,7 +87,7 @@ namespace CustomerService.Forms
                 _db.AddToContract(_newContract);
                 _db.SaveChanges();
                 MessageBox.Show("Contract has been Created", "Contract Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                this.Close();
 
             }
 

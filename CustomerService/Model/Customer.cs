@@ -37,5 +37,6 @@ namespace CustomerService.Model
         public string otherCountiesText { get; set; }
         public Nullable<int> databaseID { get; set; }
         public string CountiesForReport { get; set; }
+        public string City { get; set; }
     }
 }

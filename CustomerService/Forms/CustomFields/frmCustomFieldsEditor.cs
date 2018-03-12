@@ -70,7 +70,7 @@ namespace CustomerService.Forms.CustomFields
                     _db.SaveCustomFields(_newCustomField);
                     _db.SaveChanges();
                     MessageBox.Show("Custom Fields has been Update", "Custom Fields Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    this.Close();
 
                 }
                 else
@@ -80,7 +80,7 @@ namespace CustomerService.Forms.CustomFields
                     _db.AddToCustomFields(_newCustomField);
                     _db.SaveChanges();
                     MessageBox.Show("Custom Fields has been Created", "Custom Fields Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    this.Close();
 
                 }
             }catch(Exception ex)
@@ -89,6 +89,11 @@ namespace CustomerService.Forms.CustomFields
 
             }
 
+        }
+
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

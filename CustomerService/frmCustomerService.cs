@@ -50,7 +50,19 @@ namespace CustomerService
 
         private void frmCustomerService_Load(object sender, EventArgs e)
         {
-
+            // TODO: This line of code loads data into the 'customerDbDataSet23.Implentat' table. You can move, or remove it, as needed.
+            this.implentatTableAdapter.Fill(this.customerDbDataSet23.Implentat);
+            // TODO: This line of code loads data into the 'customerDbDataSet22.CustomerContacts' table. You can move, or remove it, as needed.
+            this.customerContactsTableAdapter2.Fill(this.customerDbDataSet22.CustomerContacts);
+            // TODO: This line of code loads data into the 'customerDbDataSet21.ContractDetails' table. You can move, or remove it, as needed.
+            this.contractDetailsTableAdapter1.Fill(this.customerDbDataSet21.ContractDetails);
+            // TODO: This line of code loads data into the 'customerDbDataSet20.AddOns' table. You can move, or remove it, as needed.
+            this.addOnsTableAdapter2.Fill(this.customerDbDataSet20.AddOns);
+            // TODO: This line of code loads data into the 'programtypes.ProgamTypes' table. You can move, or remove it, as needed.
+            this.progamTypesTableAdapter2.Fill(this.programtypes.ProgamTypes);
+            // TODO: This line of code loads data into the 'customerDbDataSet19.ProgamTypes' table. You can move, or remove it, as needed.
+            this.progamTypesTableAdapter1.Fill(this.customerDbDataSet19.ProgamTypes);
+            
             if (isAdmin == false)
 
             {
@@ -86,7 +98,7 @@ namespace CustomerService
                 CustomerId = (int)rgCustomers.CurrentRow.Cells[0].Value;
                 lbldatabaseName.Text = CustomerDb.GetDatabaseNames(DatabaseId);
 
-                BindCustomerDetail(CustomerId,DatabaseId);
+                BindCustomerDetail(CustomerId, DatabaseId);
                 BindImplentationsForCustomer(CustomerId);
                 rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
                 BindAddOns(CustomerId);
@@ -94,6 +106,8 @@ namespace CustomerService
                 BindNotes(CustomerId);
                 BindCustomFields(CustomerId);
                 BindContracts(CustomerId);
+                BindRevenue(CustomerId);
+                BindProgramTypes(CustomerId);
                 IsNewCustomer = false;
 
             }
@@ -135,7 +149,13 @@ namespace CustomerService
 
 
         }
+        public void BindProgramTypes(int id)
+        {
+            rgProgramTypes.DataSource = CustomerDb.GetALLProgramTypesById(id, DatabaseId);
+            rgProgramTypes.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
+
+        }
         public void BindDatabases()
         {
             cboDatabases.ValueMember = "Code";
@@ -147,13 +167,13 @@ namespace CustomerService
 
         public void BindCustomFields(int id)
         {
-            rgContacts.DataSource = CustomerDb.GetAllCustomFieldsByCustomer(id, DatabaseId);
-            rgContacts.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-
+            rgCustomFields.DataSource = CustomerDb.GetAllCustomFieldsByCustomer(id, DatabaseId);
+            rgCustomFields.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            
 
         }
 
-        private void BindCustomerDetail(int Id,int databaseiD)
+        private void BindCustomerDetail(int Id, int databaseiD)
         {
             Customer q = CustomerDb.GetCustomerById(Id, databaseiD);
             if (q != null)
@@ -163,7 +183,7 @@ namespace CustomerService
                 txtAddress1.Text = q.Address1;
                 txtAddress2.Text = q.Address2;
 
-                txtCounty.Text = q.County;
+                txtCity.Text = q.City;
                 txtZip.Text = q.Zip;
 
                 rdDateJoined.Value = q.CustomerJoined.HasValue ? (DateTime)q.CustomerJoined : DateTime.MinValue;
@@ -188,6 +208,7 @@ namespace CustomerService
 
         private void btnAddContacts_Click(object sender, EventArgs e)
         {
+
             frmContact _frmContacts = new frmContact();
             _frmContacts.StartPosition = FormStartPosition.CenterScreen;
             _frmContacts.CustomerId = CustomerId;
@@ -345,7 +366,9 @@ namespace CustomerService
                     if (control2 is RichTextBox)
                         (control2 as RichTextBox).Clear();
 
-
+                foreach (Control control3 in controls)
+                    if (control3 is CheckBox)
+                        (control3 as CheckBox).Checked = false;
 
             };
 
@@ -361,7 +384,7 @@ namespace CustomerService
             _cust.CustomerName = txtCustomerName.Text;
             _cust.Address1 = txtAddress1.Text;
             _cust.Address2 = txtAddress2.Text;
-            _cust.County = txtCounty.Text;
+            _cust.City = txtCity.Text;
             _cust.CustomerJoined = rdDateJoined.Value;
             _cust.SanBernardino = chkSanBernardino.Checked;
             _cust.La = chkLa.Checked;
@@ -451,6 +474,7 @@ namespace CustomerService
             _frmPrograType.IsEditMode = true;
             _frmPrograType.databaseId = DatabaseId;
             _frmPrograType.ShowDialog();
+            BindProgramTypes(CustomerId);
         }
 
         private void rgProgramTypes_SelectionChanged(object sender, EventArgs e)
@@ -482,7 +506,7 @@ namespace CustomerService
         {
             AddOn _DeleteAddOn = new AddOn();
             _DeleteAddOn = CustomerDb.GetAddOnById(AddOnId, DatabaseId);
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Addon ", "Delete Addon", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show(this, "Are you sure you wish to Delete Addon ", "Delete Addon", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 CustomerDb.DeleteAddon(_DeleteAddOn);
@@ -500,7 +524,7 @@ namespace CustomerService
         {
             CustomerContact _DeleteContact = new CustomerContact();
             _DeleteContact = CustomerDb.GetCustomerContactById(ContactId);
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Contact ", "Delete Contact", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show(this,"Are you sure you wish to Delete Contact ", "Delete Contact", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 CustomerDb.DeleteContact(_DeleteContact);
@@ -517,7 +541,7 @@ namespace CustomerService
         {
             revenue _deleteRevenue = new revenue();
             _deleteRevenue = CustomerDb.GetRevenueById(Revenueid, DatabaseId);
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Revenue ", "Delete Revenue", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show(this,"Are you sure you wish to Delete Revenue ", "Delete Revenue", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 CustomerDb.DeleteRevenue(_deleteRevenue);
@@ -534,7 +558,7 @@ namespace CustomerService
         {
             Implentat _deleteImplentat = new Implentat();
             _deleteImplentat = CustomerDb.GetImplentationById(ImplentationiD, DatabaseId);
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Implentation ", "Delete Implentation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show(this, "Are you sure you wish to Delete Implentation ", "Delete Implentation" ,MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 CustomerDb.DeleteImplmentation(_deleteImplentat);
@@ -550,19 +574,19 @@ namespace CustomerService
         private void radButton8_Click(object sender, EventArgs e)
         {
 
-            Implentat _deleteImplentat = new Implentat();
-            _deleteImplentat = CustomerDb.GetImplentationById(ImplentationiD, DatabaseId);
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Implentation ", "Delete Implentation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            ProgamType _deleteProgamType = new ProgamType();
+            _deleteProgamType = CustomerDb.GetProgramTypeById(ProgramTypeId, DatabaseId);
+            DialogResult dialogResult = MessageBox.Show(this, "Are you sure you wish to Program Type ", "Delete  Program Type", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
-                CustomerDb.DeleteImplmentation(_deleteImplentat);
-                BindImplentationsForCustomer(CustomerId);
+                CustomerDb.DeleteProgramType(_deleteProgamType);
+                BindProgramTypes(CustomerId);
             }
             else if (dialogResult == DialogResult.No)
             {
                 //do something else
             }
-            BindImplentationsForCustomer(CustomerId);
+            BindProgramTypes(CustomerId);
         }
 
         private void btnAddProgramTypes_Click(object sender, EventArgs e)
@@ -573,6 +597,8 @@ namespace CustomerService
             _frmPrograType.databaseId = DatabaseId;
             _frmPrograType.IsEditMode = false;
             _frmPrograType.ShowDialog();
+            BindProgramTypes(CustomerId);
+            
         }
 
         private void rgProgramTypes_CellDoubleClick(object sender, GridViewCellEventArgs e)
@@ -651,7 +677,7 @@ namespace CustomerService
         {
             Note _DeleteNote = new Note();
             _DeleteNote = CustomerDb.GetNotesById(NotesId);
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to Delete Note ", "Delete Note", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show(this, "Are you sure you wish to Delete Note ", "Delete Note", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 CustomerDb.DeleteNote(_DeleteNote);
@@ -740,7 +766,7 @@ namespace CustomerService
         {
             CustomField _CustomField = new CustomField();
             _CustomField = CustomerDb.GetCustomFieldById(CutomFieldId);
-            DialogResult dialogResult = MessageBox.Show("Delete Custom Field", "Are you sure you wish to CustomField ", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show(this, "Delete Custom Field", "Are you sure you wish to CustomField ", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
                 CustomerDb.DeleteCustomField(_CustomField);
@@ -760,6 +786,7 @@ namespace CustomerService
             _frmCustomFieldEdit.CustomerId = CustomerId;
             _frmCustomFieldEdit.IsEdit = true;
             _frmCustomFieldEdit.CustomFieldId = CutomFieldId;
+            _frmCustomFieldEdit.DatabaseId = DatabaseId;
             _frmCustomFieldEdit.ShowDialog();
             BindCustomFields(CustomerId);
         }
@@ -775,8 +802,9 @@ namespace CustomerService
             _frmCustomFieldEdit.CustomerId = CustomerId;
             _frmCustomFieldEdit.IsEdit = false;
             _frmCustomFieldEdit.CustomFieldId = CutomFieldId;
-            _frmCustomFieldEdit.ShowDialog();
             _frmCustomFieldEdit.DatabaseId = DatabaseId;
+            _frmCustomFieldEdit.ShowDialog();
+         
             BindCustomFields(CustomerId);
         }
 
@@ -849,10 +877,91 @@ namespace CustomerService
 
         private void cboDatabases_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DatabaseId = (int) cboDatabases.SelectedValue;
+            DatabaseId = (int)cboDatabases.SelectedValue;
 
             BindCustomers();
             lbldatabaseName.Text = CustomerDb.GetDatabaseNames(DatabaseId);
+        }
+
+        private void btnPeirscope_Click(object sender, EventArgs e)
+        {
+
+            frmStandardLookupEditor _frmStandardLookup = new frmStandardLookupEditor();
+            _frmStandardLookup.LookupType = Costants.PeriScopeStatus;
+            _frmStandardLookup.ShowDialog();
+
+        }
+
+        private void radPageViewPage2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rgAddons_CellFormatting(object sender, CellFormattingEventArgs e)
+        {
+            string columnName = e.Column.Name;
+               object value = e.Row.Cells["PeriscopeStatus"].Value ;
+
+            if (!Convert.IsDBNull(value)) 
+            {
+                if (columnName == "PeriscopeStatus")
+                {
+                     
+                     
+
+                        e.CellElement.Text = CustomerDb.GetStandardLookupDescription(Convert.ToInt32(value));
+                   
+                }
+            }
+        }
+
+        private void rgCustomFields_SelectionChanged(object sender, EventArgs e)
+        {
+            if (rgCustomFields.SelectedRows.Count > 0)
+            {
+                if (rgCustomFields.CurrentRow.Cells[0].Value != null)
+                {
+                    this.CutomFieldId = (int)rgCustomFields.CurrentRow.Cells[0].Value;
+
+                }
+                
+            }
+        }
+
+        private void btnDeleteContracts_Click(object sender, EventArgs e)
+        {
+            ContractDetail _ContractDetail = new ContractDetail();
+            _ContractDetail = CustomerDb.GetContractById(ContractId);
+            DialogResult dialogResult = MessageBox.Show( this,"Are you sure you wish to Contract", "Delete Contract", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CustomerDb.DeleteContract(_ContractDetail);
+                BindContracts(CustomerId);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
+            BindContracts(CustomerId);
+        }
+
+        private void btnDeleteRevenue_Click_1(object sender, EventArgs e)
+        {
+            revenue _revenueDetail = new revenue();
+            _revenueDetail = CustomerDb.GetRevenueById(Revenueid,DatabaseId);
+            DialogResult dialogResult = MessageBox.Show(this,"Are you sure you wish to Revenue", "Delete Contract", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CustomerDb.DeleteRevenue(_revenueDetail);
+                BindRevenue(CustomerId);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
+            BindRevenue(CustomerId);
         }
     }
 }
