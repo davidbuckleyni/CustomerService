@@ -63,6 +63,7 @@
           <Property Name="otherCountiesText" Type="nvarchar" MaxLength="350" />
           <Property Name="databaseID" Type="int" />
           <Property Name="CountiesForReport" Type="nvarchar" MaxLength="450" />
+          <Property Name="database" Type="nvarchar" MaxLength="350" />
         </EntityType>
         <EntityType Name="CustomerContacts">
           <Key>
@@ -410,6 +411,7 @@
           <Property Name="databaseID" Type="Int32" />
           <Property Name="CountiesForReport" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
           <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="database" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Implentat">
           <Key>
@@ -607,6 +609,7 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="customerDbModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="database" ColumnName="database" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="CountiesForReport" ColumnName="CountiesForReport" />
                 <ScalarProperty Name="databaseID" ColumnName="databaseID" />

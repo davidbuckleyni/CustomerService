@@ -10,6 +10,7 @@ namespace CustomerService.Classes
     {
         public abstract int SaveChanges();
 
+         
         protected int SaveChanges(System.Data.Entity.Core.Objects.ObjectContext context)
         {
            

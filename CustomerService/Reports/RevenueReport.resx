@@ -121,27 +121,37 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "CustomerCountys"."CountyDescription",
-       "CustomerCountys"."CountyCode",
-       "revenue"."Year", "revenue"."Users",
-       "revenue"."RevenueAmount",
+    <value>select "Customer"."CustomerJoined",
        "Customer"."CustomerName",
-       "Customer"."CustomerJoined",
        "Customer"."Address1",
-       "Customer"."Address2", "Customer"."Town",
-       "Customer"."County", "Customer"."Zip",
-       "Customer"."State",
-       "Customer"."PhoneNumber"
-  from (("dbo"."Customer" "Customer"
+       "Customer"."Address2", "Customer"."City",
+       "Customer"."County", "Customer"."State",
+       "Customer"."Zip", "Customer"."PhoneNumber",
+       "Customer"."MobileNumber",
+       "Customer"."EmailAddress",
+       "Customer"."CustomerLocations",
+       "Customer"."CreatedDate", "Customer"."La",
+       "Customer"."OrangeCounty",
+       "Customer"."RiverSide",
+       "Customer"."SanBernardino",
+       "Customer"."CountiesForReport",
+       "Customer"."database",
+       "revenue"."PriceFixedUntil",
+       "revenue"."CreatedBy",
+       "revenue"."CreatedDate" as "revenue_CreatedDate",
+       "revenue"."isActive", "revenue"."Year",
+       "revenue"."Users",
+       "revenue"."RevenueAmount"
+  from ("dbo"."Customer" "Customer"
   inner join "dbo"."revenue" "revenue"
        on ("revenue"."customerid" = "Customer"."id"))
-  inner join "dbo"."CustomerCountys"
-       "CustomerCountys"
-       on ("CustomerCountys"."CustomerId" = "Customer"."id"))
-where ("CustomerCountys"."CountyDescription" = @County)</value>
+where  "Customer"."La" =@LA OR
+       "Customer"."OrangeCounty"=@OrangeCounty OR
+       "Customer"."RiverSide" =@RiverSide OR
+       "Customer"."SanBernardino"=@SanBernardino</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iQ291bnR5RGVzY3JpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ291bnR5Q29kZSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlllYXIiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVc2VycyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUmV2ZW51ZUFtb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iQ3VzdG9tZXJOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkN1c3RvbWVySm9pbmVkIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQWRkcmVzczEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWRkcmVzczIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVG93biIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDb3VudHkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iWmlwIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlN0YXRlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBob25lTnVtYmVyIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iQ3VzdG9tZXJKb2luZWQiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJDdXN0b21lck5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWRkcmVzczEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWRkcmVzczIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2l0eSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDb3VudHkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU3RhdGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iWmlwIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBob25lTnVtYmVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1vYmlsZU51bWJlciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFbWFpbEFkZHJlc3MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ3VzdG9tZXJMb2NhdGlvbnMiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJDcmVhdGVkRGF0ZSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IkxhIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJPcmFuZ2VDb3VudHkiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IlJpdmVyU2lkZSIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iU2FuQmVybmFyZGlubyIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iQ291bnRpZXNGb3JSZXBvcnQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iZGF0YWJhc2UiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJpY2VGaXhlZFVudGlsIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQ3JlYXRlZEJ5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InJldmVudWVfQ3JlYXRlZERhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJpc0FjdGl2ZSIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iWWVhciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlVzZXJzIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJSZXZlbnVlQW1vdW50IiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
   <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>

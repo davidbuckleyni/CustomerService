@@ -1,0 +1,740 @@
+﻿USE [customerDb]
+GO
+/****** Object:  Table [dbo].[AddOns]    Script Date: 13/03/2018 16:22:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AddOns](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerId] [int] NULL,
+	[Description] [nvarchar](250) NULL,
+	[PeriscopeCost] [decimal](18, 2) NULL,
+	[RxNT] [bit] NULL,
+	[OQAnalyst] [bit] NULL,
+	[Availity] [bit] NULL,
+	[PeriscopeStatus] [int] NULL,
+	[PeriscopeStatusOther] [nvarchar](350) NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_AddOns] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ContractDetails]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ContractDetails](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerId] [int] NULL,
+	[SignOffGoLive] [date] NULL,
+	[NoOfUsers] [int] NULL,
+	[BasePrice] [decimal](18, 2) NULL,
+	[BaseUsers] [int] NULL,
+	[CostExtraUser] [decimal](18, 2) NULL,
+	[MonthlyCharge] [decimal](18, 2) NULL,
+	[RRARR] [decimal](18, 2) NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_ContractDetails] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Customer]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Customer](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerName] [nvarchar](650) NULL,
+	[CustomerJoined] [date] NULL,
+	[Address1] [nvarchar](250) NULL,
+	[Address2] [nvarchar](250) NULL,
+	[City] [nvarchar](250) NULL,
+	[County] [nvarchar](150) NULL,
+	[State] [nvarchar](50) NULL,
+	[Zip] [nvarchar](15) NULL,
+	[PhoneNumber] [nvarchar](50) NULL,
+	[MobileNumber] [nvarchar](50) NULL,
+	[EmailAddress] [nvarchar](255) NULL,
+	[Notes] [nvarchar](max) NULL,
+	[isActive] [bit] NULL,
+	[CreatedDate] [date] NULL,
+	[CustomerLocations] [int] NULL,
+	[La] [bit] NULL,
+	[OrangeCounty] [bit] NULL,
+	[RiverSide] [bit] NULL,
+	[SanBernardino] [bit] NULL,
+	[otherCounties] [bit] NULL,
+	[otherCountiesText] [nvarchar](350) NULL,
+	[databaseID] [int] NULL,
+	[CountiesForReport] [nvarchar](450) NULL,
+	[database] [nvarchar](350) NULL,
+ CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CustomerContacts]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CustomerContacts](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerId] [int] NULL,
+	[PoistionId] [int] NULL,
+	[Name] [nvarchar](350) NULL,
+	[phone] [nvarchar](250) NULL,
+	[email] [nvarchar](255) NULL,
+	[isPrimayContact] [bit] NULL,
+	[isActive] [bit] NULL,
+	[CreatedDate] [date] NULL,
+	[CreatedBy] [nvarchar](250) NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_CustomerContacts] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CustomerCountys]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CustomerCountys](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerId] [int] NULL,
+	[CountyCode] [int] NULL,
+	[CountyDescription] [nchar](10) NULL,
+ CONSTRAINT [PK_CustomerCountys] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CustomFields]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CustomFields](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerId] [int] NULL,
+	[TableName] [nvarchar](150) NULL,
+	[FieldName] [nvarchar](250) NULL,
+	[FieldValue] [nvarchar](150) NULL,
+	[FieldType] [int] NULL,
+	[boolValue] [bit] NULL,
+	[decimalValue] [decimal](18, 2) NULL,
+	[TextValue] [nvarchar](max) NULL,
+	[isVisible] [bit] NULL,
+	[isDeleted] [bit] NULL,
+	[CreatedBy] [date] NULL,
+	[CreatedDate] [date] NULL,
+	[isActive] [bit] NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_CustomField] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Implentat]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Implentat](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[customerId] [int] NULL,
+	[OldEhr] [int] NULL,
+	[ImplentationFee] [decimal](18, 2) NULL,
+	[Paid] [bit] NULL,
+	[DataMigrationLead] [int] NULL,
+	[DataVolume] [int] NULL,
+	[Live] [bit] NULL,
+	[isActive] [bit] NULL,
+	[CreatedDate] [date] NULL,
+	[CreatedBy] [nvarchar](250) NULL,
+	[ProjectManager] [nvarchar](350) NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_Implementation] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Notes]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Notes](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerId] [int] NULL,
+	[Title] [nvarchar](2000) NULL,
+	[Description] [nvarchar](max) NULL,
+	[Notes] [nvarchar](max) NULL,
+	[CreatedBy] [nvarchar](50) NULL,
+	[CreatedDate] [date] NULL,
+	[Status] [int] NULL,
+	[isActive] [bit] NULL,
+	[isAdminOnly] [bit] NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_Notes] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ProgamTypes]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ProgamTypes](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[ProgramTypesDescription] [nvarchar](250) NULL,
+	[Notes] [nvarchar](max) NULL,
+	[ProgramTypeStatus] [bit] NULL,
+	[CustomerId] [int] NULL,
+	[isActive] [bit] NULL,
+	[CreatedDate] [date] NULL,
+	[CreatedBy] [nvarchar](150) NULL,
+	[FosterCare] [bit] NULL,
+	[Residential] [bit] NULL,
+	[SubstanceAbuse] [bit] NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_ProgamTypes] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[revenue]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[revenue](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[customerid] [int] NULL,
+	[PriceFixedUntil] [date] NULL,
+	[CreatedBy] [nvarchar](250) NULL,
+	[CreatedDate] [date] NULL,
+	[isActive] [bit] NULL,
+	[Year] [int] NULL,
+	[Users] [decimal](18, 2) NULL,
+	[RevenueAmount] [decimal](18, 2) NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_revenue] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Sheet1$]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Sheet1$](
+	[CustomerName] [nvarchar](255) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[StandardLookups]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StandardLookups](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[code] [nvarchar](250) NULL,
+	[description] [nvarchar](350) NULL,
+	[lookupgroup] [int] NULL,
+	[lookupdescription] [nvarchar](250) NULL,
+	[isActive] [bit] NULL,
+	[CreatedBy] [nvarchar](250) NULL,
+	[CreatedDate] [date] NULL,
+ CONSTRAINT [PK_StandardLookups] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserDatabases]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserDatabases](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[userId] [int] NULL,
+	[DatabaseName] [nvarchar](250) NULL,
+	[databaseID] [int] NULL,
+ CONSTRAINT [PK_UserDatabases] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 13/03/2018 16:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[FullName] [nvarchar](250) NULL,
+	[UserName] [nvarchar](250) NULL,
+	[Pasword] [nvarchar](250) NULL,
+	[isAdmin] [bit] NULL,
+	[CreateDate] [date] NULL,
+	[CreatedBy] [nvarchar](250) NULL,
+	[isActive] [bit] NULL,
+	[LoginAttempts] [int] NULL,
+	[IpAddress] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Customer] ON 
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (87, N'Alcott Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (88, N'Alhambra USD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (89, N'Alma Family Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (90, N'Amanecer Community Counseling Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (91, N'Amanecer Community Counseling Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (92, N'Aspiranet', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (93, N'Aviva', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (94, N'Boys Republic', CAST(N'0001-01-01' AS Date), N'test', N'', N'', N'', N'', N'', N'', NULL, N'', NULL, 1, NULL, NULL, 1, 0, 0, 0, NULL, NULL, 1, N'La', N'test')
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (95, N'BRIDGES Rehab', CAST(N'0001-01-01' AS Date), N'test address line 1', N'', NULL, N'', N'', NULL, N'', NULL, N'', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (96, N'California Psychological Institute', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (97, N'Center for Integrated Family Health Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (98, N'Centro Latino Americano', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (99, N'Child & Family Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (100, N'Child Abuse Prevention Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (101, N'Child Guidance Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (102, N'Children''s Bureau', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (103, N'Children''s Bureau', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (104, N'Childrens Center of the Antelope Valley', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (105, N'Childrens Hospital Los Angeles', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (106, N'Childrens Hospital Los Angeles', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (107, N'Children''s Institute, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (108, N'Community Family Guidance Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (109, N'Comprehensive Youth Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (110, N'Counseling4Kids', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (111, N'Crittenton Services for Children and Families', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (112, N'Dignity Health', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (113, N'Drew Child Development Corporation', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (114, N'Exceptional Children''s Foundation', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (115, N'El Centro de Amistad, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (116, N'El Centro del Pueblo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (117, N'Eisner Pediatric & Family Medical Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (118, N'Ettie Lee Youth & Family Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (119, N'Exym Demo 2 Site', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (120, N'For The Child, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (121, N'Harbor View Community Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (122, N'Helpline Youth Counseling', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (123, N'IMCES', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (124, N'Inner Circle', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (125, N'Koreatown Youth & Community Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (126, N'Haynes Family of Programs', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (127, N'Los Angeles Youth Network', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (128, N'Mariposa Women & Family Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (129, N'Mary''s Path', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (130, N'Maryvale', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (131, N'McKinley Childrens Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (132, N'New Directions, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (133, N'Newport Mesa Unified School District', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (134, N'OCAPICA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (135, N'Optimist Youth Homes and Family Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (136, N'Pacific Asian Counseling Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (137, N'Para Los Ninos', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (138, N'Pathways Community Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (139, N'Pathways Community Services, LLC', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (140, N'Penny Lane', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (141, N'Personal Involvement Center, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (142, N'Redwood Quality Management Company, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (143, N'Rosemary Children''s Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (144, N'Safe Refuge', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (145, N'San Gabriel Children''s Center, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (146, N'Shields for Families, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (147, N'Social Model Recovery Systems', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (148, N'South Bay Childrens'' Health Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (149, N'South Lane Mental Health', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (150, N'Special Services for Groups', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (151, N'SPIRITT Family Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (152, N'St. Anne''s', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (153, N'St. Joseph Center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (154, N'The People Concern', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (155, N'The Road Ahead Family Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (156, N'The Soldiers Project', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (157, N'The Village Family Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (158, N'The Whole Child', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (159, N'Tobinworld', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (160, N'Trinity Youth Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (161, N'UCLA TIES for Families', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (162, N'United American Indian Involvement, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (163, N'USC Telehealth', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (164, N'VIP Community Mental Health Center, Inc.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (165, N'Wayfinders', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (166, N'Western Youth Services', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (167, N'Whittier Union High School District', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (168, N'Los Angeles Child Guidance Clinic', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (1088, N'test', CAST(N'2018-02-21' AS Date), N'test add1', N'', NULL, N'NI', N'UK', N'DB', NULL, NULL, NULL, NULL, 1, NULL, NULL, 1, 1, 1, 0, NULL, NULL, 2, N'La,Orange County,RiverSide', NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (1089, N'Test Customer DB', CAST(N'2018-02-21' AS Date), N'Test Address Line 1', N'Test Address Line 2', N'AZ', NULL, N'ZA', N'B232', NULL, NULL, NULL, NULL, 1, NULL, NULL, 1, 0, 0, 0, NULL, NULL, 1, N'La', NULL)
+GO
+INSERT [dbo].[Customer] ([id], [CustomerName], [CustomerJoined], [Address1], [Address2], [City], [County], [State], [Zip], [PhoneNumber], [MobileNumber], [EmailAddress], [Notes], [isActive], [CreatedDate], [CustomerLocations], [La], [OrangeCounty], [RiverSide], [SanBernardino], [otherCounties], [otherCountiesText], [databaseID], [CountiesForReport], [database]) VALUES (1090, N'Test David Buckley new', CAST(N'2018-02-21' AS Date), N'Address1', N'Address2', N'test', NULL, N'DA', N'D', NULL, NULL, NULL, NULL, 1, NULL, NULL, 1, 0, 0, 0, NULL, NULL, 1, N'La', NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Customer] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CustomerContacts] ON 
+GO
+INSERT [dbo].[CustomerContacts] ([id], [CustomerId], [PoistionId], [Name], [phone], [email], [isPrimayContact], [isActive], [CreatedDate], [CreatedBy], [databaseID]) VALUES (1010, 168, 1005, N'Nick', N'23323232', N'davidbuckleweb@gmail.com', 1, 1, NULL, NULL, NULL)
+GO
+INSERT [dbo].[CustomerContacts] ([id], [CustomerId], [PoistionId], [Name], [phone], [email], [isPrimayContact], [isActive], [CreatedDate], [CreatedBy], [databaseID]) VALUES (1013, 1089, 1006, N'David Buckley', N'45456465', N'david.buckley@test.com', 1, 1, NULL, NULL, NULL)
+GO
+SET IDENTITY_INSERT [dbo].[CustomerContacts] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CustomerCountys] ON 
+GO
+INSERT [dbo].[CustomerCountys] ([id], [CustomerId], [CountyCode], [CountyDescription]) VALUES (1, 85, 1, N'LA        ')
+GO
+INSERT [dbo].[CustomerCountys] ([id], [CustomerId], [CountyCode], [CountyDescription]) VALUES (2, 85, 2, N'ORANGE    ')
+GO
+INSERT [dbo].[CustomerCountys] ([id], [CustomerId], [CountyCode], [CountyDescription]) VALUES (6, 85, 4, N'SB        ')
+GO
+SET IDENTITY_INSERT [dbo].[CustomerCountys] OFF
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'1736 Family Crisis Ctr')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'AADAP, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Alcott Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Alhambra USD')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Alma Family Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Amanecer Community Counseling Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Amanecer Community Counseling Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Aspiranet')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Aviva')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Boys Republic')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'BRIDGES Rehab')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'California Psychological Institute')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Center for Integrated Family Health Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Centro Latino Americano')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Child & Family Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Child Abuse Prevention Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Child Guidance Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Children''s Bureau')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Children''s Bureau')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Childrens Center of the Antelope Valley')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Childrens Hospital Los Angeles')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Childrens Hospital Los Angeles')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Children''s Institute, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Community Family Guidance Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Comprehensive Youth Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Counseling4Kids')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Crittenton Services for Children and Families')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Dignity Health')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Drew Child Development Corporation')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Exceptional Children''s Foundation')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'El Centro de Amistad, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'El Centro del Pueblo')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Eisner Pediatric & Family Medical Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Ettie Lee Youth & Family Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Exym Demo 2 Site')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'For The Child, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Harbor View Community Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Helpline Youth Counseling')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'IMCES')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Inner Circle')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Koreatown Youth & Community Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Haynes Family of Programs')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Los Angeles Youth Network')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Mariposa Women & Family Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Mary''s Path')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Maryvale')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'McKinley Childrens Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'New Directions, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Newport Mesa Unified School District')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'OCAPICA')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Optimist Youth Homes and Family Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Pacific Asian Counseling Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Para Los Ninos')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Pathways Community Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Pathways Community Services, LLC')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Penny Lane')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Personal Involvement Center, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Redwood Quality Management Company, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Rosemary Children''s Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Safe Refuge')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'San Gabriel Children''s Center, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Shields for Families, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Social Model Recovery Systems')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'South Bay Childrens'' Health Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'South Lane Mental Health')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Special Services for Groups')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'SPIRITT Family Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'St. Anne''s')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'St. Joseph Center')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'The People Concern')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'The Road Ahead Family Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'The Soldiers Project')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'The Village Family Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'The Whole Child')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Tobinworld')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Trinity Youth Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'UCLA TIES for Families')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'United American Indian Involvement, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'USC Telehealth')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'VIP Community Mental Health Center, Inc.')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Wayfinders')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Western Youth Services')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Whittier Union High School District')
+GO
+INSERT [dbo].[Sheet1$] ([CustomerName]) VALUES (N'Los Angeles Child Guidance Clinic')
+GO
+SET IDENTITY_INSERT [dbo].[StandardLookups] ON 
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1, N'LA', N'Los Angeles', 1, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (2, N'OC', N'Orange', 1, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (3, N'R', N'Riverside', 1, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (4, N'SB', N'San Bernidino', 1, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (5, N'DB', N'David Buckley', 2, N'Project Manager', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (6, N'N', N'Nick', 2, N'Project Manager', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (7, NULL, N'David Buckley', 3, N'Data Migration Lead', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (8, NULL, N'Nick', 3, N'Data Migration Lead', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1005, N'CTO', N'CTO', 4, N'Postions', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1006, N'CFO', N'CFO', 4, N'Postions', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1007, N'CIO', N'CIO', 4, N'Postions', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1008, N'Primary Billing POC', N'Primary Billing POC', 4, N'Postions', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1009, N'Primary Administrator', N'Primary Administrator', 4, N'Postions', NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1012, N'db', N'ballycalre', 1, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1013, N'ef', N'ef', 1, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1014, N'PD', N'B', 2, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1015, N'NC', N'Not Contracted ', 5, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1016, N'FU', N'Followup', 5, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1017, N'T', N'Trial', 5, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1018, N'IP', N'In Progres', 5, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1019, N'LT1', N'Live - Tier 1', 5, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1020, N'LT2', N'Live - Tier 2', 5, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1021, N'LT3', N'Live - Tier 3', 5, NULL, NULL, NULL, NULL)
+GO
+INSERT [dbo].[StandardLookups] ([id], [code], [description], [lookupgroup], [lookupdescription], [isActive], [CreatedBy], [CreatedDate]) VALUES (1022, N'CEO', N'CEO', 4, NULL, NULL, NULL, NULL)
+GO
+SET IDENTITY_INSERT [dbo].[StandardLookups] OFF
+GO
+SET IDENTITY_INSERT [dbo].[UserDatabases] ON 
+GO
+INSERT [dbo].[UserDatabases] ([ID], [userId], [DatabaseName], [databaseID]) VALUES (1, 2, N'DBA', 1)
+GO
+INSERT [dbo].[UserDatabases] ([ID], [userId], [DatabaseName], [databaseID]) VALUES (2, 2, N'AKA', 2)
+GO
+SET IDENTITY_INSERT [dbo].[UserDatabases] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Users] ON 
+GO
+INSERT [dbo].[Users] ([id], [FullName], [UserName], [Pasword], [isAdmin], [CreateDate], [CreatedBy], [isActive], [LoginAttempts], [IpAddress]) VALUES (1, N'David Buckley', N'db', N'trafford2019d@', 0, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Users] ([id], [FullName], [UserName], [Pasword], [isAdmin], [CreateDate], [CreatedBy], [isActive], [LoginAttempts], [IpAddress]) VALUES (2, N'Nick', N'Nick', N'test123', 1, NULL, NULL, 1, NULL, NULL)
+GO
+INSERT [dbo].[Users] ([id], [FullName], [UserName], [Pasword], [isAdmin], [CreateDate], [CreatedBy], [isActive], [LoginAttempts], [IpAddress]) VALUES (1002, N'test', N'db2', N'trafford2019d;', NULL, NULL, NULL, 1, NULL, NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Users] OFF
+GO

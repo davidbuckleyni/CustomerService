@@ -5,6 +5,8 @@ using System.Text;
 using CustomerService.Model;
 using System.Data.Entity.Validation;
 using System.ComponentModel;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Core.Objects.DataClasses;
 
 namespace CustomerService.Classes
 {
@@ -30,6 +32,50 @@ namespace CustomerService.Classes
 
 
 
+        }
+     public void DeleteCustomer(int CustomerId)
+        {
+            using (var myContext = new customerDbEntities())
+            {
+                Customer DeleteCustomer = myContext.Customers.Where(c => c.id == CustomerId).SingleOrDefault();
+                myContext.Customers.Attach(DeleteCustomer);
+                myContext.Customers.Remove(DeleteCustomer);
+
+
+
+                List<ContractDetail> DeleteContracts = myContext.ContractDetails.Where(c => c.CustomerId == CustomerId).ToList();
+                myContext.ContractDetails.RemoveRange(DeleteContracts);
+
+
+                List<Note> DeleteNotes = myContext.Notes.Where(c => c.CustomerId == CustomerId).ToList();
+                myContext.Notes.RemoveRange(DeleteNotes);
+
+
+                List<ProgamType> ProgTypes = myContext.ProgamTypes.Where(c => c.CustomerId == CustomerId).ToList();
+                myContext.ProgamTypes.RemoveRange(ProgTypes);
+
+
+                List<AddOn> AddonsList = myContext.AddOns.Where(c => c.CustomerId == CustomerId).ToList();
+                myContext.AddOns.RemoveRange(AddonsList);
+
+                List<revenue> revenueList = myContext.revenues.Where(c => c.customerid == CustomerId).ToList();
+                myContext.revenues.RemoveRange(revenueList);
+
+                List<Implentat> ImplentatList = myContext.Implentats.Where(c => c.customerId == CustomerId).ToList();
+                myContext.Implentats.RemoveRange(ImplentatList);
+
+
+                List<CustomerContact> CustomerContactsList = myContext.CustomerContacts.Where(c => c.CustomerId == CustomerId).ToList();
+                myContext.CustomerContacts.RemoveRange(CustomerContactsList);
+
+
+                List<CustomField> CustomFields = myContext.CustomFields.Where(c => c.CustomerId == CustomerId).ToList();
+                myContext.CustomFields.RemoveRange(CustomFields);
+
+                myContext.SaveChanges();
+              
+
+            }
         }
 
         public string GetDatabaseNames(int databaseId)
@@ -98,7 +144,7 @@ namespace CustomerService.Classes
 
         }
 
-
+   
         public List<AddOn> GetAllAddonsByCustomerId(int id,int databaseId)
         {
             List<AddOn> q = new List<AddOn>();

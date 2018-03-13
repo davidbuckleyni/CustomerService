@@ -32,6 +32,9 @@
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevenueReport));
             DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
             DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
@@ -94,7 +97,10 @@
             this.baseControlStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.LineTotalCalcField = new DevExpress.XtraReports.UI.CalculatedField();
             this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.Countys = new DevExpress.XtraReports.Parameters.Parameter();
+            this.LA = new DevExpress.XtraReports.Parameters.Parameter();
+            this.OrangeCounty = new DevExpress.XtraReports.Parameters.Parameter();
+            this.RiverSide = new DevExpress.XtraReports.Parameters.Parameter();
+            this.SanBernardino = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceInfoTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerTable)).BeginInit();
@@ -496,10 +502,22 @@
             this.sqlDataSource1.ConnectionName = "CustomerService.Properties.Settings.customerDbConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
             customSqlQuery1.Name = "Query";
-            queryParameter1.Name = "County";
+            queryParameter1.Name = "LA";
             queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.Countys]", typeof(string));
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.LA]", typeof(bool));
+            queryParameter2.Name = "OrangeCounty";
+            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter2.Value = new DevExpress.DataAccess.Expression("[Parameters.OrangeCounty]", typeof(bool));
+            queryParameter3.Name = "RiverSide";
+            queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter3.Value = new DevExpress.DataAccess.Expression("[Parameters.RiverSide]", typeof(bool));
+            queryParameter4.Name = "SanBernardino";
+            queryParameter4.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter4.Value = new DevExpress.DataAccess.Expression("[Parameters.SanBernardino]", typeof(bool));
             customSqlQuery1.Parameters.Add(queryParameter1);
+            customSqlQuery1.Parameters.Add(queryParameter2);
+            customSqlQuery1.Parameters.Add(queryParameter3);
+            customSqlQuery1.Parameters.Add(queryParameter4);
             customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             customSqlQuery1});
@@ -562,10 +580,32 @@
             selectQuery1});
             this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
-            // Countys
+            // LA
             // 
-            this.Countys.Description = "County";
-            this.Countys.Name = "Countys";
+            this.LA.Description = "LA";
+            this.LA.Name = "LA";
+            this.LA.Type = typeof(bool);
+            this.LA.ValueInfo = "False";
+            // 
+            // OrangeCounty
+            // 
+            this.OrangeCounty.Description = "OrangeCounty";
+            this.OrangeCounty.Name = "OrangeCounty";
+            this.OrangeCounty.Type = typeof(bool);
+            this.OrangeCounty.ValueInfo = "False";
+            // 
+            // RiverSide
+            // 
+            this.RiverSide.Description = "RiverSide";
+            this.RiverSide.Name = "RiverSide";
+            this.RiverSide.Type = typeof(bool);
+            this.RiverSide.ValueInfo = "False";
+            // 
+            // SanBernardino
+            // 
+            this.SanBernardino.Name = "SanBernardino";
+            this.SanBernardino.Type = typeof(bool);
+            this.SanBernardino.ValueInfo = "False";
             // 
             // RevenueReport
             // 
@@ -586,7 +626,10 @@
             this.DataSource = this.sqlDataSource1;
             this.Margins = new System.Drawing.Printing.Margins(101, 100, 100, 75);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.Countys});
+            this.LA,
+            this.OrangeCounty,
+            this.RiverSide,
+            this.SanBernardino});
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.baseControlStyle});
             this.Version = "17.2";
@@ -644,6 +687,9 @@
         private DevExpress.XtraReports.UI.XRControlStyle baseControlStyle;
         private DevExpress.XtraReports.UI.CalculatedField LineTotalCalcField;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
-        private DevExpress.XtraReports.Parameters.Parameter Countys;
+        private DevExpress.XtraReports.Parameters.Parameter LA;
+        private DevExpress.XtraReports.Parameters.Parameter OrangeCounty;
+        private DevExpress.XtraReports.Parameters.Parameter RiverSide;
+        private DevExpress.XtraReports.Parameters.Parameter SanBernardino;
     }
 }

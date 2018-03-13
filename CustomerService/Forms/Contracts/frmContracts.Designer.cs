@@ -98,9 +98,9 @@
             // 
             this.radLabel2.Location = new System.Drawing.Point(48, 30);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(77, 18);
+            this.radLabel2.Size = new System.Drawing.Size(135, 18);
             this.radLabel2.TabIndex = 26;
-            this.radLabel2.Text = "SignOffGoLive";
+            this.radLabel2.Text = " Customer Since / Go Live";
             // 
             // dtSignOffDate
             // 

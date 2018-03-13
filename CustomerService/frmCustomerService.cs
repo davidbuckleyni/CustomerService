@@ -18,6 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,19 +52,7 @@ namespace CustomerService
 
         private void frmCustomerService_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'customerDbDataSet23.Implentat' table. You can move, or remove it, as needed.
-            this.implentatTableAdapter.Fill(this.customerDbDataSet23.Implentat);
-            // TODO: This line of code loads data into the 'customerDbDataSet22.CustomerContacts' table. You can move, or remove it, as needed.
-            this.customerContactsTableAdapter2.Fill(this.customerDbDataSet22.CustomerContacts);
-            // TODO: This line of code loads data into the 'customerDbDataSet21.ContractDetails' table. You can move, or remove it, as needed.
-            this.contractDetailsTableAdapter1.Fill(this.customerDbDataSet21.ContractDetails);
-            // TODO: This line of code loads data into the 'customerDbDataSet20.AddOns' table. You can move, or remove it, as needed.
-            this.addOnsTableAdapter2.Fill(this.customerDbDataSet20.AddOns);
-            // TODO: This line of code loads data into the 'programtypes.ProgamTypes' table. You can move, or remove it, as needed.
-            this.progamTypesTableAdapter2.Fill(this.programtypes.ProgamTypes);
-            // TODO: This line of code loads data into the 'customerDbDataSet19.ProgamTypes' table. You can move, or remove it, as needed.
-            this.progamTypesTableAdapter1.Fill(this.customerDbDataSet19.ProgamTypes);
-            
+          
             if (isAdmin == false)
 
             {
@@ -78,7 +68,7 @@ namespace CustomerService
             rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             userNameStatus.Text = Properties.Settings.Default.UserName.ToString();
 
-            BindDatabases();
+             
 
         }
 
@@ -96,8 +86,7 @@ namespace CustomerService
             if (rgCustomers.CurrentRow.Cells[0].Value != null)
             {
                 CustomerId = (int)rgCustomers.CurrentRow.Cells[0].Value;
-                lbldatabaseName.Text = CustomerDb.GetDatabaseNames(DatabaseId);
-
+               
                 BindCustomerDetail(CustomerId, DatabaseId);
                 BindImplentationsForCustomer(CustomerId);
                 rgCustomers.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
@@ -156,14 +145,7 @@ namespace CustomerService
 
 
         }
-        public void BindDatabases()
-        {
-            cboDatabases.ValueMember = "Code";
-            cboDatabases.DisplayMember = "Description";
-            int UserId = Properties.Settings.Default.UserId;
-            cboDatabases.DataSource = CustomerDb.GetAllDatabasesForSearchByUser(UserId);
-
-        }
+       
 
         public void BindCustomFields(int id)
         {
@@ -187,7 +169,7 @@ namespace CustomerService
                 txtZip.Text = q.Zip;
 
                 rdDateJoined.Value = q.CustomerJoined.HasValue ? (DateTime)q.CustomerJoined : DateTime.MinValue;
-
+                txtDataBaseName.Text = q.database;
                 txtState.Text = q.State;
 
                 chkRiverSide.Checked = (bool)q.RiverSide.HasValue ? (bool)q.RiverSide : false;
@@ -391,6 +373,7 @@ namespace CustomerService
             _cust.OrangeCounty = chkOrange.Checked;
             _cust.RiverSide = chkRiverSide.Checked;
             _cust.databaseID = DatabaseId;
+            _cust.database = txtDataBaseName.Text;
 
             if (chkCountyOther.Checked == true)
                 _cust.otherCountiesText = txtOtherCounty.Text;
@@ -875,14 +858,7 @@ namespace CustomerService
             txtOtherCounty.Enabled = chkCountyOther.Checked;
         }
 
-        private void cboDatabases_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DatabaseId = (int)cboDatabases.SelectedValue;
-
-            BindCustomers();
-            lbldatabaseName.Text = CustomerDb.GetDatabaseNames(DatabaseId);
-        }
-
+      
         private void btnPeirscope_Click(object sender, EventArgs e)
         {
 
@@ -962,6 +938,32 @@ namespace CustomerService
             }
 
             BindRevenue(CustomerId);
+            
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            
+            
+            DialogResult dialogResult = MessageBox.Show(this, "Warning this action cannot be undone. Are you sure You wish to delete a customer.", "Delete Customer", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CustomerDb.DeleteCustomer(CustomerId);
+                MessageBox.Show(this, "The Customer has Been Deleted.", "Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
+                    BindCustomerDetail(CustomerId,DatabaseId);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
+
+        }
+
+        private void frmCustomerService_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

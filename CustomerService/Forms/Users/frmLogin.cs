@@ -43,14 +43,14 @@ namespace CustomerService.Forms.Users
                 if (validUser != null  )
                 {
 
-                    frmSearch _frmSearch = new frmSearch();
-                    _frmSearch.SearchType = 2;
-                    _frmSearch.UserId = validUser.id;
-                    Properties.Settings.Default.UserId = validUser.id;
-                    _frmSearch.ShowDialog();
-                    int UserSelecteddatabaseId = _frmSearch.ReturnId;
-                    
+                    //frmSearch _frmSearch = new frmSearch();
+                    //_frmSearch.SearchType = 2;
+                    //_frmSearch.UserId = validUser.id;
+                    //Properties.Settings.Default.UserId = validUser.id;
+                    //_frmSearch.ShowDialog();
+                    int UserSelecteddatabaseId = 1;
 
+                    Properties.Settings.Default.UserId = validUser.id;
 
                     frmCustomerService _frmCustomerService = new frmCustomerService();                    
                     _frmCustomerService.isAdmin = (bool)validUser.isAdmin;

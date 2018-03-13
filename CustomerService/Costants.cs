@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using System.Text;
 
@@ -15,5 +17,7 @@ namespace CustomerService
         public const int PositionsList = 4;
         public const int CountyList = 1;
         public const int PeriScopeStatus = 5;
+
+          
     }
 }
